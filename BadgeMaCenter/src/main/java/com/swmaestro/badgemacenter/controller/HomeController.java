@@ -44,11 +44,5 @@ public class HomeController {
 		
 		return "home";
 	}
-	@RequestMapping(value = "/json.do")
-	public ModelAndView selectUser(Map<String, Object> commandMap) throws Exception {
-		ModelAndView mv = new ModelAndView("jsonView");
-		List<Map<String, Object>> list = service.selectMemberList(commandMap);
-		mv.addObject("List", list);
-		return mv;
-	}
+	
 }

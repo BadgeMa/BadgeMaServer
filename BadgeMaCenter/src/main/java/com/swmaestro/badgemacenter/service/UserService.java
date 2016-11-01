@@ -16,10 +16,14 @@ public class UserService {
 	private UserDao dao;
 	public Object good() {
 		// TODO Auto-generated method stub
-		return "Letter";
+		return "BadgeMa";
 	}
-	// member 전체 출력
-		public List<Map<String, Object>> selectMemberList(Map<String, Object> Map) throws Exception {
-			return dao.selectMemberList(Map);
+	// User 전체 출력
+		public List<Map<String, Object>> selectUserList(Map<String, Object> Map) throws Exception {
+			return dao.selectUserList(Map);
+		}
+		// user 한명 delete
+		public void deleteUser(Map<String, Object> map) {
+			dao.deleteUser(map);
 		}
 }

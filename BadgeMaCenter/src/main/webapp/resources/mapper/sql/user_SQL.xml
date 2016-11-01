@@ -3,12 +3,12 @@
 
 <mapper namespace="sample">
 	
-	<select id="selectMemberList" parameterType="hashmap" resultType="hashmap">
+	<select id="selectUserList" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[
 			SELECT
 			    *
 			FROM
-			   Member
+			   BadgeUser
 		]]>
 	</select>
 	<select id="selectAccessList" parameterType="hashmap" resultType="hashmap">
@@ -143,14 +143,15 @@
 				access_date=#{access_date} 
 		]]>
 	</update>
-	<delete id="deleteMember" parameterType="hashmap">
+	<delete id="deleteUser" parameterType="hashmap">
 		<![CDATA[
 			DELETE FROM
-				user
+				BadgeUser
 			WHERE
-				id=#{id}
+				badge_id=#{badge_id}
 		]]>
 	</delete>	
+		
 	
 	<delete id="deleteLetter" parameterType="hashmap">
 		<![CDATA[
