@@ -17,25 +17,24 @@ import com.swmaestro.badgemacenter.service.UserService;
 public class UserController {
 	@Resource(name = "UserService")
 	private UserService service;
-	//user list display
-		@RequestMapping(value = "/userList.do")
-		public ModelAndView userList(Map<String, Object> commandMap) throws Exception {
-			ModelAndView mv = new ModelAndView("userList");
-			List<Map<String, Object>> list = service.selectUserList(commandMap);
-			System.out.println(list.size());
-			mv.addObject("user_list", list);
-			return mv;
-		}
-		// delete user
-				@RequestMapping("/userDelete.do")
-				public ModelAndView memberDelete(HttpServletRequest request, Map<String, Object> commandMap) throws Exception {
-					Map<String, Object> map = new HashMap<String, Object>();
-					String badge_id = request.getParameter("badge_id");
-					map.put("badge_id", badge_id);
-					service.deleteUser(map);
-					ModelAndView mv = new ModelAndView("userList");
-					List<Map<String, Object>> list = service.selectUserList(commandMap);
-					mv.addObject("user_list", list);
-					return mv;
-				}
+
+	// user list display
+	@RequestMapping(value = "/userList.do")
+	public ModelAndView userList(Map<String, Object> commandMap) throws Exception {
+		ModelAndView mv = new ModelAndView("userTable");
+		List<Map<String, Object>> list = service.selectUserList(commandMap);
+		mv.addObject("user_list", list);
+		return mv;
+	}
+
+	// delete user
+	@RequestMapping("/userDelete.do")
+	public void memberDelete(HttpServletRequest request, Map<String, Object> commandMap) throws Exception {
+		Map<String, Object> map = new HashMap<String, Object>();
+		String badge_id = request.getParameter("badge_id");
+		System.out.println("badge_id : " + badge_id);
+		map.put("badge_id", badge_id);
+		service.deleteUser(map);
+
+	}
 }
