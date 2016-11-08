@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 <%
-	String server = "/badgemacenter";
+	String server = "/BadgeMaCenter";
 %>
 <meta charset="UTF-8" />
 <link rel="apple-touch-icon" sizes="76x76"
@@ -189,17 +189,18 @@
 					</div>
 					<!-- end row -->
 				</div>
-				 <div class="places-buttons">
-	                            
-	                            <div class="row">
-	                                
-	                                <div class="col-md-3">
-	                                    <button class="btn btn-default btn-block" onclick="demo.showNotification('bottom','right')">right</button>
-	                                </div>
-	                            </div>
-	                        </div>
+				<div class="places-buttons">
+
+					<div class="row">
+
+						<div class="col-md-3">
+							<button class="btn btn-default btn-block"
+								onclick="demo.showNotification('bottom','right')">right</button>
+						</div>
+					</div>
+				</div>
 			</div>
-			
+
 			<footer class="footer">
 				<div class="container-fluid">
 					<nav class="pull-left">

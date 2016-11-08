@@ -20,25 +20,7 @@ demo = {
 				});
 
 	},
-	initTest : function() {
-		var query = {
-				vote_date : $("#vote_date").val()
-			};
-			$.ajax({
-				type : "GET",
-				url : "voteNumber.do",
-				data : query,
-				dataType: "json",
-				success : function(json) {
-					var list = json.vote_result;
-	                var listLen = list.length;
-	                var contentStr = "";
-	                for(var i=0; i<listLen; i++){
-	                	contentStr += list[i].number;
-	                }
-				}
-			});
-	},
+
 	initGoogleMaps : function() {
 
 		// Satellite Map
@@ -46,8 +28,8 @@ demo = {
 		var mapOptions = {
 			zoom : 3,
 			scrollwheel : false, // we disable de scroll over the map, it is
-									// a really annoing when you scroll through
-									// page
+			// a really annoing when you scroll through
+			// page
 			center : myLatlng,
 			mapTypeId : google.maps.MapTypeId.SATELLITE
 		}
@@ -72,8 +54,8 @@ demo = {
 			zoom : 8,
 			center : myLatlng,
 			scrollwheel : false, // we disable de scroll over the map, it is
-									// a really annoing when you scroll through
-									// page
+		// a really annoing when you scroll through
+		// page
 		}
 
 		var map = new google.maps.Map(document.getElementById("regularMap"),
@@ -92,8 +74,8 @@ demo = {
 			zoom : 13,
 			center : myLatlng,
 			scrollwheel : false, // we disable de scroll over the map, it is
-									// a really annoing when you scroll through
-									// page
+			// a really annoing when you scroll through
+			// page
 			disableDefaultUI : true, // a way to quickly hide all controls
 			zoomControl : true,
 			styles : [ {
@@ -241,8 +223,8 @@ demo = {
 			zoom : 13,
 			center : myLatlng,
 			scrollwheel : false, // we disable de scroll over the map, it is
-									// a really annoing when you scroll through
-									// page
+			// a really annoing when you scroll through
+			// page
 			styles : [ {
 				"featureType" : "water",
 				"stylers" : [ {
@@ -350,7 +332,7 @@ demo = {
 		 */
 
 		var dataPrice = {
-			labels : [ '1', '2', '3', '4', '5', '6' ],
+			labels : [ '6월', '7월', '8월', '9월', '10월', '11월' ],
 			series : [ [ 100, 200, 400, 300, 570, 300, 100 ] ]
 		};
 
@@ -375,14 +357,40 @@ demo = {
 
 		Chartist.Line('#chartTotalEarnings', dataPrice, optionsPrice);
 
+		var dataPrice = {
+			labels : [ '6월', '7월', '8월', '9월', '10월', '11월' ],
+			series : [ [ 150, 100, 50, 110, 270, 300, 90 ] ]
+		};
+
+		var optionsPrice = {
+			showPoint : false,
+			lineSmooth : true,
+			height : "210px",
+			axisX : {
+				showGrid : false,
+				showLabel : true
+			},
+			axisY : {
+				offset : 40,
+				showGrid : false
+			},
+			low : 0,
+			high : 'auto',
+			classNames : {
+				line : 'ct-line ct-green'
+			}
+		};
+
+		Chartist.Line('#chartTotalEarnings2', dataPrice, optionsPrice);
+
 		/*
 		 * **************** Chart Subscriptions - single line
 		 * ********************
 		 */
 
 		var dataDays = {
-			labels : [ 'M', 'T', 'W', 'T', 'F', 'S', 'S' ],
-			series : [ [ 60, 50, 30, 50, 70, 60, 90, 100 ] ]
+			labels : [ '월', '화', '수', '목', '금', '토', '일' ],
+			series : [ [ 10, 20, 30, 50, 70, 60, 10, 0 ] ]
 		};
 
 		var optionsDays = {
@@ -406,14 +414,39 @@ demo = {
 
 		Chartist.Line('#chartTotalSubscriptions', dataDays, optionsDays);
 
+		var dataDays = {
+			labels : [ '월', '화', '수', '목', '금', '토', '일' ],
+			series : [ [ 60, 50, 30, 50, 70, 60, 90, 100 ] ]
+		};
+
+		var optionsDays = {
+			showPoint : false,
+			lineSmooth : true,
+			height : "210px",
+			axisX : {
+				showGrid : false,
+				showLabel : true
+			},
+			axisY : {
+				offset : 40,
+				showGrid : false
+			},
+			low : 0,
+			high : 'auto',
+			classNames : {
+				line : 'ct-line ct-red'
+			}
+		};
+
+		Chartist.Line('#chartTotalSubscriptions2', dataDays, optionsDays);
 		/*
 		 * **************** Chart Total Downloads - single line
 		 * ********************
 		 */
 
 		var dataDownloads = {
-			labels : [ '2009', '2010', '2011', '2012', '2013', '2014' ],
-			series : [ [ 1200, 1000, 3490, 8345, 3256, 2566 ] ]
+			labels : [ '2011', '2012', '2013', '2014', '2015', '2016' ],
+			series : [ [ 7500, 6800, 5000, 6000, 4000, 7000 ] ]
 		};
 
 		var optionsDownloads = {
@@ -436,6 +469,32 @@ demo = {
 		};
 
 		Chartist.Line('#chartTotalDownloads', dataDownloads, optionsDownloads);
+
+		var dataDownloads = {
+			labels : [ '2011', '2012', '2013', '2014', '2015', '2016' ],
+			series : [ [ 1200, 1000, 3490, 8345, 3256, 2566 ] ]
+		};
+
+		var optionsDownloads = {
+			showPoint : false,
+			lineSmooth : true,
+			height : "210px",
+			axisX : {
+				showGrid : false,
+				showLabel : true
+			},
+			axisY : {
+				offset : 40,
+				showGrid : false
+			},
+			low : 0,
+			high : 'auto',
+			classNames : {
+				line : 'ct-line ct-orange'
+			}
+		};
+
+		Chartist.Line('#chartTotalDownloads2', dataDownloads, optionsDownloads);
 	},
 
 	initStatsDashboard : function() {
@@ -785,7 +844,7 @@ demo = {
 
 		$('.datepicker').datetimepicker({
 			format : 'MM/DD/YYYY', // use this format if you want the 12hours
-									// timpiecker with AM/PM toggle
+			// timpiecker with AM/PM toggle
 			icons : {
 				time : "fa fa-clock-o",
 				date : "fa fa-calendar",
@@ -803,7 +862,7 @@ demo = {
 			// format: 'H:mm', // use this format if you want the 24hours
 			// timepicker
 			format : 'h:mm A', // use this format if you want the 12hours
-								// timpiecker with AM/PM toggle
+			// timpiecker with AM/PM toggle
 			icons : {
 				time : "fa fa-clock-o",
 				date : "fa fa-calendar",
@@ -864,7 +923,7 @@ demo = {
 										};
 										$calendar.fullCalendar('renderEvent',
 												eventData, true); // stick? =
-																	// true
+										// true
 									}
 
 									$calendar.fullCalendar('unselect');
@@ -873,7 +932,7 @@ demo = {
 					},
 					editable : true,
 					eventLimit : true, // allow "more" link when too many
-										// events
+					// events
 
 					// color classes: [ event-blue | event-azure | event-green |
 					// event-orange | event-red ]
@@ -929,14 +988,14 @@ demo = {
 				});
 	},
 
-	showNotification : function(from, align) {
+	showNotification : function(from, align, msg) {
 		color = Math.floor((Math.random() * 4) + 1);
 
 		$
 				.notify(
 						{
 							icon : "ti-gift",
-							message : "새로운 신고가 접수되었습니다!"
+							message : msg
 
 						}, {
 							type : type[color],
@@ -945,7 +1004,9 @@ demo = {
 								from : from,
 								align : align
 							}
+						
 						});
+		
 	},
 
 	initDocumentationCharts : function() {

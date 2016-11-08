@@ -1,19 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
 <%
 	String server = "/BadgeMaCenter";
 %>
-<meta charset="EUC-KR" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="apple-touch-icon" sizes="76x76"
 	href="resources/common/dashboard/assets/img/apple-icon.png">
 <link rel="icon" type="image/png" sizes="96x96"
 	href="resources/common/dashboard/assets/img/favicon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title>Badge Ma ¥ÎΩ√∫∏µÂ</title>
+<title>Badge Ma ÎåÄÏãúÎ≥¥Îìú</title>
 
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
@@ -58,7 +58,7 @@
 				<a href="<%=server%>/home.do" class="simple-text"> Badge Ma </a>
 			</div>
 			<div class="logo logo-mini">
-				<a href="<%=server%>/home.do" class="simple-text"> ªØ¡ˆ∏∂ </a>
+				<a href="<%=server%>/home.do" class="simple-text"> Î∫èÏßÄÎßà </a>
 			</div>
 			<div class="sidebar-wrapper">
 				<div class="user">
@@ -67,7 +67,7 @@
 					</div>
 					<div class="info">
 						<a data-toggle="collapse" href="#collapseExample"
-							class="collapsed">±Ë πÆ ºˆ <b class="caret"></b>
+							class="collapsed">ÍπÄ Î¨∏ Ïàò <b class="caret"></b>
 						</a>
 						<div class="collapse" id="collapseExample">
 							<ul class="nav">
@@ -83,12 +83,12 @@
 						href="#dashboardOverview" aria-expanded="true"> <i
 							class="ti-panel"></i>
 							<p>
-								¥ÎΩ√∫∏µÂ <b class="caret"></b>
+								ÎåÄÏãúÎ≥¥Îìú <b class="caret"></b>
 							</p>
 					</a>
 						<div class="collapse in" id="dashboardOverview">
 							<ul class="nav">
-								<li class="active"><a href="<%=server%>/home.do">«ˆ»≤∆«</a></li>
+								<li class="active"><a href="<%=server%>/home.do">ÌòÑÌô©Ìåê</a></li>
 								<li><a href="#">Stats</a></li>
 							</ul>
 						</div></li>
@@ -96,13 +96,13 @@
 					<li><a data-toggle="collapse" href="#tablesExamples"> <i
 							class="ti-view-list-alt"></i>
 							<p>
-								∏Ò∑œ ∫∏±‚ <b class="caret"></b>
+								Î™©Î°ù Î≥¥Í∏∞ <b class="caret"></b>
 							</p>
 					</a>
 						<div class="collapse" id="tablesExamples">
 							<ul class="nav">
-								<li><a href="<%=server%>/userList.do">ªÁøÎ¿⁄ ∏Ò∑œ</a></li>
-								<li><a href="<%=server%>/voteList.do">Ω≈∞Ì ∏Ò∑œ</a></li>
+								<li><a href="<%=server%>/userList.do">ÏÇ¨Ïö©Ïûê Î™©Î°ù</a></li>
+								<li><a href="<%=server%>/voteList.do">Ïã†Í≥† Î™©Î°ù</a></li>
 							</ul>
 						</div></li>
 
@@ -129,7 +129,7 @@
 								class="icon-bar bar1"></span> <span class="icon-bar bar2"></span>
 							<span class="icon-bar bar3"></span>
 						</button>
-						<a class="navbar-brand" href="<%=server%>/home.do"> «ˆ»≤∆« ∫∏±‚ </a>
+						<a class="navbar-brand" href="<%=server%>/home.do"> ÌòÑÌô©Ìåê Î≥¥Í∏∞ </a>
 					</div>
 				</div>
 			</nav>
@@ -148,7 +148,7 @@
 										</div>
 										<div class="col-xs-7">
 											<div class="numbers">
-												<p>Aπˆ∆∞ Ω≈∞Ì ∞«ºˆ</p>
+												<p>AÎ≤ÑÌäº Ïã†Í≥† Í±¥Ïàò</p>
 												<div id='Abtn_number'>0</div>
 											</div>
 										</div>
@@ -173,7 +173,7 @@
 										</div>
 										<div class="col-xs-7">
 											<div class="numbers">
-												<p>Aπˆ∆∞ √≥∏Æ ∞«ºˆ</p>
+												<p>AÎ≤ÑÌäº Ï≤òÎ¶¨ Í±¥Ïàò</p>
 												<div id='Abtn_completeNumber'>0</div>
 											</div>
 										</div>
@@ -182,7 +182,7 @@
 								<div class="card-footer">
 									<hr />
 									<div class="stats">
-										<i class="ti-calendar"></i> Last day
+										<i class="ti-reload"></i> Updated now
 									</div>
 								</div>
 							</div>
@@ -198,7 +198,7 @@
 										</div>
 										<div class="col-xs-7">
 											<div class="numbers">
-												<p>Bπˆ∆∞ Ω≈∞Ì ∞«ºˆ</p>
+												<p>BÎ≤ÑÌäº Ïã†Í≥† Í±¥Ïàò</p>
 												<div id='Bbtn_number'>0</div>
 											</div>
 										</div>
@@ -207,7 +207,7 @@
 								<div class="card-footer">
 									<hr />
 									<div class="stats">
-										<i class="ti-timer"></i> In the last hour
+										<i class="ti-reload"></i> Updated now
 									</div>
 								</div>
 							</div>
@@ -223,7 +223,7 @@
 										</div>
 										<div class="col-xs-7">
 											<div class="numbers">
-												<p>Bπˆ∆∞ √≥∏Æ ∞«ºˆ</p>
+												<p>BÎ≤ÑÌäº Ï≤òÎ¶¨ Í±¥Ïàò</p>
 												0
 											</div>
 										</div>
@@ -244,29 +244,42 @@
 								<div class="content">
 									<div class="row">
 										<div class="col-xs-7">
-											<div class="numbers pull-left">100</div>
+											<div class="numbers pull-left"></div>
 										</div>
 										<div class="col-xs-5">
 											<div class="pull-right">
-												<span class="label label-success"> +18% </span>
+												<span class="label label-danger"></span>
 											</div>
 										</div>
 									</div>
 									<h6 class="big-title">
-										¿œ¡÷¿œ ∞£<span class="text-muted"></span>»∏ø¯∞°¿‘ ºˆ<span
+										ÏùºÍ∞Ñ <span class="text-muted"></span> Ïã†Í≥† Í±¥Ïàò
+									</h6>
+									<div id="chartTotalSubscriptions"></div>
+								</div>
+
+							</div>
+						</div>
+						<div class="col-lg-4 col-sm-6">
+							<div class="card">
+								<div class="content">
+									<div class="row">
+										<div class="col-xs-7">
+											<div class="numbers pull-left"></div>
+										</div>
+										<div class="col-xs-5">
+											<div class="pull-right">
+												<span class="label label-success"></span>
+											</div>
+										</div>
+									</div>
+									<h6 class="big-title">
+										ÏõîÍ∞Ñ<span class="text-muted"></span> Ïã†Í≥† Í±¥Ïàò<span
 											class="text-muted"></span>
 									</h6>
 									<div id="chartTotalEarnings"></div>
 								</div>
-								<div class="card-footer">
-									<hr>
-									<div class="footer-title">Financial Statistics</div>
-									<div class="pull-right">
-										<button class="btn btn-info btn-fill btn-icon btn-sm">
-											<i class="ti-plus"></i>
-										</button>
-									</div>
-								</div>
+
 							</div>
 						</div>
 						<div class="col-lg-4 col-sm-6">
@@ -274,113 +287,99 @@
 								<div class="content">
 									<div class="row">
 										<div class="col-xs-7">
-											<div class="numbers pull-left">169</div>
+											<div class="numbers pull-left"></div>
 										</div>
 										<div class="col-xs-5">
 											<div class="pull-right">
-												<span class="label label-danger"> -14% </span>
+												<span class="label label-warning"></span>
 											</div>
 										</div>
 									</div>
 									<h6 class="big-title">
-										total subscriptions <span class="text-muted">in last</span> 7
-										days
-									</h6>
-									<div id="chartTotalSubscriptions"></div>
-								</div>
-								<div class="card-footer">
-									<hr>
-									<div class="footer-title">View all members</div>
-									<div class="pull-right">
-										<button class="btn btn-default btn-fill btn-icon btn-sm">
-											<i class="ti-angle-right"></i>
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-sm-6">
-							<div class="card">
-								<div class="content">
-									<div class="row">
-										<div class="col-xs-7">
-											<div class="numbers pull-left">8,960</div>
-										</div>
-										<div class="col-xs-5">
-											<div class="pull-right">
-												<span class="label label-warning"> ~51% </span>
-											</div>
-										</div>
-									</div>
-									<h6 class="big-title">
-										total downloads <span class="text-muted">in last</span> 6
-										years
+										ÎÖÑÍ∞Ñ <span class="text-muted"></span> Ïã†Í≥† Í±¥Ïàò
 									</h6>
 									<div id="chartTotalDownloads"></div>
 								</div>
-								<div class="card-footer">
-									<hr>
-									<div class="footer-title">View more details</div>
-									<div class="pull-right">
-										<button class="btn btn-success btn-fill btn-icon btn-sm">
-											<i class="ti-info"></i>
-										</button>
-									</div>
-								</div>
+
 							</div>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-lg-3 col-sm-6">
-							<div class="card card-circle-chart" data-background="color"
-								data-color="blue">
-								<div class="header text-center">
-									<h5 class="title">Dashboard</h5>
-									<p class="description">Monthly sales target</p>
-								</div>
+						<div class="col-lg-4 col-sm-6">
+							<div class="card">
 								<div class="content">
-									<div id="chartDashboard" class="chart-circle" data-percent="70">70%</div>
+									<div class="row">
+										<div class="col-xs-7">
+											<div class="numbers pull-left"></div>
+										</div>
+										<div class="col-xs-5">
+											<div class="pull-right">
+												<span class="label label-danger"></span>
+											</div>
+										</div>
+									</div>
+									<h6 class="big-title">
+										ÏùºÍ∞Ñ <span class="text-muted"></span> Ïã†Í≥† Í±¥Ïàò
+									</h6>
+									<div id="chartTotalSubscriptions2"></div>
 								</div>
+
 							</div>
 						</div>
-						<div class="col-lg-3 col-sm-6">
-							<div class="card card-circle-chart" data-background="color"
-								data-color="green">
-								<div class="header text-center">
-									<h5 class="title">Orders</h5>
-									<p class="description">Completed</p>
-								</div>
+						<div class="col-lg-4 col-sm-6">
+							<div class="card">
 								<div class="content">
-									<div id="chartOrders" class="chart-circle" data-percent="34">34%</div>
+									<div class="row">
+										<div class="col-xs-7">
+											<div class="numbers pull-left"></div>
+										</div>
+										<div class="col-xs-5">
+											<div class="pull-right">
+												<span class="label label-success"></span>
+											</div>
+										</div>
+									</div>
+									<h6 class="big-title">
+										ÏõîÍ∞Ñ<span class="text-muted"></span> Ïã†Í≥† Í±¥Ïàò<span
+											class="text-muted"></span>
+									</h6>
+									<div id="chartTotalEarnings2"></div>
 								</div>
+
 							</div>
 						</div>
-						<div class="col-lg-3 col-sm-6">
-							<div class="card card-circle-chart" data-background="color"
-								data-color="orange">
-								<div class="header text-center">
-									<h5 class="title">New Visitors</h5>
-									<p class="description">Out of total number</p>
-								</div>
+						<div class="col-lg-4 col-sm-6">
+							<div class="card">
 								<div class="content">
-									<div id="chartNewVisitors" class="chart-circle"
-										data-percent="62">62%</div>
+									<div class="row">
+										<div class="col-xs-7">
+											<div class="numbers pull-left"></div>
+										</div>
+										<div class="col-xs-5">
+											<div class="pull-right">
+												<span class="label label-warning"></span>
+											</div>
+										</div>
+									</div>
+									<h6 class="big-title">
+										ÎÖÑÍ∞Ñ <span class="text-muted"></span> Ïã†Í≥† Í±¥Ïàò
+									</h6>
+									<div id="chartTotalDownloads2"></div>
 								</div>
+
 							</div>
 						</div>
-						<div class="col-lg-3 col-sm-6">
-							<div class="card card-circle-chart" data-background="color"
-								data-color="brown">
-								<div class="header text-center">
-									<h5 class="title">Subscriptions</h5>
-									<p class="description">Monthly newsletter</p>
-								</div>
-								<div class="content">
-									<div id="chartSubscriptions" class="chart-circle"
-										data-percent="10">10%</div>
-								</div>
-							</div>
-						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="places-buttons">
+
+				<div class="row">
+
+					<div class="col-md-3">
+						<button class="btn btn-default btn-block"
+							onclick="demo.showNotification('bottom','right')">right</button>
 					</div>
 				</div>
 			</div>
@@ -390,7 +389,7 @@
 						<ul>
 							<li><a
 								href="https://www.facebook.com/groups/1599411230361237/?ref=bookmarks">
-									1% FaceBook </a></li>
+									BadgeMa FaceBook </a></li>
 							<li><a href="https://github.com/OnePercentDevelop">
 									github </a></li>
 						</ul>
@@ -401,7 +400,7 @@
 							document.write(new Date().getFullYear())
 						</script>
 						, made with <i class="fa fa-heart heart"></i> by <a
-							href="<%=server%>/home.do">1Percent</a>
+							href="<%=server%>/home.do">Bagde Ma</a>
 					</div>
 				</div>
 			</footer>
@@ -469,12 +468,15 @@
 <script src="resources/common/dashboard/assets/js/paper-dashboard.js"></script>
 
 <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
-<script src="resources/common/dashboard/assets/js/demo.js?ver=1"></script>
+<script
+	src="resources/common/dashboard/assets/js/demo.js?ver=1 charset='utf-8'"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
 		demo.initOverviewDashboard();
 		demo.initCirclePercentage();
+		//demo.showNotification('bottom','right', "hi");
+		notificationPolling();
 		pollA();
 		pollB();
 	});
@@ -503,6 +505,31 @@
 			$('#Bbtn_number').html(
 					"<div id='Bbtn_number'>" + contentStr + "</div>");
 	    }, dataType: "json", complete: pollB, timeout: 30000 });
+	};
+	var notificationPolling = function (){
+		$.ajax({
+			type : "GET",
+			url : "unnotificationList.do",
+			success : function(json) {
+				var list = json.notification_result;
+				var listLen = list.length;
+				var contentStr = "";
+				for (var i = 0; i < listLen; i++) {
+					contentStr = list[i].class_location + "ÏóêÏÑú ";
+					if (list[i].declaration_type == 1){
+						contentStr += "AÎ≤ÑÌäº";
+					}else {
+						contentStr += "BÎ≤ÑÌäº";
+					}
+					contentStr += " Ïùò Ïã†Í≥†Í∞Ä Îì§Ïñ¥ÏôîÏäµÎãàÎã§!!";
+					demo.showNotification('bottom','right', contentStr);
+				}
+
+			},
+			dataType : "json",
+			complete : notificationPolling,
+			timeout : 30000
+		});
 	};
 </script>
 

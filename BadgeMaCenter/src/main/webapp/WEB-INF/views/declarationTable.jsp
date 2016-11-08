@@ -161,7 +161,7 @@
 															<td></td>
 															<td>${row.declaration_id}</td>
 															<td>${row.badge_id}</td>
-															<td>${row.location}</td>
+															<td>${row.class_location}</td>
 															<td>${row.declaration_type}</td>
 															<td>${row.declaration_date}</td>
 															<td></td>

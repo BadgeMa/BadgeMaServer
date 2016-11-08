@@ -11,8 +11,7 @@
 			   Declaration
 		]]>
 	</select>
-	<select id="selectBtnNumber" parameterType="hashmap"
-		resultType="hashmap">
+	<select id="selectBtnNumber" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[
 			SELECT
 			    count(*) as num
@@ -23,52 +22,45 @@
 				declaration_type=#{declaration_type}
 		]]>
 	</select>
-	<select id="selectVoteList" parameterType="hashmap" resultType="hashmap">
+	<select id="selectUnNotificationList" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[
 			SELECT
 			    *
 			FROM
-			   OnePercentVote
-		]]>
+			   Declaration
+			WHERE
+				declaration_date=#{declaration_date} AND
+				notification_state=#{notification_state}
+ 		]]>
 	</select>
-	<insert id="insertVote" parameterType="hashmap">
-	<![CDATA[
-	    	IF EXISTS(
-                SELECT user_id FROM OnePercentVote
-                WHERE vote_date=#{vote_date} AND user_id = #{user_id}
-         	)
-    	BEGIN
-        	SELECT 99 cnt
-    	END
-    
-    	ELSE
-        	BEGIN
-        	INSERT
-				INTO OnePercentVote(
-			    	vote_date,
-			    	user_id,
-			    	vote_answer
+		<insert id="insertDeclaration" parameterType="hashmap">
+		<![CDATA[
+			INSERT 
+				INTO Declaration(
+			    	badge_id,
+			    	class_location,
+			    	declaration_type,
+			    	declaration_date,
+			    	notification_state
 			    	)
 				VALUES(
-			    	#{vote_date},
-			    	#{user_id},
-			    	#{vote_answer}
+					#{badge_id},
+			    	#{class_location},
+			    	#{declaration_type},
+			    	#{declaration_date},
+			    	#{notification_state}
 			    )
-       	END
 		]]>
-		
 	</insert>
-	
 
-
-	<update id="updateLetterState" parameterType="hashmap">
+	<update id="updateDeclaration" parameterType="hashmap">
 		<![CDATA[
 			UPDATE
-				letter_tb
+				Declaration
 			SET
-				read_state=1
-			WHERE
-				letter_id=#{letter_id}
+				notification_state = 1
+			WHERE 
+				declaration_id <= #{declaration_id}
 		]]>
 	</update>
 	<delete id="deleteDeclaration" parameterType="hashmap">

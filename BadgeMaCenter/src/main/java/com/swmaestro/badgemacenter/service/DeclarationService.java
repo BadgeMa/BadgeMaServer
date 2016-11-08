@@ -28,9 +28,16 @@ public class DeclarationService {
 	public List<Map<String, Object>> selectBtnNumber(Map<String, Object> Map) throws Exception {
 		return dao.selectBtnNumber(Map);
 	}
-
-
-	// user 한명 delete
+	public List<Map<String, Object>> selectUnNotificationList(Map<String, Object> Map) throws Exception {
+		return dao.selectUnNotificationList(Map);
+	}
+	public void insertDeclaration(Map<String, Object> map) {
+		dao.insertDeclaration(map);
+	}
+	public void updateDeclaration(Map<String, Object> map) {
+		dao.updateDeclaration(map);
+	}
+	//  한건 delete
 	public void deleteDeclaration(Map<String, Object> map) {
 		dao.deleteDeclaration(map);
 	}
