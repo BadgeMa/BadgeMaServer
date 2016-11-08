@@ -50,5 +50,9 @@ public class HomeController {
 
 		return "overview";
 	}
-	
+	@RequestMapping(value = "classUI.do", method = RequestMethod.GET)
+	public String classUI(Locale locale, Model model) throws Exception {
+
+		return "classUI";
+	}
 }
