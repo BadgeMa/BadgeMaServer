@@ -936,7 +936,7 @@ demo = {
 				.notify(
 						{
 							icon : "ti-gift",
-							message : "Welcome to <b>Paper Dashboard</b> - a beautiful freebie for every web developer."
+							message : "새로운 신고가 접수되었습니다!"
 
 						}, {
 							type : type[color],

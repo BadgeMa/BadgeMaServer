@@ -24,10 +24,11 @@ public class DeclarationService {
 		return dao.selectDeclarationList(Map);
 	}
 
-	// Button A 건수 가져오기
-	public List<Map<String, Object>> selectReportNumber(Map<String, Object> Map) throws Exception {
-		return dao.selectReportNumber(Map);
+	// Button 건수 가져오기
+	public List<Map<String, Object>> selectBtnNumber(Map<String, Object> Map) throws Exception {
+		return dao.selectBtnNumber(Map);
 	}
+
 
 	// user 한명 delete
 	public void deleteDeclaration(Map<String, Object> map) {

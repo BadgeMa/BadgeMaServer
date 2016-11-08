@@ -13,8 +13,8 @@ public class DeclarationDao extends abDAO {
 	public List<Map<String, Object>> selectDeclarationList(Map<String, Object> commandMap) {
 		return (List<Map<String,Object>>)selectList("declarationSQL.selectDeclaration", commandMap);
 	}
-	public List<Map<String, Object>> selectReportNumber(Map<String, Object> commandMap) {
-		return (List<Map<String,Object>>)selectList("declarationSQL.selectReportNumber", commandMap);
+	public List<Map<String, Object>> selectBtnNumber(Map<String, Object> commandMap) {
+		return (List<Map<String,Object>>)selectList("declarationSQL.selectBtnNumber", commandMap);
 	}
 	public void deleteDeclaration(Map<String, Object> map) {
 		delete("declarationSQL.deleteDeclaration",map);

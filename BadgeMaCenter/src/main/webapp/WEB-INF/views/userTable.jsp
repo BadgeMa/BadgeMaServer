@@ -189,8 +189,17 @@
 					</div>
 					<!-- end row -->
 				</div>
+				 <div class="places-buttons">
+	                            
+	                            <div class="row">
+	                                
+	                                <div class="col-md-3">
+	                                    <button class="btn btn-default btn-block" onclick="demo.showNotification('bottom','right')">right</button>
+	                                </div>
+	                            </div>
+	                        </div>
 			</div>
-
+			
 			<footer class="footer">
 				<div class="container-fluid">
 					<nav class="pull-left">
@@ -281,7 +290,7 @@
 <script src="resources/common/dashboard/assets/js/paper-dashboard.js"></script>
 
 <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
-<script src="resources/common/dashboard/assets/js/demo.js"></script>
+<script src="resources/common/dashboard/assets/js/demo.js?ver=1"></script>
 
 <script type="text/javascript">
 	var $table = $('#bootstrap-table');

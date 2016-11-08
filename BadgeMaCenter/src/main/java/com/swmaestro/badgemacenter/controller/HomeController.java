@@ -2,6 +2,7 @@ package com.swmaestro.badgemacenter.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -14,8 +15,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
+import com.swmaestro.badgemacenter.service.DeclarationService;
 import com.swmaestro.badgemacenter.service.UserService;
 
 /**
@@ -31,8 +32,8 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	@RequestMapping(value = "/noti.do", method = RequestMethod.GET)
+	public String noti(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
@@ -42,7 +43,12 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "noti";
+	}
+	@RequestMapping(value = "home.do", method = RequestMethod.GET)
+	public String home(Locale locale, Model model) throws Exception {
+
+		return "overview";
 	}
 	
 }

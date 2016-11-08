@@ -11,7 +11,7 @@
 			   Declaration
 		]]>
 	</select>
-	<select id="selectReportNumber" parameterType="hashmap"
+	<select id="selectBtnNumber" parameterType="hashmap"
 		resultType="hashmap">
 		<![CDATA[
 			SELECT
