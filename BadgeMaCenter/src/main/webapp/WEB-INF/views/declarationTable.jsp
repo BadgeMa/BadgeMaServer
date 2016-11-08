@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<%String server = "/OnePercentServer"; %>
+<%String server = "/badgemacenter"; %>
 <meta charset="UTF-8" />
 <link rel="apple-touch-icon" sizes="76x76"
 	href="resources/common/dashboard/assets/img/apple-icon.png">
@@ -11,7 +11,7 @@
 	href="resources/common/dashboard/assets/img/favicon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title>1% 투표 목록</title>
+<title>BadgeMa 신고 목록</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <meta
@@ -99,7 +99,7 @@
 						<div class="collapse in" id="tablesExamples">
 							<ul class="nav">
 								<li><a href="<%=server %>/userList.do">사용자 목록</a></li>
-								<li class="active"><a href="<%=server %>/voteList.do">신고 목록</a></li>
+								<li class="active"><a href="<%=server %>/declarationList.do">신고 목록</a></li>
 								<li><a href="<%=server%>/voteList.do">상담 목록</a></li>							</ul>
 						</div></li>
 					
@@ -202,7 +202,7 @@
 							document.write(new Date().getFullYear())
 						</script>
 						, made with <i class="fa fa-heart heart"></i> by <a
-							href="<%=server %>/home.do">BadgeMa</a>
+							href="<%=server %>/home.do">Badge Ma</a>
 					</div>
 				</div>
 			</footer>

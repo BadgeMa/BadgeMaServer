@@ -11,15 +11,16 @@
 			   Declaration
 		]]>
 	</select>
-	<select id="selectVoteNumber" parameterType="hashmap"
+	<select id="selectReportNumber" parameterType="hashmap"
 		resultType="hashmap">
 		<![CDATA[
 			SELECT
-			    count(*) as number
+			    count(*) as num
 			FROM
-			   OnePercentVote
+			   Declaration
 			WHERE
-				vote_date=#{vote_date}
+				declaration_date=#{declaration_date} AND 
+				declaration_type=#{declaration_type}
 		]]>
 	</select>
 	<select id="selectVoteList" parameterType="hashmap" resultType="hashmap">
