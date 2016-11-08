@@ -33,21 +33,20 @@ public class DeclarationController {
 	@RequestMapping(value = "/unnotificationList.do")
 	public ModelAndView selectUnNotificationList(Map<String, Object> commandMap) throws Exception {
 		Map<String, Object> map = new HashMap<String, Object>();
-//		System.out.println("hello");
+		// System.out.println("hello");
 		map.put("declaration_date", todayDate());
 		map.put("declaration_type", 1);
 		map.put("notification_state", 0);
 		ModelAndView mv = new ModelAndView("jsonView");
 		List<Map<String, Object>> list = service.selectUnNotificationList(map);
 		mv.addObject("notification_result", list);
-		if (list.size()!=0)
-		{
-			service.updateDeclaration(list.get(list.size()-1));
+		if (list.size() != 0) {
+			service.updateDeclaration(list.get(list.size() - 1));
 		}
 		return mv;
 	}
 
-	// button A 건수 가져오기
+	// button A 신고 건수 가져오기
 	@RequestMapping(value = "/AbtnNumber.do")
 	public ModelAndView AbtnNumber(Map<String, Object> commandMap) throws Exception {
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -56,6 +55,19 @@ public class DeclarationController {
 		ModelAndView mv = new ModelAndView("jsonView");
 		List<Map<String, Object>> list = service.selectBtnNumber(map);
 		mv.addObject("report_result", list);
+		return mv;
+	}
+
+	// button A 처리 건수 가져오기
+	@RequestMapping(value = "/AbtnSolveNumber.do")
+	public ModelAndView AbtnSolveNumber(Map<String, Object> commandMap) throws Exception {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("declaration_date", todayDate());
+		map.put("declaration_type", 1);
+		map.put("solve_state", 1);
+		ModelAndView mv = new ModelAndView("jsonView");
+		List<Map<String, Object>> list = service.selectBtnSolveNumber(map);
+		mv.addObject("solve_result", list);
 		return mv;
 	}
 
@@ -70,7 +82,18 @@ public class DeclarationController {
 		mv.addObject("report_result", list);
 		return mv;
 	}
-
+	// button B 처리 건수 가져오기
+		@RequestMapping(value = "/BbtnSolveNumber.do")
+		public ModelAndView BbtnSolveNumber(Map<String, Object> commandMap) throws Exception {
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("declaration_date", todayDate());
+			map.put("declaration_type", 2);
+			map.put("solve_state", 1);
+			ModelAndView mv = new ModelAndView("jsonView");
+			List<Map<String, Object>> list = service.selectBtnSolveNumber(map);
+			mv.addObject("solve_result", list);
+			return mv;
+		}
 	// delete user
 	@RequestMapping("/declarationDelete.do")
 	public void deleteDeclaration(HttpServletRequest request, Map<String, Object> commandMap) throws Exception {
@@ -94,6 +117,7 @@ public class DeclarationController {
 		map.put("declaration_type", declaration_type);
 		map.put("declaration_date", today);
 		map.put("notification_state", 0);
+		map.put("solve_state", 0);
 		service.insertDeclaration(map);
 
 	}

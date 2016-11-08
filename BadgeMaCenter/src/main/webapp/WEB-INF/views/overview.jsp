@@ -224,7 +224,7 @@
 										<div class="col-xs-7">
 											<div class="numbers">
 												<p>B버튼 처리 건수</p>
-												0
+												<div id='Bbtn_completeNumber'>0</div>
 											</div>
 										</div>
 									</div>
@@ -373,16 +373,7 @@
 
 				</div>
 			</div>
-			<div class="places-buttons">
-
-				<div class="row">
-
-					<div class="col-md-3">
-						<button class="btn btn-default btn-block"
-							onclick="demo.showNotification('bottom','right')">right</button>
-					</div>
-				</div>
-			</div>
+			
 			<footer class="footer">
 				<div class="container-fluid">
 					<nav class="pull-left">
@@ -479,6 +470,8 @@
 		notificationPolling();
 		pollA();
 		pollB();
+		pollSolveA();
+		pollSolveB();
 	});
 	var pollA = function (){
 		
@@ -493,6 +486,19 @@
 					"<div id='Abtn_number'>" + contentStr + "</div>");
 	    }, dataType: "json", complete: pollA, timeout: 30000 });
 	};
+	var pollSolveA = function (){
+		
+	    $.ajax({ type : "GET", url: "AbtnSolveNumber.do",  success: function(json){
+	    	var list = json.solve_result;
+			var listLen = list.length;
+			var contentStr = "";
+			for (var i = 0; i < listLen; i++) {
+				contentStr += list[i].num;
+			}
+			$('#Abtn_completeNumber').html(
+					"<div id='Abtn_completeNumber'>" + contentStr + "</div>");
+	    }, dataType: "json", complete: pollSolveA, timeout: 30000 });
+	};
 	var pollB = function (){
 		
 	    $.ajax({ type : "GET", url: "BbtnNumber.do",  success: function(json){
@@ -505,6 +511,19 @@
 			$('#Bbtn_number').html(
 					"<div id='Bbtn_number'>" + contentStr + "</div>");
 	    }, dataType: "json", complete: pollB, timeout: 30000 });
+	};
+	var pollSolveB = function (){
+		
+	    $.ajax({ type : "GET", url: "BbtnSolveNumber.do",  success: function(json){
+	    	var list = json.solve_result;
+			var listLen = list.length;
+			var contentStr = "";
+			for (var i = 0; i < listLen; i++) {
+				contentStr += list[i].num;
+			}
+			$('#Bbtn_completeNumber').html(
+					"<div id='Bbtn_completeNumber'>" + contentStr + "</div>");
+	    }, dataType: "json", complete: pollSolveB, timeout: 30000 });
 	};
 	var notificationPolling = function (){
 		$.ajax({

@@ -22,6 +22,18 @@
 				declaration_type=#{declaration_type}
 		]]>
 	</select>
+	<select id="selectBtnSolveNumber" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[
+			SELECT
+			    count(*) as num
+			FROM
+			   Declaration
+			WHERE
+				declaration_date=#{declaration_date} AND 
+				declaration_type=#{declaration_type} AND
+				solve_state = #{solve_state}
+		]]>
+	</select>
 	<select id="selectUnNotificationList" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[
 			SELECT
@@ -41,14 +53,16 @@
 			    	class_location,
 			    	declaration_type,
 			    	declaration_date,
-			    	notification_state
+			    	notification_state,
+			    	solve_state
 			    	)
 				VALUES(
 					#{badge_id},
 			    	#{class_location},
 			    	#{declaration_type},
 			    	#{declaration_date},
-			    	#{notification_state}
+			    	#{notification_state},
+			    	#{solve_state}
 			    )
 		]]>
 	</insert>

@@ -17,6 +17,9 @@ public class DeclarationDao extends abDAO {
 	public List<Map<String, Object>> selectBtnNumber(Map<String, Object> commandMap) {
 		return (List<Map<String, Object>>) selectList("declarationSQL.selectBtnNumber", commandMap);
 	}
+	public List<Map<String, Object>> selectBtnSolveNumber(Map<String, Object> commanMap) {
+		return (List<Map<String, Object>>) selectList("declarationSQL.selectBtnSolveNumber", commanMap);
+	}
 	public List<Map<String, Object>> selectUnNotificationList(Map<String, Object> commandMap) {
 		return (List<Map<String, Object>>) selectList("declarationSQL.selectUnNotificationList", commandMap);
 	}

@@ -28,6 +28,9 @@ public class DeclarationService {
 	public List<Map<String, Object>> selectBtnNumber(Map<String, Object> Map) throws Exception {
 		return dao.selectBtnNumber(Map);
 	}
+	public List<Map<String, Object>> selectBtnSolveNumber(Map<String, Object> Map) throws Exception {
+		return dao.selectBtnSolveNumber(Map);
+	}
 	public List<Map<String, Object>> selectUnNotificationList(Map<String, Object> Map) throws Exception {
 		return dao.selectUnNotificationList(Map);
 	}
