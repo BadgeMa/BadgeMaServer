@@ -7,10 +7,15 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.swmaestro.badgemacenter.model.UserModel;
 import com.swmaestro.badgemacenter.service.UserService;
 
 @Controller
@@ -26,7 +31,13 @@ public class UserController {
 		mv.addObject("user_list", list);
 		return mv;
 	}
+	@RequestMapping(value = "/postTest.do", method = RequestMethod.POST)
+	public String logs(@RequestBody Map<String,String> body) {
+		
+		System.out.println("Received POST request:" + body.get("badge_id"));
 
+	    return null;
+	}
 	// delete user
 	@RequestMapping("/userDelete.do")
 	public void memberDelete(HttpServletRequest request, Map<String, Object> commandMap) throws Exception {
