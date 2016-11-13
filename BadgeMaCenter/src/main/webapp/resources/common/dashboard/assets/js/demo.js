@@ -23,35 +23,277 @@ demo = {
 
 	initGoogleMaps : function() {
 
-		// Satellite Map
-		var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
+		var school1 = new google.maps.LatLng(37.628298, 127.049677); // 염광고등학교
+		var school2 = new google.maps.LatLng(37.646984, 127.075585); // 서라벌고등학교
+		var school3 = new google.maps.LatLng(37.650812, 127.038877); // 창동
+																		// 고등학교
+		var school4 = new google.maps.LatLng(37.586555, 127.068399); // 휘봉
+																		// 고등학교
+		var school5 = new google.maps.LatLng(37.588541, 127.050904); // 청량
+																		// 고등학교
+		var school6 = new google.maps.LatLng(37.547774, 126.831766); // 화곡
+																		// 고등학교
+		var school7 = new google.maps.LatLng(37.484910, 127.0596397); // 개포
+																		// 고등학교
+		var school8 = new google.maps.LatLng(37.516888, 127.055992); // 경기
+																		// 고등학교
+		var school9 = new google.maps.LatLng(37.490305, 127.102559); // 세종
+																		// 고등학교
+		var school10 = new google.maps.LatLng(37.531151, 127.032880); // 압구정
+																		// 고등학교
+		var school11 = new google.maps.LatLng(37.485700, 127.080651); // 중산
+																		// 고등학교
+		var school12 = new google.maps.LatLng(37.527964, 127.043331); // 청담
+																		// 고등학교
+
 		var mapOptions = {
-			zoom : 3,
-			scrollwheel : false, // we disable de scroll over the map, it is
+			zoom : 10,
+			scrollwheel : true, // we disable de scroll over the map, it is
 			// a really annoing when you scroll through
 			// page
-			center : myLatlng,
-			mapTypeId : google.maps.MapTypeId.SATELLITE
+			center : school1
 		}
 
 		var map = new google.maps.Map(document.getElementById("satelliteMap"),
 				mapOptions);
 
 		var marker = new google.maps.Marker({
-			position : myLatlng,
-			title : "Satellite Map!"
+			map : map,
+			position : school1,
+			title : "염광 고등학교"
 		});
-
-		marker.setMap(map);
-
+		
+		var marker2 = new google.maps.Marker({
+			map : map,
+			position : school2,
+			title : "서라벌 고등학교"
+		});
+		var marker3 = new google.maps.Marker({
+			map : map,
+			position : school3,
+			title : "창동 고등학교"
+		});
+		var marker4 = new google.maps.Marker({
+			map : map,
+			position : school4,
+			title : "휘봉 고등학교"
+		});
+		var marker5 = new google.maps.Marker({
+			map : map,
+			position : school5,
+			title : "청량 고등학교"
+		});
+		var marker6 = new google.maps.Marker({
+			map : map,
+			position : school6,
+			title : "화곡 고등학교"
+		});
+		var marker7 = new google.maps.Marker({
+			map : map,
+			position : school7,
+			title : "개포 고등학교"
+		});
+		var marker8 = new google.maps.Marker({
+			map : map,
+			position : school8,
+			title : "경기 고등학교"
+		});
+		var marker9 = new google.maps.Marker({
+			map : map,
+			position : school9,
+			title : "세종 고등학교"
+		});
+		var marker10 = new google.maps.Marker({
+			map : map,
+			position : school10,
+			title : "압구정 고등학교"
+		});
+		var marker11 = new google.maps.Marker({
+			map : map,
+			position : school11,
+			title : "중산 고등학교"
+		});
+		var marker12 = new google.maps.Marker({
+			map : map,
+			position : school12,
+			title : "청담 고등학교"
+		});
+		var school1_content = "염광 고등학교"; // 말풍선 안에 들어갈 내용
+		var school2_content = "서라벌 고등학교"; // 말풍선 안에 들어갈 내용
+		var school3_content = "창동 고등학교"; // 말풍선 안에 들어갈 내용
+		var school4_content = "휘봉 고등학교"; // 말풍선 안에 들어갈 내용
+		var school5_content = "청량 고등학교"; // 말풍선 안에 들어갈 내용
+		var school6_content = "화곡 고등학교"; // 말풍선 안에 들어갈 내용
+		var school7_content = "개포 고등학교"; // 말풍선 안에 들어갈 내용
+		var school8_content = "경기 고등학교"; // 말풍선 안에 들어갈 내용
+		var school9_content = "세종 고등학교"; // 말풍선 안에 들어갈 내용
+		var school10_content = "압구정 고등학교"; // 말풍선 안에 들어갈 내용
+		var school11_content = "중산 고등학교"; // 말풍선 안에 들어갈 내용
+		var school12_content = "청담 고등학교"; // 말풍선 안에 들어갈 내용
+		var school1_infowindow = new google.maps.InfoWindow({ content: school1_content});
+		var school2_infowindow = new google.maps.InfoWindow({ content: school2_content});
+		var school3_infowindow = new google.maps.InfoWindow({ content: school3_content});
+		var school4_infowindow = new google.maps.InfoWindow({ content: school4_content});
+		var school5_infowindow = new google.maps.InfoWindow({ content: school5_content});
+		var school6_infowindow = new google.maps.InfoWindow({ content: school6_content});
+		var school7_infowindow = new google.maps.InfoWindow({ content: school7_content});
+		var school8_infowindow = new google.maps.InfoWindow({ content: school8_content});
+		var school9_infowindow = new google.maps.InfoWindow({ content: school9_content});
+		var school10_infowindow = new google.maps.InfoWindow({ content: school10_content});
+		var school11_infowindow = new google.maps.InfoWindow({ content: school11_content});
+		var school12_infowindow = new google.maps.InfoWindow({ content: school12_content});
+		
+		marker.addListener('click', function() {
+			$('#Abtn_number').html("<div id='Abtn_number'>100</div>");
+			$('#Abtn_completeNumber').html(
+					"<div id='Abtn_completeNumber'>50</div>");
+			$('#Bbtn_number').html(
+					"<div id='Bbtn_number'>200</div>");
+			$('#Bbtn_completeNumber').html(
+					"<div id='Bbtn_completeNumber'>120</div>");
+			school1_infowindow.open(map, marker);
+			map.setZoom(18);
+			map.setCenter(marker.getPosition());
+		});
+		marker2.addListener('click', function() {
+			$('#Abtn_number').html("<div id='Abtn_number'>152</div>");
+			$('#Abtn_completeNumber').html(
+					"<div id='Abtn_completeNumber'>103</div>");
+			$('#Bbtn_number').html(
+					"<div id='Bbtn_number'>300</div>");
+			$('#Bbtn_completeNumber').html(
+					"<div id='Bbtn_completeNumber'>110</div>");
+			school2_infowindow.open(map, marker2);
+			map.setZoom(18);
+			map.setCenter(marker2.getPosition());
+		});
+		marker3.addListener('click', function() {
+			$('#Abtn_number').html("<div id='Abtn_number'>150</div>");
+			$('#Abtn_completeNumber').html(
+					"<div id='Abtn_completeNumber'>54</div>");
+			$('#Bbtn_number').html(
+					"<div id='Bbtn_number'>230</div>");
+			$('#Bbtn_completeNumber').html(
+					"<div id='Bbtn_completeNumber'>128</div>");
+			school3_infowindow.open(map, marker3);
+			map.setZoom(18);
+			map.setCenter(marker3.getPosition());
+		});
+		marker4.addListener('click', function() {
+			$('#Abtn_number').html("<div id='Abtn_number'>405</div>");
+			$('#Abtn_completeNumber').html(
+					"<div id='Abtn_completeNumber'>230</div>");
+			$('#Bbtn_number').html(
+					"<div id='Bbtn_number'>610</div>");
+			$('#Bbtn_completeNumber').html(
+					"<div id='Bbtn_completeNumber'>320</div>");
+			school4_infowindow.open(map, marker4);
+			map.setZoom(18);
+			map.setCenter(marker4.getPosition());
+		});
+		marker5.addListener('click', function() {
+			$('#Abtn_number').html("<div id='Abtn_number'>180</div>");
+			$('#Abtn_completeNumber').html(
+					"<div id='Abtn_completeNumber'>50</div>");
+			$('#Bbtn_number').html(
+					"<div id='Bbtn_number'>530</div>");
+			$('#Bbtn_completeNumber').html(
+					"<div id='Bbtn_completeNumber'>350</div>");
+			school5_infowindow.open(map, marker5);
+			map.setZoom(18);
+			map.setCenter(marker5.getPosition());
+		});
+		marker6.addListener('click', function() {
+			$('#Abtn_number').html("<div id='Abtn_number'>80</div>");
+			$('#Abtn_completeNumber').html(
+					"<div id='Abtn_completeNumber'>52</div>");
+			$('#Bbtn_number').html(
+					"<div id='Bbtn_number'>342</div>");
+			$('#Bbtn_completeNumber').html(
+					"<div id='Bbtn_completeNumber'>121</div>");
+			school6_infowindow.open(map, marker6);
+			map.setZoom(18);
+			map.setCenter(marker6.getPosition());
+		});
+		marker7.addListener('click', function() {
+			$('#Abtn_number').html("<div id='Abtn_number'>104</div>");
+			$('#Abtn_completeNumber').html(
+					"<div id='Abtn_completeNumber'>79</div>");
+			$('#Bbtn_number').html(
+					"<div id='Bbtn_number'>341</div>");
+			$('#Bbtn_completeNumber').html(
+					"<div id='Bbtn_completeNumber'>278</div>");
+			school7_infowindow.open(map, marker7);
+			map.setZoom(18);
+			map.setCenter(marker7.getPosition());
+		});
+		marker8.addListener('click', function() {
+			$('#Abtn_number').html("<div id='Abtn_number'>110</div>");
+			$('#Abtn_completeNumber').html(
+					"<div id='Abtn_completeNumber'>69</div>");
+			$('#Bbtn_number').html(
+					"<div id='Bbtn_number'>72</div>");
+			$('#Bbtn_completeNumber').html(
+					"<div id='Bbtn_completeNumber'>19</div>");
+			school8_infowindow.open(map, marker8);
+			map.setZoom(18);
+			map.setCenter(marker8.getPosition());
+		});
+		marker9.addListener('click', function() {
+			$('#Abtn_number').html("<div id='Abtn_number'>75</div>");
+			$('#Abtn_completeNumber').html(
+					"<div id='Abtn_completeNumber'>73</div>");
+			$('#Bbtn_number').html(
+					"<div id='Bbtn_number'>93</div>");
+			$('#Bbtn_completeNumber').html(
+					"<div id='Bbtn_completeNumber'>71</div>");
+			school9_infowindow.open(map, marker9);
+			map.setZoom(18);
+			map.setCenter(marker9.getPosition());
+		});
+		marker10.addListener('click', function() {
+			$('#Abtn_number').html("<div id='Abtn_number'>43</div>");
+			$('#Abtn_completeNumber').html(
+					"<div id='Abtn_completeNumber'>34</div>");
+			$('#Bbtn_number').html(
+					"<div id='Bbtn_number'>62</div>");
+			$('#Bbtn_completeNumber').html(
+					"<div id='Bbtn_completeNumber'>42</div>");
+			school10_infowindow.open(map, marker10);
+			map.setZoom(18);
+			map.setCenter(marker10.getPosition());
+		});
+		marker11.addListener('click', function() {
+			$('#Abtn_number').html("<div id='Abtn_number'>37</div>");
+			$('#Abtn_completeNumber').html(
+					"<div id='Abtn_completeNumber'>32</div>");
+			$('#Bbtn_number').html(
+					"<div id='Bbtn_number'>103</div>");
+			$('#Bbtn_completeNumber').html(
+					"<div id='Bbtn_completeNumber'>82</div>");
+			school11_infowindow.open(map, marker11);
+			map.setZoom(18);
+			map.setCenter(marker11.getPosition());
+		});
+		marker12.addListener('click', function() {
+			$('#Abtn_number').html("<div id='Abtn_number'>53</div>");
+			$('#Abtn_completeNumber').html(
+					"<div id='Abtn_completeNumber'>50</div>");
+			$('#Bbtn_number').html(
+					"<div id='Bbtn_number'>34</div>");
+			$('#Bbtn_completeNumber').html(
+					"<div id='Bbtn_completeNumber'>14</div>");
+			school12_infowindow.open(map, marker12);
+			map.setZoom(18);
+			map.setCenter(marker12.getPosition());
+		});
 	},
 
 	initSmallGoogleMaps : function() {
-
 		// Regular Map
-		var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
+		var myLatlng = new google.maps.LatLng(37.492877, 127.055630);
 		var mapOptions = {
-			zoom : 8,
+			zoom : 18,
 			center : myLatlng,
 			scrollwheel : false, // we disable de scroll over the map, it is
 		// a really annoing when you scroll through
@@ -666,8 +908,8 @@ demo = {
 		/* **************** Views - barchart ******************** */
 
 		var dataViews = {
-			labels : [ 'Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug',
-					'Sep', 'Oct', 'Nov', 'Dec' ],
+			labels : [ '염광', '서라벌', '창동', '휘봉', '청량', '화곡', '개포', '경기', '세종',
+					'압구정', '중산', '청담' ],
 			series : [ [ 542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756,
 					895 ] ]
 		};
@@ -991,22 +1233,20 @@ demo = {
 	showNotification : function(from, align, msg) {
 		color = Math.floor((Math.random() * 4) + 1);
 
-		$
-				.notify(
-						{
-							icon : "ti-gift",
-							message : msg
+		$.notify({
+			icon : "ti-gift",
+			message : msg
 
-						}, {
-							type : type[color],
-							timer : 4000,
-							placement : {
-								from : from,
-								align : align
-							}
-						
-						});
-		
+		}, {
+			type : type[color],
+			timer : 4000,
+			placement : {
+				from : from,
+				align : align
+			}
+
+		});
+
 	},
 
 	initDocumentationCharts : function() {
