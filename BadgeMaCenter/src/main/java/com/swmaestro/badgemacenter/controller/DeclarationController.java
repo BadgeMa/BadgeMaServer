@@ -28,7 +28,13 @@ public class DeclarationController {
 		mv.addObject("declaration_list", list);
 		return mv;
 	}
-
+	@RequestMapping(value = "/declarationManage.do")
+	public ModelAndView declarationManage(Map<String, Object> commandMap) throws Exception {
+		ModelAndView mv = new ModelAndView("declarationManage");
+		List<Map<String, Object>> list = service.selectDeclarationList(commandMap);
+		mv.addObject("declaration_list", list);
+		return mv;
+	}
 	// notification 신고 가져오기
 	@RequestMapping(value = "/unnotificationList.do")
 	public ModelAndView selectUnNotificationList(Map<String, Object> commandMap) throws Exception {

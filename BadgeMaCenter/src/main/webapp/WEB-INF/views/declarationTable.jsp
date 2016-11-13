@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<%String server = "/badgemacenter"; %>
+<%String server = "/BadgeMaCenter"; %>
 <meta charset="UTF-8" />
 <link rel="apple-touch-icon" sizes="76x76"
 	href="resources/common/dashboard/assets/img/apple-icon.png">
@@ -53,10 +53,10 @@
 			Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
 		-->
 			<div class="logo">
-				<a href="<%=server %>/home.do" class="simple-text"> BadgeMa </a>
+				<a href="<%=server%>/home.do" class="simple-text"> Badge Ma </a>
 			</div>
 			<div class="logo logo-mini">
-				<a href="<%=server %>/home.do" class="simple-text"> 뺏지마 </a>
+				<a href="<%=server%>/home.do" class="simple-text"> 뺏지마 </a>
 			</div>
 			<div class="sidebar-wrapper">
 				<div class="user">
@@ -65,12 +65,12 @@
 					</div>
 					<div class="info">
 						<a data-toggle="collapse" href="#collapseExample"
-							class="collapsed"> 김 문 수 <b class="caret"></b>
+							class="collapsed">김 문 수 <b class="caret"></b>
 						</a>
 						<div class="collapse" id="collapseExample">
 							<ul class="nav">
 								<li><a href="#profile">My Profile</a></li>
-								<li><a href="#edit">Edit Profile</a></li>
+								<li><a href="#editprofile">Edit Profile</a></li>
 								<li><a href="#settings">Settings</a></li>
 							</ul>
 						</div>
@@ -85,11 +85,11 @@
 					</a>
 						<div class="collapse" id="dashboardOverview">
 							<ul class="nav">
-								<li><a href="<%=server%>/home.do">현황판</a></li>
-								<li><a href="#">Sdtats</a></li>
+								<li><a href="<%=server%>/home.do">overview</a></li>
+								<li><a href="#">장비 배치도</a></li>
 							</ul>
 						</div></li>
-					
+
 					<li class="active"><a data-toggle="collapse"
 						href="#tablesExamples"> <i class="ti-view-list-alt"></i>
 							<p>
@@ -98,18 +98,30 @@
 					</a>
 						<div class="collapse in" id="tablesExamples">
 							<ul class="nav">
-								<li><a href="<%=server %>/userList.do">사용자 목록</a></li>
-								<li class="active"><a href="<%=server %>/declarationList.do">신고 목록</a></li>
-								<li><a href="<%=server%>/voteList.do">상담 목록</a></li>							</ul>
+								<li><a href="<%=server%>/userList.do">사용자
+										목록</a></li>
+								<li class="active"><a href="<%=server%>/declarationList.do">신고 목록</a></li>
+								<li><a href="<%=server%>/declarationListList.do">상담 목록</a></li>
+							</ul>
 						</div></li>
-					
-					<li><a href="<%=server %>/calendar.do"> <i class="ti-calendar"></i>
+					<li><a href="<%=server %>/declarationManage.do"> <i class="ti-signal"></i>
+							<p>신고 관리</p>
+					</a></li>
+					<li><a href="<%=server %>/adviceManage.do"> <i class="ti-comments"></i>
+							<p>상담 관리</p>
+					</a></li>
+					<li><a href="<%=server %>/declarationManage.do"> <i class="ti-book"></i>
+							<p>대나무숲 관리</p>
+					</a></li>
+					<li><a href="<%=server%>/calendar.do"> <i
+							class="ti-calendar"></i>
 							<p>Calendar</p>
 					</a></li>
-					
+
 				</ul>
 			</div>
 		</div>
+
 
 		<div class="main-panel">
 			<nav class="navbar navbar-default">

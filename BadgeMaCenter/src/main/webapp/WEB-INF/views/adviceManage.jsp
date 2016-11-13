@@ -34,7 +34,7 @@
 	href="resources/common/dashboard/assets/img/favicon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title>Badge Ma 대시보드</title>
+<title>상담 관리</title>
 
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
@@ -100,19 +100,19 @@
 					</div>
 				</div>
 				<ul class="nav">
-					<li class="active"><a data-toggle="collapse"
-						href="#dashboardOverview" aria-expanded="true"> <i
+					<li><a data-toggle="collapse" href="#dashboardOverview"> <i
 							class="ti-panel"></i>
 							<p>
 								대시보드 <b class="caret"></b>
 							</p>
 					</a>
-						<div class="collapse in" id="dashboardOverview">
+						<div class="collapse" id="dashboardOverview">
 							<ul class="nav">
-								<li><a href="<%=server%>/home.do">Overview</a></li>
-								<li class="active"><a href="#">장비 배치도</a></li>
+								<li><a href="<%=server%>/home.do">overview</a></li>
+								<li><a href="#">장비 배치도</a></li>
 							</ul>
 						</div></li>
+
 
 					<li><a data-toggle="collapse" href="#tablesExamples"> <i
 							class="ti-view-list-alt"></i>
@@ -123,31 +123,19 @@
 						<div class="collapse" id="tablesExamples">
 							<ul class="nav">
 								<li><a href="<%=server%>/userList.do">사용자 목록</a></li>
-								<li><a href="<%=server%>/voteList.do">신고 목록</a></li>
-								<li><a href="<%=server%>/voteList.do">상담 목록</a></li>
+								<li><a href="<%=server%>/declarationList.do">신고 목록</a></li>
+								<li><a href="<%=server%>/declarationList.do">상담 목록</a></li>
 							</ul>
 						</div></li>
-					<li><a href="<%=server%>/declarationManage.do"> <i
-							class="ti-signal"></i>
-							<p>
-								신고 관리 
-							</p>
-					</a>
-					</li>
-					<li><a href="<%=server%>/adviceManage.do"> <i
-							class="ti-comments"></i>
-							<p>
-								상담 관리
-							</p>
-					</a>
-					</li>
-					<li><a href="#"> <i
-							class="ti-book"></i>
-							<p>
-								대나무숲 관리
-							</p>
-					</a>
-					</li>
+					<li><a href="<%=server%>/declarationManage.do"> <i class="ti-signal"></i>
+							<p>신고 관리</p>
+					</a></li>
+					<li class="active"><a href="<%=server%>/adviceManage.do"> <i class="ti-comments"></i>
+							<p>상담 관리</p>
+					</a></li>
+					<li><a href="#"> <i class="ti-book"></i>
+							<p>대나무숲 관리</p>
+					</a></li>
 					<li><a href="<%=server%>/calendar.do"> <i
 							class="ti-calendar"></i>
 							<p>Calendar</p>
@@ -170,7 +158,8 @@
 								class="icon-bar bar1"></span> <span class="icon-bar bar2"></span>
 							<span class="icon-bar bar3"></span>
 						</button>
-						<a class="navbar-brand" href="<%=server%>/home.do"> 반 배치도 </a>
+						<a class="navbar-brand" href="<%=server%>/declarationManage.do">
+							신고 관리 </a>
 					</div>
 				</div>
 			</nav>
@@ -178,204 +167,101 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="card">
-								<div class="header">
-									<h4 class="title">반별 배치 상황</h4>
-									<p class="category">실시간 작동 감시</p>
-									<br />
-								</div>
-								<div class="content">
-									<hr />
-									<div class="row">
-										<div class="col-md-2">
-											<div id="styleInfo">
-												<h4>1층</h4>
+							<div class="header">
+								<h4 class="title">Timeline</h4>
+							</div>
+							<div class="content">
+								<ul class="timeline">
+									<li class="timeline-inverted">
+										<div class="timeline-badge danger">
+											<i class="ti-gallery"></i>
+										</div>
+										<div class="timeline-panel">
+											<div class="timeline-heading">
+												<span class="label label-danger">Some Title</span>
+											</div>
+											<div class="timeline-body">
+												<p>Wifey made the best Father's Day meal ever. So
+													thankful so happy so blessed. Thank you for making my
+													family We just had fun with the “future” theme !!! It was a
+													fun night all together ... The always rude Kanye Show at
+													2am Sold Out Famous viewing @ Figueroa and 12th in
+													downtown.</p>
+											</div>
+											<h6>
+												<i class="ti-time"></i> 11 hours ago via Twitter
+											</h6>
+										</div>
+									</li>
+									<li>
+										<div class="timeline-badge success">
+											<i class="ti-check-box"></i>
+										</div>
+										<div class="timeline-panel">
+											<div class="timeline-heading">
+												<span class="label label-success">Another One</span>
+											</div>
+											<div class="timeline-body">
+												<p>Thank God for the support of my wife and real
+													friends. I also wanted to point out that it’s the first
+													album to go number 1 off of streaming!!! I love you Ellen
+													and also my number one design rule of anything I do from
+													shoes to music to homes is that Kim has to like it....</p>
 											</div>
 										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>1학년 1반</p>
-												</div>
-											</div>
+									</li>
+									<li class="timeline-inverted">
+										<div class="timeline-badge info">
+											<i class="ti-credit-card"></i>
 										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>1학년 2반</p>
-												</div>
+										<div class="timeline-panel">
+											<div class="timeline-heading">
+												<span class="label label-info">Another Title</span>
 											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>1학년 3반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>1학년 4반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>화장실</p>
-												</div>
-											</div>
-										</div>
-									</div>
-									<hr />
-									<div class="row">
-										<div class="col-md-2">
-											<div id="styleInfo">
-												<h4>2층</h4>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>2학년 1반</p>
+											<div class="timeline-body">
+												<p>Called I Miss the Old Kanye That’s all it was Kanye
+													And I love you like Kanye loves Kanye Famous viewing @
+													Figueroa and 12th in downtown LA 11:10PM</p>
+												<p>What if Kanye made a song about Kanye Royère doesn't
+													make a Polar bear bed but the Polar bear couch is my
+													favorite piece of furniture we own It wasn’t any Kanyes Set
+													on his goals Kanye</p>
+												<hr>
+												<div class="btn-group">
+													<button type="button" class="btn btn-info dropdown-toggle"
+														data-toggle="dropdown">
+														<i class="ti-settings"></i> <span class="caret"></span>
+													</button>
+													<ul class="dropdown-menu dropdown-menu-left" role="menu">
+														<li><a href="#action">Action</a></li>
+														<li><a href="#another">Another action</a></li>
+														<li><a href="#else">Something else here</a></li>
+														<li class="divider"></li>
+														<li><a href="#link">Separated link</a></li>
+													</ul>
 												</div>
 											</div>
 										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>2학년 2반</p>
-												</div>
+									</li>
+									<li>
+										<div class="timeline-badge warning">
+											<i class="ti-gallery"></i>
+										</div>
+										<div class="timeline-panel">
+											<div class="timeline-heading">
+												<span class="label label-warning">Another One</span>
+											</div>
+											<div class="timeline-body">
+												<p>Tune into Big Boy's 92.3 I'm about to play the first
+													single from Cruel Winter Tune into Big Boy's 92.3 I'm about
+													to play the first single from Cruel Winter also to Kim’s
+													hair and makeup Lorraine jewelry and the whole style squad
+													at Balmain and the Yeezy team. Thank you Anna for the
+													invite thank you to the whole Vogue team</p>
 											</div>
 										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>2학년 3반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>2학년 4반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>화장실</p>
-												</div>
-											</div>
-										</div>
-									</div>
-									<hr />
-									<div class="row">
-										<div class="col-md-2">
-											<div id="styleInfo">
-												<h4>3층</h4>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>3학년 1반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>3학년 2반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>3학년 3반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>3학년 4반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>화장실</p>
-												</div>
-											</div>
-										</div>
-									</div>
-									<hr />
-								</div>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -395,8 +281,8 @@
 					<div class="copyright pull-right">
 						&copy;
 						<script>
-								document.write(new Date().getFullYear())
-							</script>
+							document.write(new Date().getFullYear())
+						</script>
 						, made with <i class="fa fa-heart heart"></i> by <a
 							href="<%=server%>/home.do">Bagde Ma</a>
 					</div>

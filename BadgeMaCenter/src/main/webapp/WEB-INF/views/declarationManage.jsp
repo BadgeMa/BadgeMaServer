@@ -3,6 +3,27 @@
 <!doctype html>
 <html lang="ko">
 <head>
+<style type="text/css">
+<!--
+#class_style {
+	width: 80px;
+	height: 80px;
+	overflow: hidden;
+	border-radius: 50%;
+	margin: 0 auto;
+	border: 4px solid rgba(0, 0, 0, 0.15);
+}
+
+#stylePhotoImg {
+	width: 100%
+}
+
+#styleInfo {
+	text-align: center
+}
+//
+-->
+</style>
 <%
 	String server = "/BadgeMaCenter";
 %>
@@ -13,7 +34,7 @@
 	href="resources/common/dashboard/assets/img/favicon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title>Badge Ma 대시보드</title>
+<title>신고 관리</title>
 
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
@@ -79,19 +100,19 @@
 					</div>
 				</div>
 				<ul class="nav">
-					<li class="active"><a data-toggle="collapse"
-						href="#dashboardOverview" aria-expanded="true"> <i
+					<li><a data-toggle="collapse" href="#dashboardOverview"> <i
 							class="ti-panel"></i>
 							<p>
 								대시보드 <b class="caret"></b>
 							</p>
 					</a>
-						<div class="collapse in" id="dashboardOverview">
+						<div class="collapse" id="dashboardOverview">
 							<ul class="nav">
-								<li class="active"><a href="<%=server%>/home.do">overview</a></li>
+								<li><a href="<%=server%>/home.do">overview</a></li>
 								<li><a href="#">장비 배치도</a></li>
 							</ul>
 						</div></li>
+
 
 					<li><a data-toggle="collapse" href="#tablesExamples"> <i
 							class="ti-view-list-alt"></i>
@@ -106,15 +127,13 @@
 								<li><a href="<%=server%>/declarationList.do">상담 목록</a></li>
 							</ul>
 						</div></li>
-					<li><a href="<%=server%>/declarationManage.do"> <i
-							class="ti-signal"></i>
+					<li class="active"><a href="<%=server %>/declarationManage.do"> <i class="ti-signal"></i>
 							<p>신고 관리</p>
 					</a></li>
-					<li><a href="<%=server%>/adviceManage.do"> <i
-							class="ti-comments"></i>
+					<li><a href="<%=server %>/adviceManage.do"> <i class="ti-comments"></i>
 							<p>상담 관리</p>
 					</a></li>
-					<li><a href="#"> <i class="ti-book"></i>
+					<li><a href="<%=server %>/adviceManage.do"> <i class="ti-book"></i>
 							<p>대나무숲 관리</p>
 					</a></li>
 					<li><a href="<%=server%>/calendar.do"> <i
@@ -125,7 +144,6 @@
 				</ul>
 			</div>
 		</div>
-
 		<div class="main-panel">
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
@@ -140,15 +158,16 @@
 								class="icon-bar bar1"></span> <span class="icon-bar bar2"></span>
 							<span class="icon-bar bar3"></span>
 						</button>
-						<a class="navbar-brand" href="<%=server%>/home.do"> 현황판 보기 </a>
+						<a class="navbar-brand" href="<%=server%>/declarationManage.do"> 신고 관리 </a>
 					</div>
 				</div>
 			</nav>
-
 			<div class="content">
 				<div class="container-fluid">
+
 					<div class="row">
-						<div class="col-lg-3 col-sm-6">
+
+						<div class="col-lg-3">
 							<div class="card">
 								<div class="content">
 									<div class="row">
@@ -159,8 +178,8 @@
 										</div>
 										<div class="col-xs-7">
 											<div class="numbers">
-												<p>A버튼 신고 건수</p>
-												<div id='Abtn_number'>0</div>
+												<p>A버튼 건수</p>
+												13
 											</div>
 										</div>
 									</div>
@@ -173,19 +192,20 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-3 col-sm-6">
+
+						<div class="col-lg-3">
 							<div class="card">
 								<div class="content">
 									<div class="row">
 										<div class="col-xs-5">
-											<div class="icon-big icon-success text-center">
-												<i class="ti-wallet"></i>
+											<div class="icon-big icon-warning text-center">
+												<i class="ti-server"></i>
 											</div>
 										</div>
 										<div class="col-xs-7">
 											<div class="numbers">
-												<p>A버튼 처리 건수</p>
-												<div id='Abtn_completeNumber'>0</div>
+												<p>A버튼 처리</p>
+												8
 											</div>
 										</div>
 									</div>
@@ -198,190 +218,176 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-3 col-sm-6">
+
+						<div class="col-lg-6">
 							<div class="card">
 								<div class="content">
 									<div class="row">
-										<div class="col-xs-5">
-											<div class="icon-big icon-danger text-center">
-												<i class="ti-pulse"></i>
-											</div>
-										</div>
-										<div class="col-xs-7">
-											<div class="numbers">
-												<p>B버튼 신고 건수</p>
-												<div id='Bbtn_number'>0</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="card-footer">
-									<hr />
-									<div class="stats">
-										<i class="ti-reload"></i> Updated now
+										<h6 class="big-title">
+											total earnings <span class="text-muted">in last</span> ten <span
+												class="text-muted">quarters</span>
+										</h6>
+										<div id="chartTotalSubscriptions'"></div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-lg-3 col-sm-6">
-							<div class="card">
-								<div class="content">
-									<div class="row">
-										<div class="col-xs-5">
-											<div class="icon-big icon-info text-center">
-												<i class="ti-twitter-alt"></i>
-											</div>
-										</div>
-										<div class="col-xs-7">
-											<div class="numbers">
-												<p>B버튼 처리 건수</p>
-												<div id='Bbtn_completeNumber'>0</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="card-footer">
-									<hr />
-									<div class="stats">
-										<i class="ti-reload"></i> Updated now
-									</div>
-								</div>
-							</div>
+
 						</div>
 					</div>
+
 					<div class="row">
-						<div class="col-lg-4 col-sm-6">
-							<div class="card">
-								<div class="content">
-									<div class="row">
-										<div class="col-xs-7">
-											<div class="numbers pull-left"></div>
-										</div>
-										<div class="col-xs-5">
-											<div class="pull-right">
-												<span class="label label-danger"></span>
-											</div>
-										</div>
-									</div>
-									<h6 class="big-title">
-										일간 <span class="text-muted"></span> 신고 건수
-									</h6>
-									<div id="chartTotalSubscriptions"></div>
-								</div>
+						<div class="col-md-12">
+							<div class="content">
+								<div class="col-md-6">
 
-							</div>
-						</div>
-						<div class="col-lg-4 col-sm-6">
-							<div class="card">
-								<div class="content">
-									<div class="row">
-										<div class="col-xs-7">
-											<div class="numbers pull-left"></div>
-										</div>
-										<div class="col-xs-5">
-											<div class="pull-right">
-												<span class="label label-success"></span>
-											</div>
-										</div>
-									</div>
-									<h6 class="big-title">
-										월간<span class="text-muted"></span> 신고 건수<span
-											class="text-muted"></span>
-									</h6>
-									<div id="chartTotalEarnings"></div>
-								</div>
 
-							</div>
-						</div>
-						<div class="col-lg-4 col-sm-6">
-							<div class="card">
-								<div class="content">
-									<div class="row">
-										<div class="col-xs-7">
-											<div class="numbers pull-left"></div>
-										</div>
-										<div class="col-xs-5">
-											<div class="pull-right">
-												<span class="label label-warning"></span>
+									<ul class="timeline">
+										<li class="timeline-inverted">
+											<div class="timeline-badge warning">
+												<i class="ti-gallery"></i>
 											</div>
-										</div>
-									</div>
-									<h6 class="big-title">
-										년간 <span class="text-muted"></span> 신고 건수
-									</h6>
-									<div id="chartTotalDownloads"></div>
+											<div class="timeline-panel">
+												<div class="timeline-heading">
+													<span class="label label-warning">Taking Job</span>
+												</div>
+												<div class="timeline-body">
+													<p>
+														16년 10월 28일 발생<br /> 규정이가 같은 반 학생에게 돈을 빼앗겼습니다. 상황 정리중입니다.
+													</p>
+												</div>
+												<h6>
+													<i class="ti-time"></i> 11 hours ago via Twitter
+												</h6>
+											</div>
+										</li>
+										<li>
+											<div class="timeline-badge danger">
+												<i class="ti-check-box"></i>
+											</div>
+											<div class="timeline-panel">
+												<div class="timeline-heading">
+													<span class="label label-danger">Emergency Report</span>
+												</div>
+												<div class="timeline-body">
+													<p>
+														16.10.27 10:20<br /> 긴급 출동 요함
+													</p>
+												</div>
+											</div>
+										</li>
+										<li class="timeline-inverted">
+											<div class="timeline-badge warning">
+												<i class="ti-gallery"></i>
+											</div>
+											<div class="timeline-panel">
+												<div class="timeline-heading">
+													<span class="label label-warning">Taking Job</span>
+												</div>
+												<div class="timeline-body">
+													<p>
+														16년 10월 20일 발생<br /> 규정이가 같은 반 학생 돈을 빼앗음. 사건 파악 중입니다.
+													</p>
+												</div>
+												<h6>
+													<i class="ti-time"></i> 11 hours ago via Twitter
+												</h6>
+											</div>
+										</li>
+										<li>
+											<div class="timeline-badge danger">
+												<i class="ti-check-box"></i>
+											</div>
+											<div class="timeline-panel">
+												<div class="timeline-heading">
+													<span class="label label-danger">Ananymous Report</span>
+												</div>
+												<div class="timeline-body">
+													<p>
+														16.10.18 12:58<br /> 익명 신고 발생<br /> 사건 조사 요망
+													</p>
+												</div>
+											</div>
+										</li>
+									</ul>
 								</div>
-
+								<div class="col-md-6">
+									<ul class="timeline timeline-simple">
+										<li class="timeline-inverted">
+											<div class="timeline-badge success">
+												<i class="ti-gallery"></i>
+											</div>
+											<div class="timeline-panel">
+												<div class="timeline-heading">
+													<span class="label label-success">Some title</span>
+												</div>
+												<div class="timeline-body">
+													<p>Wifey made the best Father's Day meal ever. So
+														thankful so happy so blessed. Thank you for making my
+														family We just had fun with the “future” theme !!! It was
+														a fun night all together ... The always rude Kanye Show at
+														2am Sold Out Famous viewing @ Figueroa and 12th in
+														downtown.</p>
+												</div>
+												<h6>
+													<i class="ti-time"></i> 11 hours ago via Twitter
+												</h6>
+											</div>
+										</li>
+										<li class="timeline-inverted">
+											<div class="timeline-badge success">
+												<i class="ti-check-box"></i>
+											</div>
+											<div class="timeline-panel">
+												<div class="timeline-heading">
+													<span class="label label-success">Another One</span>
+												</div>
+												<div class="timeline-body">
+													<p>Thank God for the support of my wife and real
+														friends. I also wanted to point out that it’s the first
+														album to go number 1 off of streaming!!! I love you Ellen
+														and also my number one design rule of anything I do from
+														shoes to music to homes is that Kim has to like it....</p>
+												</div>
+											</div>
+										</li>
+										<li class="timeline-inverted">
+											<div class="timeline-badge success">
+												<i class="ti-credit-card"></i>
+											</div>
+											<div class="timeline-panel">
+												<div class="timeline-heading">
+													<span class="label label-success">Another Title</span>
+												</div>
+												<div class="timeline-body">
+													<p>Called I Miss the Old Kanye That’s all it was Kanye
+														And I love you like Kanye loves Kanye Famous viewing @
+														Figueroa and 12th in downtown LA 11:10PM</p>
+													<p>What if Kanye made a song about Kanye Royère doesn't
+														make a Polar bear bed but the Polar bear couch is my
+														favorite piece of furniture we own It wasn’t any Kanyes
+														Set on his goals Kanye</p>
+													<hr>
+													<div class="dropdown">
+														<button type="button" class="btn btn-info dropdown-toggle"
+															data-toggle="dropdown">
+															<i class="ti-settings"></i> <span class="caret"></span>
+														</button>
+														<ul class="dropdown-menu dropdown-menu-left" role="menu">
+															<li><a href="#action">Action</a></li>
+															<li><a href="#action">Another action</a></li>
+															<li><a href="#here">Something else here</a></li>
+															<li class="divider"></li>
+															<li><a href="#link">Separated link</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-lg-4 col-sm-6">
-							<div class="card">
-								<div class="content">
-									<div class="row">
-										<div class="col-xs-7">
-											<div class="numbers pull-left"></div>
-										</div>
-										<div class="col-xs-5">
-											<div class="pull-right">
-												<span class="label label-danger"></span>
-											</div>
-										</div>
-									</div>
-									<h6 class="big-title">
-										일간 <span class="text-muted"></span> 신고 건수
-									</h6>
-									<div id="chartTotalSubscriptions2"></div>
-								</div>
-
-							</div>
-						</div>
-						<div class="col-lg-4 col-sm-6">
-							<div class="card">
-								<div class="content">
-									<div class="row">
-										<div class="col-xs-7">
-											<div class="numbers pull-left"></div>
-										</div>
-										<div class="col-xs-5">
-											<div class="pull-right">
-												<span class="label label-success"></span>
-											</div>
-										</div>
-									</div>
-									<h6 class="big-title">
-										월간<span class="text-muted"></span> 신고 건수<span
-											class="text-muted"></span>
-									</h6>
-									<div id="chartTotalEarnings2"></div>
-								</div>
-
-							</div>
-						</div>
-						<div class="col-lg-4 col-sm-6">
-							<div class="card">
-								<div class="content">
-									<div class="row">
-										<div class="col-xs-7">
-											<div class="numbers pull-left"></div>
-										</div>
-										<div class="col-xs-5">
-											<div class="pull-right">
-												<span class="label label-warning"></span>
-											</div>
-										</div>
-									</div>
-									<h6 class="big-title">
-										년간 <span class="text-muted"></span> 신고 건수
-									</h6>
-									<div id="chartTotalDownloads2"></div>
-								</div>
-
-							</div>
-						</div>
-					</div>
-
 				</div>
 			</div>
 
@@ -477,90 +483,7 @@
 	$(document).ready(function() {
 		demo.initOverviewDashboard();
 		demo.initCirclePercentage();
-		//demo.showNotification('bottom','right', "hi");
-		notificationPolling();
-		pollA();
-		pollB();
-		pollSolveA();
-		pollSolveB();
 	});
-	var pollA = function (){
-		
-	    $.ajax({ type : "GET", url: "AbtnNumber.do",  success: function(json){
-	    	var list = json.report_result;
-			var listLen = list.length;
-			var contentStr = "";
-			for (var i = 0; i < listLen; i++) {
-				contentStr += list[i].num;
-			}
-			$('#Abtn_number').html(
-					"<div id='Abtn_number'>" + contentStr + "</div>");
-	    }, dataType: "json", complete: pollA, timeout: 30000 });
-	};
-	var pollSolveA = function (){
-		
-	    $.ajax({ type : "GET", url: "AbtnSolveNumber.do",  success: function(json){
-	    	var list = json.solve_result;
-			var listLen = list.length;
-			var contentStr = "";
-			for (var i = 0; i < listLen; i++) {
-				contentStr += list[i].num;
-			}
-			$('#Abtn_completeNumber').html(
-					"<div id='Abtn_completeNumber'>" + contentStr + "</div>");
-	    }, dataType: "json", complete: pollSolveA, timeout: 30000 });
-	};
-	var pollB = function (){
-		
-	    $.ajax({ type : "GET", url: "BbtnNumber.do",  success: function(json){
-	    	var list = json.report_result;
-			var listLen = list.length;
-			var contentStr = "";
-			for (var i = 0; i < listLen; i++) {
-				contentStr += list[i].num;
-			}
-			$('#Bbtn_number').html(
-					"<div id='Bbtn_number'>" + contentStr + "</div>");
-	    }, dataType: "json", complete: pollB, timeout: 30000 });
-	};
-	var pollSolveB = function (){
-		
-	    $.ajax({ type : "GET", url: "BbtnSolveNumber.do",  success: function(json){
-	    	var list = json.solve_result;
-			var listLen = list.length;
-			var contentStr = "";
-			for (var i = 0; i < listLen; i++) {
-				contentStr += list[i].num;
-			}
-			$('#Bbtn_completeNumber').html(
-					"<div id='Bbtn_completeNumber'>" + contentStr + "</div>");
-	    }, dataType: "json", complete: pollSolveB, timeout: 30000 });
-	};
-	var notificationPolling = function (){
-		$.ajax({
-			type : "GET",
-			url : "unnotificationList.do",
-			success : function(json) {
-				var list = json.notification_result;
-				var listLen = list.length;
-				var contentStr = "";
-				for (var i = 0; i < listLen; i++) {
-					contentStr = list[i].class_location + "에서 ";
-					if (list[i].declaration_type == 1){
-						contentStr += "A버튼";
-					}else {
-						contentStr += "B버튼";
-					}
-					contentStr += " 의 신고가 들어왔습니다!!";
-					demo.showNotification('bottom','right', contentStr);
-				}
-
-			},
-			dataType : "json",
-			complete : notificationPolling,
-			timeout : 30000
-		});
-	};
 </script>
 
 </html>

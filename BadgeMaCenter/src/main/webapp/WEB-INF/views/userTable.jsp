@@ -87,8 +87,8 @@
 					</a>
 						<div class="collapse" id="dashboardOverview">
 							<ul class="nav">
-								<li><a href="<%=server%>/home.do">현황판</a></li>
-								<li><a href="#">Stats</a></li>
+								<li><a href="<%=server%>/home.do">overview</a></li>
+								<li><a href="#">장비 배치도</a></li>
 							</ul>
 						</div></li>
 
@@ -103,10 +103,20 @@
 								<li class="active"><a href="<%=server%>/userList.do">사용자
 										목록</a></li>
 								<li><a href="<%=server%>/declarationList.do">신고 목록</a></li>
-								<li><a href="<%=server%>/voteList.do">상담 목록</a></li>
+								<li><a href="<%=server%>/declarationList.do">상담 목록</a></li>
 							</ul>
 						</div></li>
-
+					<li><a href="<%=server%>/declarationManage.do"> <i
+							class="ti-signal"></i>
+							<p>신고 관리</p>
+					</a></li>
+					<li><a href="<%=server%>/adviceManage.do"> <i
+							class="ti-comments"></i>
+							<p>상담 관리</p>
+					</a></li>
+					<li><a href="#"> <i class="ti-book"></i>
+							<p>대나무숲 관리</p>
+					</a></li>
 					<li><a href="<%=server%>/calendar.do"> <i
 							class="ti-calendar"></i>
 							<p>Calendar</p>
