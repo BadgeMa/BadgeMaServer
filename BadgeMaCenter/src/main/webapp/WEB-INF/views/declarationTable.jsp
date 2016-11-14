@@ -101,7 +101,7 @@
 								<li><a href="<%=server%>/userList.do">사용자
 										목록</a></li>
 								<li class="active"><a href="<%=server%>/declarationList.do">신고 목록</a></li>
-								<li><a href="<%=server%>/declarationListList.do">상담 목록</a></li>
+								<li><a href="<%=server%>/declarationList.do">상담 목록</a></li>
 							</ul>
 						</div></li>
 					<li><a href="<%=server %>/declarationManage.do"> <i class="ti-signal"></i>
@@ -110,12 +110,13 @@
 					<li><a href="<%=server %>/adviceManage.do"> <i class="ti-comments"></i>
 							<p>상담 관리</p>
 					</a></li>
-					<li><a href="<%=server %>/declarationManage.do"> <i class="ti-book"></i>
+					<li><a href="<%=server%>/feed.do"> <i
+							class="ti-book"></i>
 							<p>대나무숲 관리</p>
 					</a></li>
-					<li><a href="<%=server%>/calendar.do"> <i
-							class="ti-calendar"></i>
-							<p>Calendar</p>
+					<li><a href="<%=server%>/map.do"> <i
+							class="ti-map"></i>
+							<p>BadgeMa Map</p>
 					</a></li>
 
 				</ul>

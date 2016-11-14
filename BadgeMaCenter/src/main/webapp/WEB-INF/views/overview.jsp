@@ -114,12 +114,13 @@
 							class="ti-comments"></i>
 							<p>상담 관리</p>
 					</a></li>
-					<li><a href="#"> <i class="ti-book"></i>
+					<li><a href="<%=server%>/feed.do"> <i
+							class="ti-book"></i>
 							<p>대나무숲 관리</p>
 					</a></li>
-					<li><a href="<%=server%>/calendar.do"> <i
-							class="ti-calendar"></i>
-							<p>Calendar</p>
+					<li><a href="<%=server%>/map.do"> <i
+							class="ti-map"></i>
+							<p>BadgeMa Map</p>
 					</a></li>
 
 				</ul>
@@ -478,11 +479,11 @@
 		demo.initOverviewDashboard();
 		demo.initCirclePercentage();
 		//demo.showNotification('bottom','right', "hi");
-		notificationPolling();
-		pollA();
-		pollB();
-		pollSolveA();
-		pollSolveB();
+		//notificationPolling();
+		//pollA();
+		//pollB();
+		//pollSolveA();
+		//pollSolveB();
 	});
 	var pollA = function (){
 		

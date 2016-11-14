@@ -127,18 +127,21 @@
 								<li><a href="<%=server%>/declarationList.do">상담 목록</a></li>
 							</ul>
 						</div></li>
-					<li class="active"><a href="<%=server %>/declarationManage.do"> <i class="ti-signal"></i>
+					<li class="active"><a href="<%=server%>/declarationManage.do">
+							<i class="ti-signal"></i>
 							<p>신고 관리</p>
 					</a></li>
-					<li><a href="<%=server %>/adviceManage.do"> <i class="ti-comments"></i>
+					<li><a href="<%=server%>/adviceManage.do"> <i
+							class="ti-comments"></i>
 							<p>상담 관리</p>
 					</a></li>
-					<li><a href="<%=server %>/adviceManage.do"> <i class="ti-book"></i>
+					<li><a href="<%=server%>/feed.do"> <i
+							class="ti-book"></i>
 							<p>대나무숲 관리</p>
 					</a></li>
-					<li><a href="<%=server%>/calendar.do"> <i
-							class="ti-calendar"></i>
-							<p>Calendar</p>
+					<li><a href="<%=server%>/map.do"> <i
+							class="ti-map"></i>
+							<p>BadgeMa Map</p>
 					</a></li>
 
 				</ul>
@@ -158,7 +161,8 @@
 								class="icon-bar bar1"></span> <span class="icon-bar bar2"></span>
 							<span class="icon-bar bar3"></span>
 						</button>
-						<a class="navbar-brand" href="<%=server%>/declarationManage.do"> 신고 관리 </a>
+						<a class="navbar-brand" href="<%=server%>/declarationManage.do">
+							신고 관리 </a>
 					</div>
 				</div>
 			</nav>
@@ -172,8 +176,8 @@
 								<div class="content">
 									<div class="row">
 										<div class="col-xs-5">
-											<div class="icon-big icon-warning text-center">
-												<i class="ti-server"></i>
+											<div class="icon-big icon-danger text-center">
+												<i class="ti-direction"></i>
 											</div>
 										</div>
 										<div class="col-xs-7">
@@ -199,7 +203,7 @@
 									<div class="row">
 										<div class="col-xs-5">
 											<div class="icon-big icon-warning text-center">
-												<i class="ti-server"></i>
+												<i class="ti-direction-alt"></i>
 											</div>
 										</div>
 										<div class="col-xs-7">
@@ -223,11 +227,8 @@
 							<div class="card">
 								<div class="content">
 									<div class="row">
-										<h6 class="big-title">
-											total earnings <span class="text-muted">in last</span> ten <span
-												class="text-muted">quarters</span>
-										</h6>
-										<div id="chartTotalSubscriptions'"></div>
+										<h6 class="big-title">주간 신고 건수</h6>
+										<div id="chartWeeklyReport"></div>
 									</div>
 								</div>
 							</div>
@@ -389,6 +390,7 @@
 						</div>
 					</div>
 				</div>
+
 			</div>
 
 			<footer class="footer">
@@ -480,9 +482,35 @@
 	src="resources/common/dashboard/assets/js/demo.js?ver=1 charset='utf-8'"></script>
 
 <script type="text/javascript">
+<!-- Pie Chart -->
 	$(document).ready(function() {
 		demo.initOverviewDashboard();
 		demo.initCirclePercentage();
+		var dataDays = {
+			labels : [ 'M', 'T', 'W', 'T', 'F', 'S', 'S' ],
+			series : [ [ 33, 13, 20, 5, 7, 8, 4 ] ]
+		};
+
+		var optionsDays = {
+			showPoint : false,
+			lineSmooth : true,
+			height : "80px",
+			axisX : {
+				showGrid : false,
+				showLabel : true
+			},
+			axisY : {
+				offset : 40,
+				showGrid : false
+			},
+			low : 0,
+			high : 'auto',
+			classNames : {
+				line : 'ct-line ct-red'
+			}
+		};
+
+		Chartist.Line('#chartWeeklyReport', dataDays, optionsDays);
 	});
 </script>
 

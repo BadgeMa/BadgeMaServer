@@ -98,16 +98,15 @@
 							</ul>
 						</div></li>
 
-					<li class="active"><a data-toggle="collapse"
-						href="#tablesExamples"> <i class="ti-view-list-alt"></i>
+					<li><a data-toggle="collapse" href="#tablesExamples"> <i
+							class="ti-view-list-alt"></i>
 							<p>
-								목록 보기<b class="caret"></b>
+								목록 보기 <b class="caret"></b>
 							</p>
 					</a>
-						<div class="collapse in" id="tablesExamples">
+						<div class="collapse" id="tablesExamples">
 							<ul class="nav">
-								<li class="active"><a href="<%=server%>/userList.do">사용자
-										목록</a></li>
+								<li><a href="<%=server%>/userList.do">사용자 목록</a></li>
 								<li><a href="<%=server%>/declarationList.do">신고 목록</a></li>
 								<li><a href="<%=server%>/declarationList.do">상담 목록</a></li>
 							</ul>
@@ -120,12 +119,12 @@
 							class="ti-comments"></i>
 							<p>상담 관리</p>
 					</a></li>
-					<li><a href="#"> <i class="ti-book"></i>
+					<li><a href="<%=server%>/feed.do"> <i class="ti-book"></i>
 							<p>대나무숲 관리</p>
 					</a></li>
-					<li><a href="<%=server%>/calendar.do"> <i
-							class="ti-calendar"></i>
-							<p>Calendar</p>
+					<li class="active"><a href="<%=server%>/map.do"> <i
+							class="ti-map"></i>
+							<p>BadgeMa Map</p>
 					</a></li>
 
 				</ul>
@@ -166,7 +165,7 @@
 							</div>
 
 						</div>
-						
+
 						<div class="col-md-6">
 							<div class="card">
 								<div class="header">
@@ -294,7 +293,9 @@
 					</nav>
 					<div class="copyright pull-right">
 						&copy;
-						<script>document.write(new Date().getFullYear())</script>
+						<script>
+							document.write(new Date().getFullYear())
+						</script>
 						, made with <i class="fa fa-heart heart"></i> by <a
 							href="http://www.creative-tim.com">Creative Tim</a>
 					</div>
@@ -367,14 +368,15 @@
 <script src="resources/common/dashboard/assets/js/paper-dashboard.js"></script>
 
 <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
-<script src="resources/common/dashboard/assets/js/demo.js?ver=1 charset='utf-8'"></script>
+<script
+	src="resources/common/dashboard/assets/js/demo.js?ver=1 charset='utf-8'"></script>
 
 <script>
-        $().ready(function(){
-           // demo.initGoogleMaps();
-            //demo.initSmallGoogleMaps();
-        	demo.initChartsPage();
-        });
-    </script>
+	$().ready(function() {
+		// demo.initGoogleMaps();
+		//demo.initSmallGoogleMaps();
+		demo.initChartsPage();
+	});
+</script>
 
 </html>

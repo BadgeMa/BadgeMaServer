@@ -133,12 +133,13 @@
 					<li class="active"><a href="<%=server%>/adviceManage.do"> <i class="ti-comments"></i>
 							<p>상담 관리</p>
 					</a></li>
-					<li><a href="#"> <i class="ti-book"></i>
+					<li><a href="<%=server%>/feed.do"> <i
+							class="ti-book"></i>
 							<p>대나무숲 관리</p>
 					</a></li>
-					<li><a href="<%=server%>/calendar.do"> <i
-							class="ti-calendar"></i>
-							<p>Calendar</p>
+					<li><a href="<%=server%>/map.do"> <i
+							class="ti-map"></i>
+							<p>BadgeMa Map</p>
 					</a></li>
 
 				</ul>
@@ -159,113 +160,170 @@
 							<span class="icon-bar bar3"></span>
 						</button>
 						<a class="navbar-brand" href="<%=server%>/declarationManage.do">
-							신고 관리 </a>
+							상담 관리 </a>
 					</div>
 				</div>
 			</nav>
 			<div class="content">
 				<div class="container-fluid">
+
+					<div class="row">
+
+						<div class="col-lg-4">
+							<div class="row">
+								<div class="card">
+									<div class="content">
+										<div class="row">
+											<div class="col-xs-5">
+												<div class="icon-big icon-info text-center">
+													<i class="ti-face-sad"></i>
+												</div>
+											</div>
+											<div class="col-xs-7">
+												<div class="numbers">
+													<p>상담 건수</p>
+													20
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card-footer">
+										<hr/>
+										<div class="stats">
+											<i class="ti-reload"></i> Updated now
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="card">
+									<div class="content">
+										<div class="row">
+											<div class="col-xs-5">
+												<div class="icon-big icon-success text-center">
+													<i class="ti-face-smile"></i>
+												</div>
+											</div>
+											<div class="col-xs-7">
+												<div class="numbers">
+													<p>상담 처리</p>
+													5
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card-footer">
+										<hr/>
+										<div class="stats">
+											<i class="ti-reload"></i> Updated now
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4">
+							<div class="card card-circle-chart" data-background="color" data-color="green">
+								<div class="header text-center">
+									<h5 class="title">상담 처리 차트</h5>
+									<p class="description">완료된 상담의 비율</p>
+								</div>
+								<div class="content">
+									<div id="chartCounsel" class="chart-circle" data-percent="25">25%</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4">
+							<div class="card">
+								<div class="content">
+									<div class="row">
+										<h6 class="big-title">주간 상담 건수 </h6>
+										<div id="chartWeeklyCounsel"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
 					<div class="row">
 						<div class="col-md-12">
-							<div class="header">
-								<h4 class="title">Timeline</h4>
-							</div>
 							<div class="content">
+
 								<ul class="timeline">
 									<li class="timeline-inverted">
-										<div class="timeline-badge danger">
+										<div class="timeline-badge success">
 											<i class="ti-gallery"></i>
 										</div>
 										<div class="timeline-panel">
 											<div class="timeline-heading">
-												<span class="label label-danger">Some Title</span>
+												<span class="label label-success">Counceling</span>
 											</div>
 											<div class="timeline-body">
-												<p>Wifey made the best Father's Day meal ever. So
-													thankful so happy so blessed. Thank you for making my
-													family We just had fun with the “future” theme !!! It was a
-													fun night all together ... The always rude Kanye Show at
-													2am Sold Out Famous viewing @ Figueroa and 12th in
-													downtown.</p>
+												<p>16.10.29 16:02<br/> 익명의 학생의 연애상담
+												</p>
 											</div>
 											<h6>
-												<i class="ti-time"></i> 11 hours ago via Twitter
-											</h6>
+								                    <i class="ti-time"></i>
+								                    11 hours ago via Twitter
+								                </h6>
 										</div>
 									</li>
 									<li>
-										<div class="timeline-badge success">
+										<div class="timeline-badge info">
 											<i class="ti-check-box"></i>
 										</div>
 										<div class="timeline-panel">
 											<div class="timeline-heading">
-												<span class="label label-success">Another One</span>
+												<span class="label label-info">New Counseling</span>
 											</div>
 											<div class="timeline-body">
-												<p>Thank God for the support of my wife and real
-													friends. I also wanted to point out that it’s the first
-													album to go number 1 off of streaming!!! I love you Ellen
-													and also my number one design rule of anything I do from
-													shoes to music to homes is that Kim has to like it....</p>
+												<p>16.11.02 15:20<br/> 익명 상담 신청
+												</p>
 											</div>
 										</div>
 									</li>
 									<li class="timeline-inverted">
-										<div class="timeline-badge info">
-											<i class="ti-credit-card"></i>
-										</div>
-										<div class="timeline-panel">
-											<div class="timeline-heading">
-												<span class="label label-info">Another Title</span>
-											</div>
-											<div class="timeline-body">
-												<p>Called I Miss the Old Kanye That’s all it was Kanye
-													And I love you like Kanye loves Kanye Famous viewing @
-													Figueroa and 12th in downtown LA 11:10PM</p>
-												<p>What if Kanye made a song about Kanye Royère doesn't
-													make a Polar bear bed but the Polar bear couch is my
-													favorite piece of furniture we own It wasn’t any Kanyes Set
-													on his goals Kanye</p>
-												<hr>
-												<div class="btn-group">
-													<button type="button" class="btn btn-info dropdown-toggle"
-														data-toggle="dropdown">
-														<i class="ti-settings"></i> <span class="caret"></span>
-													</button>
-													<ul class="dropdown-menu dropdown-menu-left" role="menu">
-														<li><a href="#action">Action</a></li>
-														<li><a href="#another">Another action</a></li>
-														<li><a href="#else">Something else here</a></li>
-														<li class="divider"></li>
-														<li><a href="#link">Separated link</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="timeline-badge warning">
+										<div class="timeline-badge success">
 											<i class="ti-gallery"></i>
 										</div>
 										<div class="timeline-panel">
 											<div class="timeline-heading">
-												<span class="label label-warning">Another One</span>
+												<span class="label label-success">Counseling</span>
 											</div>
 											<div class="timeline-body">
-												<p>Tune into Big Boy's 92.3 I'm about to play the first
-													single from Cruel Winter Tune into Big Boy's 92.3 I'm about
-													to play the first single from Cruel Winter also to Kim’s
-													hair and makeup Lorraine jewelry and the whole style squad
-													at Balmain and the Yeezy team. Thank you Anna for the
-													invite thank you to the whole Vogue team</p>
+												<p>16.10.27<br/> 익명의 학교폭력 고민상담
+												</p>
+											</div>
+											<h6>
+													<i class="ti-time"></i>
+													11 hours ago via Twitter
+												</h6>
+										</div>
+									</li>
+									<li>
+										<div class="timeline-badge info">
+											<i class="ti-check-box"></i>
+										</div>
+										<div class="timeline-panel">
+											<div class="timeline-heading">
+												<span class="label label-info">New Counseling</span>
+											</div>
+											<div class="timeline-body">
+												<p>16.10.18 12:58<br/> 익명 상담 접수
+												</p>
 											</div>
 										</div>
 									</li>
 								</ul>
 							</div>
+
 						</div>
 					</div>
 				</div>
+
 			</div>
 			<footer class="footer">
 				<div class="container-fluid">
@@ -356,10 +414,48 @@
 	src="resources/common/dashboard/assets/js/demo.js?ver=1 charset='utf-8'"></script>
 
 <script type="text/javascript">
-	$(document).ready(function() {
-		demo.initOverviewDashboard();
-		demo.initCirclePercentage();
+<!-- Pie Chart -->
+$(document).ready(function() {
+	demo.initOverviewDashboard();
+	demo.initCirclePercentage();
+	$('#chartCounsel').easyPieChart({
+		lineWidth: 6,
+		size: 160,
+		scaleColor: false,
+		trackColor: 'rgba(255,255,255,.25)',
+		barColor: '#FFFFFF',
+		animate: ({duration: 5000, enabled: true})
 	});
+});
+
+
+var dataPrice = {
+  labels: ['월','화','수', '목', '금', '토'],
+  series: [
+	[3, 5, 1, 12, 4, 0]
+  ]
+};
+
+var optionsPrice = {
+  showPoint: false,
+  lineSmooth: true,
+  height: "250px",
+  axisX: {
+	showGrid: false,
+	showLabel: true
+  },
+  axisY: {
+	offset: 40,
+	showGrid: false
+  },
+  low: 0,
+  high: 'auto',
+	  classNames: {
+		line: 'ct-line ct-green'
+	}
+};
+
+Chartist.Line('#chartWeeklyCounsel', dataPrice, optionsPrice);
 </script>
 
 </html>
