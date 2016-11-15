@@ -28,6 +28,13 @@ public class DeclarationController {
 		mv.addObject("declaration_list", list);
 		return mv;
 	}
+	@RequestMapping(value = "/finishDeclarationList.do")
+	public ModelAndView finishDeclarationList(Map<String, Object> commandMap) throws Exception {
+		ModelAndView mv = new ModelAndView("finishDeclaration");
+		List<Map<String, Object>> list = service.selectDeclarationList(commandMap);
+		mv.addObject("declaration_list", list);
+		return mv;
+	}
 	@RequestMapping(value = "/declarationLine.do")
 	public ModelAndView declarationLine(Map<String, Object> commandMap) throws Exception {
 		ModelAndView mv = new ModelAndView("jsonView");

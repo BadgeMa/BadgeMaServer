@@ -174,5 +174,8 @@ manage = {
 						swal("취소!", "요청이 취소되었습니다.", "error");
 					}
 				});
+	},
+	detail_onclick : function(obj) {
+		alert(obj['pk']);
 	}
 }
