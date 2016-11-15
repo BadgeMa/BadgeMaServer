@@ -40,7 +40,7 @@
 			FROM
 			   Declaration
 			WHERE
-				declaration_date=#{declaration_date} AND 
+				declaration_date LIKE '%'+#{declaration_date}+'%' AND
 				declaration_type=#{declaration_type}
 		]]>
 	</select>
@@ -51,7 +51,7 @@
 			FROM
 			   Declaration
 			WHERE
-				declaration_date=#{declaration_date} AND 
+				declaration_date LIKE '%'+#{declaration_date}+'%' AND 
 				declaration_type=#{declaration_type} AND
 				solve_state = #{solve_state}
 		]]>
@@ -97,6 +97,16 @@
 				notification_state = 1
 			WHERE 
 				declaration_id <= #{declaration_id}
+		]]>
+	</update>
+	<update id="updateSolve" parameterType="hashmap">
+		<![CDATA[
+			UPDATE
+				Declaration
+			SET
+				solve_state = #{solve_state}
+			WHERE 
+				declaration_id = #{declaration_id}
 		]]>
 	</update>
 	<delete id="deleteDeclaration" parameterType="hashmap">

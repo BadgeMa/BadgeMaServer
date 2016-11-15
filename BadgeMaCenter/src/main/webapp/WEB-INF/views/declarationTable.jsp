@@ -309,7 +309,6 @@
 		window.operateEvents = {
 			'click .view' : function(e, value, row, index) {
 				info = JSON.stringify(row);
-
 				swal('You click view icon, row: ', info);
 				console.log(info);
 			},

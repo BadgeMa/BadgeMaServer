@@ -67,6 +67,7 @@
 </head>
 
 <body>
+
 	<div class="wrapper">
 		<div class="sidebar" data-background-color="brown"
 			data-active-color="danger">
@@ -134,10 +135,12 @@
 							class="ti-comments"></i>
 							<p>상담 관리</p>
 					</a></li>
-					<li><a href="<%=server%>/feed.do"> <i class="ti-book"></i>
+					<li><a href="<%=server%>/feed.do"> <i
+							class="ti-book"></i>
 							<p>대나무숲 관리</p>
 					</a></li>
-					<li><a href="<%=server%>/map.do"> <i class="ti-map"></i>
+					<li><a href="<%=server%>/map.do"> <i
+							class="ti-map"></i>
 							<p>BadgeMa Map</p>
 					</a></li>
 
@@ -167,78 +170,167 @@
 				<div class="container-fluid">
 
 					<div class="row">
-						<div class="col-md-6">
-							<div class="col-md-6 col-md-offset-3">
-								<div class="card">
-									<div class="content">
-										<div class="row">
-											<div class="col-md-5">
-												<div class="icon-big icon-danger text-center">
-													<i class="ti-direction"></i>
-												</div>
-											</div>
-											<div class="col-md-7">
-												<div class="numbers">
-													<p>도와줘 건수</p>
-													<div id='helpnumber'>13</div>
-												</div>
+
+						<div class="col-lg-3">
+							<div class="card">
+								<div class="content">
+									<div class="row">
+										<div class="col-xs-5">
+											<div class="icon-big icon-danger text-center">
+												<i class="ti-direction"></i>
 											</div>
 										</div>
+										<div class="col-xs-7">
+											<div class="numbers">
+												<p>A버튼 건수</p>
+												13
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card-footer">
+									<hr/>
+									<div class="stats">
+										<i class="ti-reload"></i> Updated now
 									</div>
 								</div>
 							</div>
 						</div>
 
-						<div class="col-md-6">
-							<div class="col-md-6 col-md-offset-3">
-								<div class="card">
-									<div class="content">
-										<div class="row">
-											<div class="col-md-5">
-												<div class="icon-big icon-warning text-center">
-													<i class="ti-direction-alt"></i>
-												</div>
-											</div>
-											<div class="col-md-7">
-												<div class="numbers">
-													<p>도와줘 처리</p>
-													<div id='finishNumber'>0</div>
-												</div>
+						<div class="col-lg-3">
+							<div class="card">
+								<div class="content">
+									<div class="row">
+										<div class="col-xs-5">
+											<div class="icon-big icon-warning text-center">
+												<i class="ti-direction-alt"></i>
 											</div>
 										</div>
+										<div class="col-xs-7">
+											<div class="numbers">
+												<p>A버튼 처리</p>
+												8
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card-footer">
+									<hr/>
+									<div class="stats">
+										<i class="ti-reload"></i> Updated now
 									</div>
 								</div>
 							</div>
 						</div>
 
-						<div class="col-md-6">
-							<div class="col-md-6 col-md-offset-4">
-								<button class="btn btn-danger btn-fill btn-wd">신고접수</button>
+						<div class="col-lg-6">
+							<div class="card">
+								<div class="content">
+									<div class="row">
+										<h6 class="big-title">주간 신고 건수</h6>
+										<div id="chartWeeklyReport"></div>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="col-md-6 col-md-offset-4">
-								<button class="btn btn-warning btn-fill btn-wd">진행신고</button>
-							</div>
-						</div>
 
+						</div>
 					</div>
 
-
-
-					<div class="content">
-
-
+					<div class="row">
 						<div class="col-md-12">
-							<ul class="timeline" id='declarationline'>
+							<div class="content">
 
-							</ul>
+								<div class="col-md-6">
+									<div class="col-md-5 text-center">
+										<button class="btn btn-danger btn-fill btn-wd">신고접수</button>
+									</div>
+									<div class="col-md-4 col-md-offset-2 text-center">
+										<button class="btn btn-warning btn-fill btn-wd">진행신고</button>
+									</div>
+
+								</div>
+								<div class="col-md-6">
+									<div class="col-md-5 col-md-offset-4 text-center">
+										<button class="btn btn-success btn-fill btn-wd">완료신고</button>
+									</div>
+								</div>
+
+								<div class="col-md-6">
+
+									<ul class="timeline" id='declarationline'>										
+										
+									
+									</ul>
+								</div>
+								<div class="col-md-6">
+									<ul class="timeline timeline-simple">
+										<li class="timeline-inverted">
+											<div class="timeline-badge success">
+												<i class="ti-gallery"></i>
+											</div>
+											<div class="timeline-panel">
+												<div class="timeline-heading">
+													<span class="label label-success">Some title</span>
+												</div>
+												<div class="timeline-body">
+													<p>Wifey made the best Father's Day meal ever. So thankful so happy so blessed. Thank you for making my family We just had fun with the “future” theme !!! It was a fun night all together ... The always rude Kanye Show at 2am Sold Out Famous
+														viewing @ Figueroa and 12th in downtown.</p>
+												</div>
+												<h6>
+												<i class="ti-time"></i>
+												11 hours ago via Twitter
+											</h6>
+											</div>
+										</li>
+										<li class="timeline-inverted">
+											<div class="timeline-badge success">
+												<i class="ti-check-box"></i>
+											</div>
+											<div class="timeline-panel">
+												<div class="timeline-heading">
+													<span class="label label-success">Another One</span>
+												</div>
+												<div class="timeline-body">
+													<p>Thank God for the support of my wife and real friends. I also wanted to point out that it’s the first album to go number 1 off of streaming!!! I love you Ellen and also my number one design rule of anything I do from shoes to music to homes
+														is that Kim has to like it....</p>
+												</div>
+											</div>
+										</li>
+										<li class="timeline-inverted">
+											<div class="timeline-badge success">
+												<i class="ti-credit-card"></i>
+											</div>
+											<div class="timeline-panel">
+												<div class="timeline-heading">
+													<span class="label label-success">Another Title</span>
+												</div>
+												<div class="timeline-body">
+													<p>Called I Miss the Old Kanye That’s all it was Kanye And I love you like Kanye loves Kanye Famous viewing @ Figueroa and 12th in downtown LA 11:10PM</p>
+													<p>What if Kanye made a song about Kanye Royère doesn't make a Polar bear bed but the Polar bear couch is my favorite piece of furniture we own It wasn’t any Kanyes Set on his goals Kanye</p>
+													<hr>
+													<div class="dropdown">
+														<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+									            		<i class="ti-settings"></i> <span class="caret"></span>
+									            	</button>
+														<ul class="dropdown-menu dropdown-menu-left" role="menu">
+															<li><a href="#action">Action</a></li>
+															<li><a href="#action">Another action</a></li>
+															<li><a href="#here">Something else here</a></li>
+															<li class="divider"></li>
+															<li><a href="#link">Separated link</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
+
 			</div>
-
-
 
 			<footer class="footer">
 				<div class="container-fluid">
@@ -325,16 +417,14 @@
 <script src="resources/common/dashboard/assets/js/paper-dashboard.js"></script>
 
 <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
-<script
-	src="resources/common/dashboard/assets/js/demo.js?ver=1 charset='utf-8'"></script>
-<script
-	src="resources/common/dashboard/assets/js/declaration-manage.js?ver=2 charset='utf-8'"></script>
+<script src="resources/common/dashboard/assets/js/demo.js?ver=1 charset='utf-8'"></script>
+<script src="resources/common/dashboard/assets/js/declaration-manage.js?ver=3 charset='utf-8'"></script>
 <script type="text/javascript">
 <!-- Pie Chart -->
 	$(document).ready(function() {
+		//manage.preline();
+		//manage.doingline();
 		manage.declarationList();
-		manage.helpNumber();
-		manage.finishNumber();
 		demo.initOverviewDashboard();
 		demo.initCirclePercentage();
 		var dataDays = {

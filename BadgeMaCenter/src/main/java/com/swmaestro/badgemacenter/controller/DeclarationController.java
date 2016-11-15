@@ -77,7 +77,7 @@ public class DeclarationController {
 	@RequestMapping(value = "/AbtnNumber.do")
 	public ModelAndView AbtnNumber(Map<String, Object> commandMap) throws Exception {
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("declaration_date", todayDate());
+		map.put("declaration_date", today());
 		map.put("declaration_type", 1);
 		ModelAndView mv = new ModelAndView("jsonView");
 		List<Map<String, Object>> list = service.selectBtnNumber(map);
@@ -89,9 +89,9 @@ public class DeclarationController {
 	@RequestMapping(value = "/AbtnSolveNumber.do")
 	public ModelAndView AbtnSolveNumber(Map<String, Object> commandMap) throws Exception {
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("declaration_date", todayDate());
+		map.put("declaration_date", today());
 		map.put("declaration_type", 1);
-		map.put("solve_state", 1);
+		map.put("solve_state", 2);
 		ModelAndView mv = new ModelAndView("jsonView");
 		List<Map<String, Object>> list = service.selectBtnSolveNumber(map);
 		mv.addObject("solve_result", list);
@@ -130,7 +130,16 @@ public class DeclarationController {
 		map.put("declaration_id", declaration_id);
 		service.deleteDeclaration(map);
 	}
-
+	@RequestMapping("/updateSolve.do")
+	public void updateSolve(HttpServletRequest request, Map<String, Object> commandMap) throws Exception {
+		Map<String, Object> map = new HashMap<String, Object>();
+		int declaration_id = Integer.parseInt(request.getParameter("declaration_id"));
+		int solve_state = Integer.parseInt(request.getParameter("solve_state"));
+		System.out.println("declaration_id : " + declaration_id);
+		map.put("declaration_id", declaration_id);
+		map.put("solve_state", solve_state);
+		service.updateSolve(map);
+	}
 	// 신고 접수
 	@RequestMapping("/insertDeclaration.do")
 	public void insertDeclaration(HttpServletRequest request, Map<String, Object> commandMap) throws Exception {
@@ -157,12 +166,27 @@ public class DeclarationController {
 		int year = 1900 + date.getYear();
 		int month = date.getMonth() + 1;
 		int day = date.getDate();
+		int hours = date.getHours();
+		int minutes = date.getMinutes();
+		int seconds = date.getSeconds();
 		today_date = "" + year + "년 ";
 		today_date += month / 10 > 0 ? "" + month + "월 " : "0" + month + "월 ";
 		today_date += day / 10 > 0 ? "" + day + "일 " : "0" + day + "일 ";
-		today_date += ""+date.getHours() + "시 ";
-		today_date += ""+date.getMinutes() + "분 ";
-		today_date += ""+date.getSeconds() + "초 ";
+		today_date += hours/10>0 ? "" +hours+ "시 " : "0" + hours+"시 ";
+		today_date += minutes/10>0 ? "" +minutes+ "분 " : "0" + minutes+"분 ";
+		today_date += seconds/10>0 ? "" +seconds+ "초 " : "0" + seconds+"초 ";
+		return today_date;
+	}
+	public String today() {
+		Date date = new Date();
+		String today_date = "";
+		int year = 1900 + date.getYear();
+		int month = date.getMonth() + 1;
+		int day = date.getDate();
+		
+		today_date = "" + year + "년 ";
+		today_date += month / 10 > 0 ? "" + month + "월 " : "0" + month + "월 ";
+		today_date += day / 10 > 0 ? "" + day + "일 " : "0" + day + "일 ";
 		return today_date;
 	}
 }

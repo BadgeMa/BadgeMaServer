@@ -45,6 +45,9 @@ public class DeclarationService {
 	public void updateDeclaration(Map<String, Object> map) {
 		dao.updateDeclaration(map);
 	}
+	public void updateSolve(Map<String, Object> map) {
+		dao.updateSolve(map);
+	}
 	//  ÇÑ°Ç delete
 	public void deleteDeclaration(Map<String, Object> map) {
 		dao.deleteDeclaration(map);

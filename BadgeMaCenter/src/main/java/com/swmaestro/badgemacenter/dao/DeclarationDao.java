@@ -34,6 +34,9 @@ public class DeclarationDao extends abDAO {
 	public void updateDeclaration(Map<String, Object> map) {
 		update("declarationSQL.updateDeclaration", map);
 	}
+	public void updateSolve(Map<String, Object> map) {
+		update("declarationSQL.updateSolve", map);
+	}
 	public void insertDeclaration(Map<String, Object> map) {
 		insert("declarationSQL.insertDeclaration", map);
 	}
