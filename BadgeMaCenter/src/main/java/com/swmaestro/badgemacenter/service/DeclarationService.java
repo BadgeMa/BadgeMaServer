@@ -23,7 +23,12 @@ public class DeclarationService {
 	public List<Map<String, Object>> selectDeclarationList(Map<String, Object> Map) throws Exception {
 		return dao.selectDeclarationList(Map);
 	}
-
+	public List<Map<String, Object>> selectPreDeclarationList(Map<String, Object> Map) throws Exception {
+		return dao.selectPreDeclarationList(Map);
+	}
+	public List<Map<String, Object>> selectDoingDeclarationList(Map<String, Object> Map) throws Exception {
+		return dao.selectDoingDeclarationList(Map);
+	}
 	// Button 건수 가져오기
 	public List<Map<String, Object>> selectBtnNumber(Map<String, Object> Map) throws Exception {
 		return dao.selectBtnNumber(Map);

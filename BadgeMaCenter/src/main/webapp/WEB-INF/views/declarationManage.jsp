@@ -189,7 +189,7 @@
 									</div>
 								</div>
 								<div class="card-footer">
-									<hr />
+									<hr/>
 									<div class="stats">
 										<i class="ti-reload"></i> Updated now
 									</div>
@@ -215,7 +215,7 @@
 									</div>
 								</div>
 								<div class="card-footer">
-									<hr />
+									<hr/>
 									<div class="stats">
 										<i class="ti-reload"></i> Updated now
 									</div>
@@ -239,76 +239,27 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="content">
+
+								<div class="col-md-6">
+									<div class="col-md-5 text-center">
+										<button class="btn btn-danger btn-fill btn-wd">신고접수</button>
+									</div>
+									<div class="col-md-4 col-md-offset-2 text-center">
+										<button class="btn btn-warning btn-fill btn-wd">진행신고</button>
+									</div>
+
+								</div>
+								<div class="col-md-6">
+									<div class="col-md-5 col-md-offset-4 text-center">
+										<button class="btn btn-success btn-fill btn-wd">완료신고</button>
+									</div>
+								</div>
+
 								<div class="col-md-6">
 
-
-									<ul class="timeline">
-										<li class="timeline-inverted">
-											<div class="timeline-badge warning">
-												<i class="ti-gallery"></i>
-											</div>
-											<div class="timeline-panel">
-												<div class="timeline-heading">
-													<span class="label label-warning">Taking Job</span>
-												</div>
-												<div class="timeline-body">
-													<p>
-														16년 10월 28일 발생<br /> 규정이가 같은 반 학생에게 돈을 빼앗겼습니다. 상황 정리중입니다.
-													</p>
-												</div>
-												<h6>
-													<i class="ti-time"></i> 11 hours ago via Twitter
-												</h6>
-											</div>
-										</li>
-										<li>
-											<div class="timeline-badge danger">
-												<i class="ti-check-box"></i>
-											</div>
-											<div class="timeline-panel">
-												<div class="timeline-heading">
-													<span class="label label-danger">Emergency Report</span>
-												</div>
-												<div class="timeline-body">
-													<p>
-														16.10.27 10:20<br /> 긴급 출동 요함
-													</p>
-												</div>
-											</div>
-										</li>
-										<li class="timeline-inverted">
-											<div class="timeline-badge warning">
-												<i class="ti-gallery"></i>
-											</div>
-											<div class="timeline-panel">
-												<div class="timeline-heading">
-													<span class="label label-warning">Taking Job</span>
-												</div>
-												<div class="timeline-body">
-													<p>
-														16년 10월 20일 발생<br /> 규정이가 같은 반 학생 돈을 빼앗음. 사건 파악 중입니다.
-													</p>
-												</div>
-												<h6>
-													<i class="ti-time"></i> 11 hours ago via Twitter
-												</h6>
-											</div>
-										</li>
-										<li>
-											<div class="timeline-badge danger">
-												<i class="ti-check-box"></i>
-											</div>
-											<div class="timeline-panel">
-												<div class="timeline-heading">
-													<span class="label label-danger">Ananymous Report</span>
-												</div>
-												<div class="timeline-body">
-													<p>
-														16.10.18 12:58<br /> 익명 신고 발생<br /> 사건 조사 요망
-													</p>
-												</div>
-											</div>
-										</li>
+									<ul class="timeline" id='declarationline'>										
+										
+									
 									</ul>
 								</div>
 								<div class="col-md-6">
@@ -322,16 +273,13 @@
 													<span class="label label-success">Some title</span>
 												</div>
 												<div class="timeline-body">
-													<p>Wifey made the best Father's Day meal ever. So
-														thankful so happy so blessed. Thank you for making my
-														family We just had fun with the “future” theme !!! It was
-														a fun night all together ... The always rude Kanye Show at
-														2am Sold Out Famous viewing @ Figueroa and 12th in
-														downtown.</p>
+													<p>Wifey made the best Father's Day meal ever. So thankful so happy so blessed. Thank you for making my family We just had fun with the “future” theme !!! It was a fun night all together ... The always rude Kanye Show at 2am Sold Out Famous
+														viewing @ Figueroa and 12th in downtown.</p>
 												</div>
 												<h6>
-													<i class="ti-time"></i> 11 hours ago via Twitter
-												</h6>
+												<i class="ti-time"></i>
+												11 hours ago via Twitter
+											</h6>
 											</div>
 										</li>
 										<li class="timeline-inverted">
@@ -343,11 +291,8 @@
 													<span class="label label-success">Another One</span>
 												</div>
 												<div class="timeline-body">
-													<p>Thank God for the support of my wife and real
-														friends. I also wanted to point out that it’s the first
-														album to go number 1 off of streaming!!! I love you Ellen
-														and also my number one design rule of anything I do from
-														shoes to music to homes is that Kim has to like it....</p>
+													<p>Thank God for the support of my wife and real friends. I also wanted to point out that it’s the first album to go number 1 off of streaming!!! I love you Ellen and also my number one design rule of anything I do from shoes to music to homes
+														is that Kim has to like it....</p>
 												</div>
 											</div>
 										</li>
@@ -360,19 +305,13 @@
 													<span class="label label-success">Another Title</span>
 												</div>
 												<div class="timeline-body">
-													<p>Called I Miss the Old Kanye That’s all it was Kanye
-														And I love you like Kanye loves Kanye Famous viewing @
-														Figueroa and 12th in downtown LA 11:10PM</p>
-													<p>What if Kanye made a song about Kanye Royère doesn't
-														make a Polar bear bed but the Polar bear couch is my
-														favorite piece of furniture we own It wasn’t any Kanyes
-														Set on his goals Kanye</p>
+													<p>Called I Miss the Old Kanye That’s all it was Kanye And I love you like Kanye loves Kanye Famous viewing @ Figueroa and 12th in downtown LA 11:10PM</p>
+													<p>What if Kanye made a song about Kanye Royère doesn't make a Polar bear bed but the Polar bear couch is my favorite piece of furniture we own It wasn’t any Kanyes Set on his goals Kanye</p>
 													<hr>
 													<div class="dropdown">
-														<button type="button" class="btn btn-info dropdown-toggle"
-															data-toggle="dropdown">
-															<i class="ti-settings"></i> <span class="caret"></span>
-														</button>
+														<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+									            		<i class="ti-settings"></i> <span class="caret"></span>
+									            	</button>
 														<ul class="dropdown-menu dropdown-menu-left" role="menu">
 															<li><a href="#action">Action</a></li>
 															<li><a href="#action">Another action</a></li>
@@ -478,12 +417,14 @@
 <script src="resources/common/dashboard/assets/js/paper-dashboard.js"></script>
 
 <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
-<script
-	src="resources/common/dashboard/assets/js/demo.js?ver=1 charset='utf-8'"></script>
-
+<script src="resources/common/dashboard/assets/js/demo.js?ver=1 charset='utf-8'"></script>
+<script src="resources/common/dashboard/assets/js/declaration-manage.js?ver=3 charset='utf-8'"></script>
 <script type="text/javascript">
 <!-- Pie Chart -->
 	$(document).ready(function() {
+		//manage.preline();
+		//manage.doingline();
+		manage.declarationList();
 		demo.initOverviewDashboard();
 		demo.initCirclePercentage();
 		var dataDays = {

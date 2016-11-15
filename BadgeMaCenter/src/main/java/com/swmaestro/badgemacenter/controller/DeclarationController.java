@@ -28,6 +28,27 @@ public class DeclarationController {
 		mv.addObject("declaration_list", list);
 		return mv;
 	}
+	@RequestMapping(value = "/declarationLine.do")
+	public ModelAndView declarationLine(Map<String, Object> commandMap) throws Exception {
+		ModelAndView mv = new ModelAndView("jsonView");
+		List<Map<String, Object>> list = service.selectDeclarationList(commandMap);
+		mv.addObject("line_list", list);
+		return mv;
+	}
+	@RequestMapping(value = "/preDeclarationList.do")
+	public ModelAndView preDeclarationList(Map<String, Object> commandMap) throws Exception {
+		ModelAndView mv = new ModelAndView("jsonView");
+		List<Map<String, Object>> list = service.selectPreDeclarationList(commandMap);
+		mv.addObject("pre_list", list);
+		return mv;
+	}
+	@RequestMapping(value = "/doingDeclarationList.do")
+	public ModelAndView doingDeclarationList(Map<String, Object> commandMap) throws Exception {
+		ModelAndView mv = new ModelAndView("jsonView");
+		List<Map<String, Object>> list = service.selectDoingDeclarationList(commandMap);
+		mv.addObject("doing_list", list);
+		return mv;
+	}
 	@RequestMapping(value = "/declarationManage.do")
 	public ModelAndView declarationManage(Map<String, Object> commandMap) throws Exception {
 		ModelAndView mv = new ModelAndView("declarationManage");
@@ -116,14 +137,16 @@ public class DeclarationController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		String badge_id = request.getParameter("badge_id");
 		String class_location = request.getParameter("class_location");
+		int solve_state = Integer.parseInt(request.getParameter("solve_state"));
 		int declaration_type = Integer.parseInt(request.getParameter("declaration_type"));
 		String today = todayDate();
+		System.out.println(today);
 		map.put("badge_id", badge_id);
 		map.put("class_location", class_location);
 		map.put("declaration_type", declaration_type);
 		map.put("declaration_date", today);
 		map.put("notification_state", 0);
-		map.put("solve_state", 0);
+		map.put("solve_state", solve_state);
 		service.insertDeclaration(map);
 
 	}
@@ -134,9 +157,12 @@ public class DeclarationController {
 		int year = 1900 + date.getYear();
 		int month = date.getMonth() + 1;
 		int day = date.getDate();
-		today_date = "" + year + "년";
-		today_date += month / 10 > 0 ? "" + month + "월" : "0" + month + "월";
-		today_date += day / 10 > 0 ? "" + day + "일" : "0" + day + "일";
+		today_date = "" + year + "년 ";
+		today_date += month / 10 > 0 ? "" + month + "월 " : "0" + month + "월 ";
+		today_date += day / 10 > 0 ? "" + day + "일 " : "0" + day + "일 ";
+		today_date += ""+date.getHours() + "시 ";
+		today_date += ""+date.getMinutes() + "분 ";
+		today_date += ""+date.getSeconds() + "초 ";
 		return today_date;
 	}
 }

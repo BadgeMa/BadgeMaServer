@@ -157,7 +157,7 @@
 										<thead>
 
 											<th data-field="state" data-checkbox="true"></th>
-											<th data-field="id" class="text-center">Primary Key</th>
+											<th data-field="id" class="text-center">순번</th>
 											<th data-field="user_id" data-sortable="true">아이디</th>
 											<th data-field="location" data-sortable="true">위치</th>
 											<th data-field="declaration_type" data-sortable="true">신고 유형</th>

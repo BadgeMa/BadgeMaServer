@@ -42,9 +42,7 @@
 <link href='https://fonts.googleapis.com/css?family=Muli:400,300'
 	rel='stylesheet' type='text/css'>
 
-<script
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgn9TGmzddyo4n5OsOw1FDvDjxh4QUZIQ&callback=demo.initGoogleMaps"
-	async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgn9TGmzddyo4n5OsOw1FDvDjxh4QUZIQ&callback=demo.initGoogleMaps" async defer></script>
 
 
 <link href="resources/common/dashboard/assets/css/themify-icons.css"
@@ -369,11 +367,11 @@
 
 <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
 <script
-	src="resources/common/dashboard/assets/js/demo.js?ver=1 charset='utf-8'"></script>
+	src="resources/common/dashboard/assets/js/demo.js?ver=3 charset='utf-8'"></script>
 
 <script>
 	$().ready(function() {
-		// demo.initGoogleMaps();
+		//demo.initGoogleMaps();
 		//demo.initSmallGoogleMaps();
 		demo.initChartsPage();
 	});

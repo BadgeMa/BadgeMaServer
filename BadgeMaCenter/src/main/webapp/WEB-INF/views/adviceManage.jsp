@@ -247,84 +247,92 @@
 						</div>
 
 					</div>
+					<hr/>
+
 
 					<div class="row">
-						<div class="col-md-12">
-							<div class="content">
+						<div class="content">
 
-								<ul class="timeline">
-									<li class="timeline-inverted">
-										<div class="timeline-badge success">
-											<i class="ti-gallery"></i>
+							<div class="col-md-2 col-md-offset-2 text-center">
+								<button class="btn btn-info btn-fill btn-wd">접수상담</button>
+							</div>
+							<div class="col-md-2 col-md-offset-4 text-center">
+								<button class="btn btn-success btn-fill btn-wd">진행상담</button>
+							</div>
+
+							<ul class="timeline">
+								<li class="timeline-inverted">
+									<div class="timeline-badge success">
+										<i class="ti-gallery"></i>
+									</div>
+									<div class="timeline-panel">
+										<div class="timeline-heading">
+											<span class="label label-success">Counceling</span>
 										</div>
-										<div class="timeline-panel">
-											<div class="timeline-heading">
-												<span class="label label-success">Counceling</span>
-											</div>
-											<div class="timeline-body">
-												<p>16.10.29 16:02<br/> 익명의 학생의 연애상담
-												</p>
-											</div>
-											<h6>
+										<div class="timeline-body">
+											<p>16.10.29 16:02<br/> 익명의 학생의 연애상담
+											</p>
+										</div>
+										<h6>
 								                    <i class="ti-time"></i>
 								                    11 hours ago via Twitter
 								                </h6>
+									</div>
+								</li>
+								<li>
+									<div class="timeline-badge info">
+										<i class="ti-check-box"></i>
+									</div>
+									<div class="timeline-panel">
+										<div class="timeline-heading">
+											<span class="label label-info">New Counseling</span>
 										</div>
-									</li>
-									<li>
-										<div class="timeline-badge info">
-											<i class="ti-check-box"></i>
+										<div class="timeline-body">
+											<p>16.11.02 15:20<br/> 익명 상담 신청
+											</p>
 										</div>
-										<div class="timeline-panel">
-											<div class="timeline-heading">
-												<span class="label label-info">New Counseling</span>
-											</div>
-											<div class="timeline-body">
-												<p>16.11.02 15:20<br/> 익명 상담 신청
-												</p>
-											</div>
+									</div>
+								</li>
+								<li class="timeline-inverted">
+									<div class="timeline-badge success">
+										<i class="ti-gallery"></i>
+									</div>
+									<div class="timeline-panel">
+										<div class="timeline-heading">
+											<span class="label label-success">Counseling</span>
 										</div>
-									</li>
-									<li class="timeline-inverted">
-										<div class="timeline-badge success">
-											<i class="ti-gallery"></i>
+										<div class="timeline-body">
+											<p>16.10.27<br/> 익명의 학교폭력 고민상담
+											</p>
 										</div>
-										<div class="timeline-panel">
-											<div class="timeline-heading">
-												<span class="label label-success">Counseling</span>
-											</div>
-											<div class="timeline-body">
-												<p>16.10.27<br/> 익명의 학교폭력 고민상담
-												</p>
-											</div>
-											<h6>
+										<h6>
 													<i class="ti-time"></i>
 													11 hours ago via Twitter
 												</h6>
+									</div>
+								</li>
+								<li>
+									<div class="timeline-badge info">
+										<i class="ti-check-box"></i>
+									</div>
+									<div class="timeline-panel">
+										<div class="timeline-heading">
+											<span class="label label-info">New Counseling</span>
 										</div>
-									</li>
-									<li>
-										<div class="timeline-badge info">
-											<i class="ti-check-box"></i>
+										<div class="timeline-body">
+											<p>16.10.18 12:58<br/> 익명 상담 접수
+											</p>
 										</div>
-										<div class="timeline-panel">
-											<div class="timeline-heading">
-												<span class="label label-info">New Counseling</span>
-											</div>
-											<div class="timeline-body">
-												<p>16.10.18 12:58<br/> 익명 상담 접수
-												</p>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
-
+									</div>
+								</li>
+							</ul>
 						</div>
+
 					</div>
 				</div>
-
 			</div>
+
+		</div>
 			<footer class="footer">
 				<div class="container-fluid">
 					<nav class="pull-left">
