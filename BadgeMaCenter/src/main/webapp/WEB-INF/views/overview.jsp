@@ -69,11 +69,12 @@
 <body>
 
 	<div class="wrapper">
-		<div class="sidebar" data-background-color="brown" data-active-color="danger">
+		<div class="sidebar" data-background-color="brown"
+			data-active-color="danger">
 			<!--
-		  Tip 1: you can change the color of the sidebar's background using: data-background-color="white | brown"
-		  Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
-	   -->
+			Tip 1: you can change the color of the sidebar's background using: data-background-color="white | brown"
+			Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+		-->
 			<div class="logo">
 				<a href="<%=server%>/home.do" class="simple-text"> Badge Ma </a>
 			</div>
@@ -86,82 +87,50 @@
 						<img src="resources/common/dashboard/assets/img/faces/moonsu.png" />
 					</div>
 					<div class="info">
-						<a data-toggle="collapse" href="#collapseExample" class="collapsed">김 문 수 <b class="caret"></b>
-				   </a>
+						<a data-toggle="collapse" href="#collapseExample"
+							class="collapsed">김 문 수 <b class="caret"></b>
+						</a>
 						<div class="collapse" id="collapseExample">
 							<ul class="nav">
 								<li><a href="#profile">My Profile</a></li>
+								<li><a href="#editprofile">Edit Profile</a></li>
+								<li><a href="#settings">Settings</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 				<ul class="nav">
-					<li>
-						<a href="#dashboardOverview">
-							<i class="ti-panel"></i>
-							<p>
-								대나무숲 <b class="caret"></b>
+					<li class="active"><a href="<%=server%>/home.do"> <i
+							class="ti-panel"></i>
+							<p>현황판					
 							</p>
-						</a>
-					</li>
+					</a>
+						</li>
 
-					<li>
-						<a href="#dashboardOverview">
-							<i class="ti-panel"></i>
+					<li ><a data-toggle="collapse"
+						href="#tablesExamples"> <i class="ti-signal"></i>
 							<p>
-								대나무숲 <b class="caret"></b>
+								도와주세요<b class="caret"></b>
 							</p>
-						</a>
-					</li>
-
-					<li>
-						<a href="#">
-							<i class="ti-panel"></i>
-							<p>대나무숲 <b class="caret"></b></p>
-						</a>
-					</li>
-					<li>
-						<a href="<%=server%>/adviceManage.do"> <i class="ti-comments"></i>
-							<p>상담 관리</p>
-						</a>
-					</li>
-
-
-					<li>
-						<a data-toggle="collapse" href="#tablesExamples"> <i class="ti-view-list-alt"></i>
-							<p>
-								목록 보기 <b class="caret"></b>
-							</p>
-						</a>
+					</a>
 						<div class="collapse" id="tablesExamples">
 							<ul class="nav">
-								<li><a href="<%=server%>/userList.do">사용자 목록</a></li>
-								<li><a href="<%=server%>/declarationList.do">신고 목록</a></li>
-								<li><a href="<%=server%>/declarationList.do">상담 목록</a></li>
+								<li ><a href="<%=server%>/declarationManage.do">신고 목록</a></li>
+								<li><a href="<%=server%>/finishDeclaration.do">완료 목록</a></li>
 							</ul>
-						</div>
-					</li>
-					<li class="active">
-						<a href="<%=server%>/declarationManage.do">
-							<i class="ti-signal"></i>
-							<p>신고 관리</p>
-						</a>
-					</li>
-					<li>
-						<a href="<%=server%>/adviceManage.do"> <i class="ti-comments"></i>
-							<p>상담 관리</p>
-						</a>
-					</li>
-					<li>
-						<a href="<%=server%>/feed.do"> <i class="ti-book"></i>
-							<p>대나무숲 관리</p>
-						</a>
-					</li>
-					<li>
-						<a href="<%=server%>/map.do"> <i class="ti-map"></i>
+						</div></li>
+					
+					<li ><a href="<%=server %>/adviceManage.do"> <i class="ti-comments"></i>
+							<p>고민있어요</p>
+					</a></li>
+					<li><a href="<%=server%>/feed.do"> <i
+							class="ti-book"></i>
+							<p>대나무숲</p>
+					</a></li>
+					<li><a href="<%=server%>/map.do"> <i
+							class="ti-map"></i>
 							<p>BadgeMa Map</p>
-						</a>
-					</li>
+					</a></li>
 
 				</ul>
 			</div>
@@ -171,17 +140,17 @@
 				<div class="container-fluid">
 					<div class="navbar-minimize">
 						<button id="minimizeSidebar" class="btn btn-fill btn-icon">
-					  <i class="ti-more-alt"></i>
-				   </button>
+							<i class="ti-more-alt"></i>
+						</button>
 					</div>
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle">
-					  <span class="sr-only">Toggle navigation</span> <span
-						 class="icon-bar bar1"></span> <span class="icon-bar bar2"></span>
-					  <span class="icon-bar bar3"></span>
-				   </button>
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar bar1"></span> <span class="icon-bar bar2"></span>
+							<span class="icon-bar bar3"></span>
+						</button>
 						<a class="navbar-brand" href="<%=server%>/declarationManage.do">
-					  신고 관리 </a>
+							신고 관리 </a>
 					</div>
 				</div>
 			</nav>
@@ -279,7 +248,9 @@
 						<div class="col-md-12">
 							<div class="card">
 								<div class="content">
-									<h4 class="title text-center"><b>반별 배치 상황</b></h4>
+									<h4 class="title text-center">
+										<b>반별 배치 상황</b>
+									</h4>
 									<hr />
 									<div class="row">
 										<div class="col-md-2">
@@ -290,7 +261,8 @@
 										<div class="col-md-2">
 											<div>
 												<div id="class_style">
-													<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+													<img id="stylePhotoImg"
+														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>1학년 1반</p>
@@ -300,7 +272,8 @@
 										<div class="col-md-2">
 											<div>
 												<div id="class_style">
-													<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+													<img id="stylePhotoImg"
+														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>1학년 2반</p>
@@ -310,7 +283,8 @@
 										<div class="col-md-2">
 											<div>
 												<div id="class_style">
-													<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+													<img id="stylePhotoImg"
+														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>1학년 3반</p>
@@ -320,7 +294,8 @@
 										<div class="col-md-2">
 											<div>
 												<div id="class_style">
-													<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+													<img id="stylePhotoImg"
+														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>1학년 4반</p>
@@ -330,7 +305,8 @@
 										<div class="col-md-2">
 											<div>
 												<div id="class_style">
-													<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+													<img id="stylePhotoImg"
+														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>화장실</p>
@@ -348,7 +324,8 @@
 										<div class="col-md-2">
 											<div>
 												<div id="class_style">
-													<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+													<img id="stylePhotoImg"
+														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>2학년 1반</p>
@@ -358,7 +335,8 @@
 										<div class="col-md-2">
 											<div>
 												<div id="class_style">
-													<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+													<img id="stylePhotoImg"
+														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>2학년 2반</p>
@@ -368,7 +346,8 @@
 										<div class="col-md-2">
 											<div>
 												<div id="class_style">
-													<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+													<img id="stylePhotoImg"
+														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>2학년 3반</p>
@@ -378,7 +357,8 @@
 										<div class="col-md-2">
 											<div>
 												<div id="class_style">
-													<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+													<img id="stylePhotoImg"
+														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>2학년 4반</p>
@@ -388,7 +368,8 @@
 										<div class="col-md-2">
 											<div>
 												<div id="class_style">
-													<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+													<img id="stylePhotoImg"
+														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>화장실</p>
@@ -406,7 +387,8 @@
 										<div class="col-md-2">
 											<div>
 												<div id="class_style">
-													<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+													<img id="stylePhotoImg"
+														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>3학년 1반</p>
@@ -416,7 +398,8 @@
 										<div class="col-md-2">
 											<div>
 												<div id="class_style">
-													<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+													<img id="stylePhotoImg"
+														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>3학년 2반</p>
@@ -426,7 +409,8 @@
 										<div class="col-md-2">
 											<div>
 												<div id="class_style">
-													<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+													<img id="stylePhotoImg"
+														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>3학년 3반</p>
@@ -436,7 +420,8 @@
 										<div class="col-md-2">
 											<div>
 												<div id="class_style">
-													<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+													<img id="stylePhotoImg"
+														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>3학년 4반</p>
@@ -446,7 +431,8 @@
 										<div class="col-md-2">
 											<div>
 												<div id="class_style">
-													<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+													<img id="stylePhotoImg"
+														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>화장실</p>
@@ -454,7 +440,7 @@
 											</div>
 										</div>
 									</div>
-									<hr/>
+									<hr />
 								</div>
 							</div>
 						</div>
@@ -473,62 +459,76 @@
 														<thead>
 															<tr>
 																<th>
-																	<h6>순위</h6></th>
+																	<h6>순위</h6>
+																</th>
 																<th>
-																	<h6>장소</h6></th>
+																	<h6>장소</h6>
+																</th>
 																<th>
-																	<h6>신고</h6></th>
+																	<h6>신고</h6>
+																</th>
 																<th>
-																	<h6>고민</h6></th>
+																	<h6>고민</h6>
+																</th>
 															</tr>
 														</thead>
 														<tbody>
-														  <tr BGCOLOR="RED">
-															  <td>
-																  <div class="flag">
-																	  <img width='25' height='25' src="resources/common/dashboard/assets/img/rank/one.png"/> </div>
-															  </td>
-															  <td>화장실</td>
-															  <td>8</td>
-															  <td>13</td>
-														  </tr>
-														  <tr>
-															  <td>
-																  <div class="flag">
-																	<img width='25' height='25' src="resources/common/dashboard/assets/img/rank/two.png"/> </div>
-															  </td>
-															  <td>1-1반</td>
-															  <td>6</td>
-															  <td>11</td>
-														  </tr>
-														  <tr>
-															  <td>
-																  <div class="flag">
-																	  <img width='25' height='25' src="resources/common/dashboard/assets/img/rank/three.png"/> </div>
-															  </td>
-															  <td>1-3반</td>
-															  <td>6</td>
-															  <td>9</td>
-														  </tr>
-														  <tr>
-															  <td>
-																  <div class="flag">
-																	  <img width='25' height='25' src="resources/common/dashboard/assets/img/rank/four.png"/> </div>
-															  </td>
-															  <td>1-4반</td>
-															  <td>4</td>
-															  <td>8</td>
-														  </tr>
-														  <tr>
-															  <td>
-																  <div class="flag">
-																	  <img width='25' height='25' src="resources/common/dashboard/assets/img/rank/five.png"/> </div>
-															  </td>
-															  <td>1-2반</td>
-															  <td>2</td>
-															  <td>8</td>
-														  </tr>
-													  </tbody>
+															<tr BGCOLOR="RED">
+																<td>
+																	<div class="flag">
+																		<img width='25' height='25'
+																			src="resources/common/dashboard/assets/img/rank/one.png" />
+																	</div>
+																</td>
+																<td>화장실</td>
+																<td>8</td>
+																<td>13</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="flag">
+																		<img width='25' height='25'
+																			src="resources/common/dashboard/assets/img/rank/two.png" />
+																	</div>
+																</td>
+																<td>1-1반</td>
+																<td>6</td>
+																<td>11</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="flag">
+																		<img width='25' height='25'
+																			src="resources/common/dashboard/assets/img/rank/three.png" />
+																	</div>
+																</td>
+																<td>1-3반</td>
+																<td>6</td>
+																<td>9</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="flag">
+																		<img width='25' height='25'
+																			src="resources/common/dashboard/assets/img/rank/four.png" />
+																	</div>
+																</td>
+																<td>1-4반</td>
+																<td>4</td>
+																<td>8</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="flag">
+																		<img width='25' height='25'
+																			src="resources/common/dashboard/assets/img/rank/five.png" />
+																	</div>
+																</td>
+																<td>1-2반</td>
+																<td>2</td>
+																<td>8</td>
+															</tr>
+														</tbody>
 													</table>
 												</div>
 											</div>
@@ -550,62 +550,76 @@
 														<thead>
 															<tr>
 																<th>
-																	<h6>순위</h6></th>
+																	<h6>순위</h6>
+																</th>
 																<th>
-																	<h6>장소</h6></th>
+																	<h6>장소</h6>
+																</th>
 																<th>
-																	<h6>신고</h6></th>
+																	<h6>신고</h6>
+																</th>
 																<th>
-																	<h6>고민</h6></th>
+																	<h6>고민</h6>
+																</th>
 															</tr>
 														</thead>
 														<tbody>
-														  <tr BGCOLOR="RED">
-															  <td>
-																  <div class="flag">
-																	  <img width='25' height='25' src="resources/common/dashboard/assets/img/rank/one.png"/> </div>
-															  </td>
-															  <td>2-1반</td>
-															  <td>10</td>
-															  <td>12</td>
-														  </tr>
-														  <tr>
-															  <td>
-																  <div class="flag">
-																	  <img width='25' height='25' src="resources/common/dashboard/assets/img/rank/two.png"/> </div>
-															  </td>
-															  <td>2-2반</td>
-															  <td>9</td>
-															  <td>13</td>
-														  </tr>
-														  <tr>
-															  <td>
-																  <div class="flag">
-																	  <img width='25' height='25' src="resources/common/dashboard/assets/img/rank/three.png"/> </div>
-															  </td>
-															  <td>2-3반</td>
-															  <td>8</td>
-															  <td>10</td>
-														  </tr>
-														  <tr>
-															  <td>
-																  <div class="flag">
-																	  <img width='25' height='25' src="resources/common/dashboard/assets/img/rank/four.png"/> </div>
-															  </td>
-															  <td>2-4반</td>
-															  <td>5</td>
-															  <td>5</td>
-														  </tr>
-														  <tr>
-															  <td>
-																  <div class="flag">
-																	  <img width='25' height='25' src="resources/common/dashboard/assets/img/rank/five.png"/> </div>
-															  </td>
-															  <td>화장실2</td>
-															  <td>2</td>
-															  <td>7</td>
-														  </tr>
-													  </tbody>
+															<tr BGCOLOR="RED">
+																<td>
+																	<div class="flag">
+																		<img width='25' height='25'
+																			src="resources/common/dashboard/assets/img/rank/one.png" />
+																	</div>
+																</td>
+																<td>2-1반</td>
+																<td>10</td>
+																<td>12</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="flag">
+																		<img width='25' height='25'
+																			src="resources/common/dashboard/assets/img/rank/two.png" />
+																	</div>
+																</td>
+																<td>2-2반</td>
+																<td>9</td>
+																<td>13</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="flag">
+																		<img width='25' height='25'
+																			src="resources/common/dashboard/assets/img/rank/three.png" />
+																	</div>
+																</td>
+																<td>2-3반</td>
+																<td>8</td>
+																<td>10</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="flag">
+																		<img width='25' height='25'
+																			src="resources/common/dashboard/assets/img/rank/four.png" />
+																	</div>
+																</td>
+																<td>2-4반</td>
+																<td>5</td>
+																<td>5</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="flag">
+																		<img width='25' height='25'
+																			src="resources/common/dashboard/assets/img/rank/five.png" />
+																	</div>
+																</td>
+																<td>화장실2</td>
+																<td>2</td>
+																<td>7</td>
+															</tr>
+														</tbody>
 													</table>
 												</div>
 											</div>
@@ -627,62 +641,76 @@
 														<thead>
 															<tr>
 																<th>
-																	<h6>순위</h6></th>
+																	<h6>순위</h6>
+																</th>
 																<th>
-																	<h6>장소</h6></th>
+																	<h6>장소</h6>
+																</th>
 																<th>
-																	<h6>신고</h6></th>
+																	<h6>신고</h6>
+																</th>
 																<th>
-																	<h6>고민</h6></th>
+																	<h6>고민</h6>
+																</th>
 															</tr>
 														</thead>
 														<tbody>
-														  <tr BGCOLOR="RED">
-															  <td>
-																  <div class="flag">
-																	  <img width='25' height='25' src="resources/common/dashboard/assets/img/rank/one.png"/> </div>
-															  </td>
-															  <td>3-3</td>
-															  <td>11</td>
-															  <td>11</td>
-														  </tr>
-														  <tr>
-															  <td>
-																  <div class="flag">
-																	  <img width='25' height='25' src="resources/common/dashboard/assets/img/rank/two.png"/> </div>
-															  </td>
-															  <td>화장실</td>
-															  <td>12</td>
-															  <td>8</td>
-														  </tr>
-														  <tr>
-															  <td>
-																  <div class="flag">
-																	  <img width='25' height='25' src="resources/common/dashboard/assets/img/rank/three.png"/> </div>
-															  </td>
-															  <td>3-1반</td>
-															  <td>10</td>
-															  <td>7</td>
-														  </tr>
-														  <tr>
-															  <td>
-																  <div class="flag">
-																	  <img width='25' height='25' src="resources/common/dashboard/assets/img/rank/four.png"/> </div>
-															  </td>
-															  <td>3-2반</td>
-															  <td>9</td>
-															  <td>7</td>
-														  </tr>
-														  <tr>
-															  <td>
-																  <div class="flag">
-																	  <img width='25' height='25' src="resources/common/dashboard/assets/img/rank/five.png"/> </div>
-															  </td>
-															  <td>1-4반</td>
-															  <td>8</td>
-															  <td>6</td>
-														  </tr>
-													  </tbody>
+															<tr BGCOLOR="RED">
+																<td>
+																	<div class="flag">
+																		<img width='25' height='25'
+																			src="resources/common/dashboard/assets/img/rank/one.png" />
+																	</div>
+																</td>
+																<td>3-3</td>
+																<td>11</td>
+																<td>11</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="flag">
+																		<img width='25' height='25'
+																			src="resources/common/dashboard/assets/img/rank/two.png" />
+																	</div>
+																</td>
+																<td>화장실</td>
+																<td>12</td>
+																<td>8</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="flag">
+																		<img width='25' height='25'
+																			src="resources/common/dashboard/assets/img/rank/three.png" />
+																	</div>
+																</td>
+																<td>3-1반</td>
+																<td>10</td>
+																<td>7</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="flag">
+																		<img width='25' height='25'
+																			src="resources/common/dashboard/assets/img/rank/four.png" />
+																	</div>
+																</td>
+																<td>3-2반</td>
+																<td>9</td>
+																<td>7</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="flag">
+																		<img width='25' height='25'
+																			src="resources/common/dashboard/assets/img/rank/five.png" />
+																	</div>
+																</td>
+																<td>1-4반</td>
+																<td>8</td>
+																<td>6</td>
+															</tr>
+														</tbody>
 													</table>
 												</div>
 											</div>
@@ -701,10 +729,11 @@
 				<div class="container-fluid">
 					<nav class="pull-left">
 						<ul>
-							<li><a href="https://www.facebook.com/groups/1599411230361237/?ref=bookmarks">
-							BadgeMa FaceBook </a></li>
+							<li><a
+								href="https://www.facebook.com/groups/1599411230361237/?ref=bookmarks">
+									BadgeMa FaceBook </a></li>
 							<li><a href="https://github.com/OnePercentDevelop">
-							github </a></li>
+									github </a></li>
 						</ul>
 					</nav>
 					<div class="copyright pull-right">
@@ -712,7 +741,8 @@
 						<script>
 							document.write(new Date().getFullYear())
 						</script>
-						, made with <i class="fa fa-heart heart"></i> by <a href="<%=server%>/home.do">Bagde Ma</a>
+						, made with <i class="fa fa-heart heart"></i> by <a
+							href="<%=server%>/home.do">Bagde Ma</a>
 					</div>
 				</div>
 			</footer>
@@ -794,59 +824,89 @@
 		//pollSolveA();
 		//pollSolveB();
 	});
-	var pollA = function (){
-		
-	    $.ajax({ type : "GET", url: "AbtnNumber.do",  success: function(json){
-	    	var list = json.report_result;
-			var listLen = list.length;
-			var contentStr = "";
-			for (var i = 0; i < listLen; i++) {
-				contentStr += list[i].num;
-			}
-			$('#Abtn_number').html(
-					"<div id='Abtn_number'>" + contentStr + "</div>");
-	    }, dataType: "json", complete: pollA, timeout: 30000 });
+	var pollA = function() {
+
+		$.ajax({
+			type : "GET",
+			url : "AbtnNumber.do",
+			success : function(json) {
+				var list = json.report_result;
+				var listLen = list.length;
+				var contentStr = "";
+				for (var i = 0; i < listLen; i++) {
+					contentStr += list[i].num;
+				}
+				$('#Abtn_number').html(
+						"<div id='Abtn_number'>" + contentStr + "</div>");
+			},
+			dataType : "json",
+			complete : pollA,
+			timeout : 30000
+		});
 	};
-	var pollSolveA = function (){
-		
-	    $.ajax({ type : "GET", url: "AbtnSolveNumber.do",  success: function(json){
-	    	var list = json.solve_result;
-			var listLen = list.length;
-			var contentStr = "";
-			for (var i = 0; i < listLen; i++) {
-				contentStr += list[i].num;
-			}
-			$('#Abtn_completeNumber').html(
-					"<div id='Abtn_completeNumber'>" + contentStr + "</div>");
-	    }, dataType: "json", complete: pollSolveA, timeout: 30000 });
+	var pollSolveA = function() {
+
+		$.ajax({
+			type : "GET",
+			url : "AbtnSolveNumber.do",
+			success : function(json) {
+				var list = json.solve_result;
+				var listLen = list.length;
+				var contentStr = "";
+				for (var i = 0; i < listLen; i++) {
+					contentStr += list[i].num;
+				}
+				$('#Abtn_completeNumber').html(
+						"<div id='Abtn_completeNumber'>" + contentStr
+								+ "</div>");
+			},
+			dataType : "json",
+			complete : pollSolveA,
+			timeout : 30000
+		});
 	};
-	var pollB = function (){
-		
-	    $.ajax({ type : "GET", url: "BbtnNumber.do",  success: function(json){
-	    	var list = json.report_result;
-			var listLen = list.length;
-			var contentStr = "";
-			for (var i = 0; i < listLen; i++) {
-				contentStr += list[i].num;
-			}
-			$('#Bbtn_number').html(
-					"<div id='Bbtn_number'>" + contentStr + "</div>");
-	    }, dataType: "json", complete: pollB, timeout: 30000 });
+	var pollB = function() {
+
+		$.ajax({
+			type : "GET",
+			url : "BbtnNumber.do",
+			success : function(json) {
+				var list = json.report_result;
+				var listLen = list.length;
+				var contentStr = "";
+				for (var i = 0; i < listLen; i++) {
+					contentStr += list[i].num;
+				}
+				$('#Bbtn_number').html(
+						"<div id='Bbtn_number'>" + contentStr + "</div>");
+			},
+			dataType : "json",
+			complete : pollB,
+			timeout : 30000
+		});
 	};
-	var pollSolveB = function (){
-		
-	    $.ajax({ type : "GET", url: "BbtnSolveNumber.do",  success: function(json){
-	    	var list = json.solve_result;
-			var listLen = list.length;
-			var contentStr = "";
-			for (var i = 0; i < listLen; i++) {
-				contentStr += list[i].num;
-			}
-			$('#Bbtn_completeNumber').html(
-					"<div id='Bbtn_completeNumber'>" + contentStr + "</div>");
-	    }, dataType: "json", complete: pollSolveB, timeout: 30000 });
+	var pollSolveB = function() {
+
+		$.ajax({
+			type : "GET",
+			url : "BbtnSolveNumber.do",
+			success : function(json) {
+				var list = json.solve_result;
+				var listLen = list.length;
+				var contentStr = "";
+				for (var i = 0; i < listLen; i++) {
+					contentStr += list[i].num;
+				}
+				$('#Bbtn_completeNumber').html(
+						"<div id='Bbtn_completeNumber'>" + contentStr
+								+ "</div>");
+			},
+			dataType : "json",
+			complete : pollSolveB,
+			timeout : 30000
+		});
 	};
-	var notificationPolling = function (){
+	var notificationPolling = function() {
 		$.ajax({
 			type : "GET",
 			url : "unnotificationList.do",
@@ -856,13 +916,13 @@
 				var contentStr = "";
 				for (var i = 0; i < listLen; i++) {
 					contentStr = list[i].class_location + "에서 ";
-					if (list[i].declaration_type == 1){
+					if (list[i].declaration_type == 1) {
 						contentStr += "A버튼";
-					}else {
+					} else {
 						contentStr += "B버튼";
 					}
 					contentStr += " 의 신고가 들어왔습니다!!";
-					demo.showNotification('bottom','right', contentStr);
+					demo.showNotification('bottom', 'right', contentStr);
 				}
 
 			},

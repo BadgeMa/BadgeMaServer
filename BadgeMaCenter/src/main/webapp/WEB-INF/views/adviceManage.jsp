@@ -67,7 +67,6 @@
 </head>
 
 <body>
-
 	<div class="wrapper">
 		<div class="sidebar" data-background-color="brown"
 			data-active-color="danger">
@@ -100,42 +99,32 @@
 					</div>
 				</div>
 				<ul class="nav">
-					<li><a data-toggle="collapse" href="#dashboardOverview"> <i
+					<li><a href="<%=server%>/home.do"> <i
 							class="ti-panel"></i>
-							<p>
-								대시보드 <b class="caret"></b>
+							<p>현황판					
 							</p>
 					</a>
-						<div class="collapse" id="dashboardOverview">
-							<ul class="nav">
-								<li><a href="<%=server%>/home.do">overview</a></li>
-								<li><a href="#">장비 배치도</a></li>
-							</ul>
-						</div></li>
+						</li>
 
-
-					<li><a data-toggle="collapse" href="#tablesExamples"> <i
-							class="ti-view-list-alt"></i>
+					<li ><a data-toggle="collapse"
+						href="#tablesExamples"> <i class="ti-signal"></i>
 							<p>
-								목록 보기 <b class="caret"></b>
+								도와주세요<b class="caret"></b>
 							</p>
 					</a>
 						<div class="collapse" id="tablesExamples">
 							<ul class="nav">
-								<li><a href="<%=server%>/userList.do">사용자 목록</a></li>
-								<li><a href="<%=server%>/declarationList.do">신고 목록</a></li>
-								<li><a href="<%=server%>/declarationList.do">상담 목록</a></li>
+								<li ><a href="<%=server%>/declarationManage.do">신고 목록</a></li>
+								<li><a href="<%=server%>/finishDeclaration.do">완료 목록</a></li>
 							</ul>
 						</div></li>
-					<li><a href="<%=server%>/declarationManage.do"> <i class="ti-signal"></i>
-							<p>신고 관리</p>
-					</a></li>
-					<li class="active"><a href="<%=server%>/adviceManage.do"> <i class="ti-comments"></i>
-							<p>상담 관리</p>
+					
+					<li class="active"><a href="<%=server %>/adviceManage.do"> <i class="ti-comments"></i>
+							<p>고민있어요</p>
 					</a></li>
 					<li><a href="<%=server%>/feed.do"> <i
 							class="ti-book"></i>
-							<p>대나무숲 관리</p>
+							<p>대나무숲</p>
 					</a></li>
 					<li><a href="<%=server%>/map.do"> <i
 							class="ti-map"></i>
@@ -150,198 +139,105 @@
 				<div class="container-fluid">
 					<div class="navbar-minimize">
 						<button id="minimizeSidebar" class="btn btn-fill btn-icon">
-							<i class="ti-more-alt"></i>
-						</button>
+                        <i class="ti-more-alt"></i>
+                     </button>
 					</div>
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle">
-							<span class="sr-only">Toggle navigation</span> <span
-								class="icon-bar bar1"></span> <span class="icon-bar bar2"></span>
-							<span class="icon-bar bar3"></span>
-						</button>
-						<a class="navbar-brand" href="<%=server%>/declarationManage.do">
-							상담 관리 </a>
+                        <span class="sr-only">Toggle navigation</span> <span
+                           class="icon-bar bar1"></span> <span class="icon-bar bar2"></span>
+                        <span class="icon-bar bar3"></span>
+                     </button>
+						<a class="navbar-brand" href="<%=server%>/home.do">상담 관리</a>
 					</div>
 				</div>
 			</nav>
+
 			<div class="content">
 				<div class="container-fluid">
-
 					<div class="row">
 
-						<div class="col-lg-4">
-							<div class="row">
-								<div class="card">
-									<div class="content">
-										<div class="row">
-											<div class="col-xs-5">
-												<div class="icon-big icon-info text-center">
-													<i class="ti-face-sad"></i>
-												</div>
-											</div>
-											<div class="col-xs-7">
-												<div class="numbers">
-													<p>상담 건수</p>
-													20
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="card-footer">
-										<hr/>
-										<div class="stats">
-											<i class="ti-reload"></i> Updated now
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="card">
-									<div class="content">
-										<div class="row">
-											<div class="col-xs-5">
-												<div class="icon-big icon-success text-center">
-													<i class="ti-face-smile"></i>
-												</div>
-											</div>
-											<div class="col-xs-7">
-												<div class="numbers">
-													<p>상담 처리</p>
-													5
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="card-footer">
-										<hr/>
-										<div class="stats">
-											<i class="ti-reload"></i> Updated now
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-lg-4">
-							<div class="card card-circle-chart" data-background="color" data-color="green">
-								<div class="header text-center">
-									<h5 class="title">상담 처리 차트</h5>
-									<p class="description">완료된 상담의 비율</p>
-								</div>
-								<div class="content">
-									<div id="chartCounsel" class="chart-circle" data-percent="25">25%</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-lg-4">
+						<div class="col-md-6">
 							<div class="card">
-								<div class="content">
-									<div class="row">
-										<h6 class="big-title">주간 상담 건수 </h6>
-										<div id="chartWeeklyCounsel"></div>
-									</div>
+								<div class="header">
+									<div class="card-title">상담 신청 목록</div>
+									<p class="category">학생들의 고민을 함께 나눠요</p>
+								</div>
+								<div class="content" id = "advice">
+									<div class="card" style="background-color: #f4f3ef">
+						                <div class="content">
+						                    <p>같은반 친구가 돈을 빌려갔는데 갚지 않고 있어요</p>
+						                </div>
+						                <div class="card-footer" style="
+											text-align: right;
+											height: 40px;
+											font-size: 12px;
+										">
+						                    <hr/>
+						                    <i class="ti-time"></i>
+						                    16.11.04. 14:27 김문수
+						                </div>
+						            </div>
+
+									<div class="card" style="background-color: #f4f3ef">
+						                <div class="content">
+						                    <p>안녕하세요, 익명의 고민상담방입니다. 마음편하게 이야기 해주세요.</p>
+						                </div>
+						                <div class="card-footer" style="
+											text-align: right;
+											height: 40px;
+											font-size: 12px;
+										">
+						                    <hr/>
+						                    <i class="ti-time"></i>
+						                    16.11.02. 10:41 김문수
+						                </div>
+						            </div>
+
+									<div class="card" style="background-color: #f4f3ef">
+						                <div class="content">
+						                    <p>어떤 대학교의 어떤 과로 진학해야할지 모르겠어요</p>
+						                </div>
+						                <div class="card-footer" style="
+											text-align: right;
+											height: 40px;
+											font-size: 12px;
+										">
+						                    <hr/>
+						                    <i class="ti-time"></i>
+						                    16.11.01. 17:17 김문수
+						                </div>
+						            </div>
 								</div>
 							</div>
+							<!-- card end -->
 						</div>
 
-					</div>
-					<hr/>
-
-
-					<div class="row">
-						<div class="content">
-
-							<div class="col-md-2 col-md-offset-2 text-center">
-								<button class="btn btn-info btn-fill btn-wd">접수상담</button>
-							</div>
-							<div class="col-md-2 col-md-offset-4 text-center">
-								<button class="btn btn-success btn-fill btn-wd">진행상담</button>
-							</div>
-
-							<ul class="timeline">
-								<li class="timeline-inverted">
-									<div class="timeline-badge success">
-										<i class="ti-gallery"></i>
+						<div class="col-md-6">
+							<div class="card">
+								<div class="card card-chat" >
+									<div class="header">
+										<h4 class="title"><b>함께 나누는 고민</b></h4>
+										<p class="category"></p>
 									</div>
-									<div class="timeline-panel">
-										<div class="timeline-heading">
-											<span class="label label-success">Counceling</span>
-										</div>
-										<div class="timeline-body">
-											<p>16.10.29 16:02<br/> 익명의 학생의 연애상담
-											</p>
-										</div>
-										<h6>
-								                    <i class="ti-time"></i>
-								                    11 hours ago via Twitter
-								                </h6>
-									</div>
-								</li>
-								<li>
-									<div class="timeline-badge info">
-										<i class="ti-check-box"></i>
-									</div>
-									<div class="timeline-panel">
-										<div class="timeline-heading">
-											<span class="label label-info">New Counseling</span>
-										</div>
-										<div class="timeline-body">
-											<p>16.11.02 15:20<br/> 익명 상담 신청
-											</p>
-										</div>
-									</div>
-								</li>
-								<li class="timeline-inverted">
-									<div class="timeline-badge success">
-										<i class="ti-gallery"></i>
-									</div>
-									<div class="timeline-panel">
-										<div class="timeline-heading">
-											<span class="label label-success">Counseling</span>
-										</div>
-										<div class="timeline-body">
-											<p>16.10.27<br/> 익명의 학교폭력 고민상담
-											</p>
-										</div>
-										<h6>
-													<i class="ti-time"></i>
-													11 hours ago via Twitter
-												</h6>
-									</div>
-								</li>
-								<li>
-									<div class="timeline-badge info">
-										<i class="ti-check-box"></i>
-									</div>
-									<div class="timeline-panel">
-										<div class="timeline-heading">
-											<span class="label label-info">New Counseling</span>
-										</div>
-										<div class="timeline-body">
-											<p>16.10.18 12:58<br/> 익명 상담 접수
-											</p>
-										</div>
-									</div>
-								</li>
-							</ul>
+									<div class="content" id="advice_content">
+																			</div>
+								</div>
+							</div> <!-- card end -->
 						</div>
 
 					</div>
 				</div>
 			</div>
 
-		</div>
 			<footer class="footer">
 				<div class="container-fluid">
 					<nav class="pull-left">
 						<ul>
-							<li><a
-								href="https://www.facebook.com/groups/1599411230361237/?ref=bookmarks">
-									BadgeMa FaceBook </a></li>
+							<li><a href="https://www.facebook.com/groups/1599411230361237/?ref=bookmarks">
+                              BadgeMa FaceBook </a></li>
 							<li><a href="https://github.com/OnePercentDevelop">
-									github </a></li>
+                              github </a></li>
 						</ul>
 					</nav>
 					<div class="copyright pull-right">
@@ -349,8 +245,7 @@
 						<script>
 							document.write(new Date().getFullYear())
 						</script>
-						, made with <i class="fa fa-heart heart"></i> by <a
-							href="<%=server%>/home.do">Bagde Ma</a>
+						, made with <i class="fa fa-heart heart"></i> by <a href="<%=server%>/home.do">Bagde Ma</a>
 					</div>
 				</div>
 			</footer>
@@ -420,10 +315,12 @@
 <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
 <script
 	src="resources/common/dashboard/assets/js/demo.js?ver=1 charset='utf-8'"></script>
-
+<script
+	src="resources/common/dashboard/assets/js/advice-manage.js?ver=1 charset='utf-8'"></script>
 <script type="text/javascript">
 <!-- Pie Chart -->
 $(document).ready(function() {
+	advice.adviceList();
 	demo.initOverviewDashboard();
 	demo.initCirclePercentage();
 	$('#chartCounsel').easyPieChart({

@@ -152,11 +152,14 @@ public class DeclarationController {
 	public void insertDeclaration(HttpServletRequest request, Map<String, Object> commandMap) throws Exception {
 		Map<String, Object> map = new HashMap<String, Object>();
 		String badge_id = request.getParameter("badge_id");
-		String class_location = request.getParameter("class_location");
-		int solve_state = Integer.parseInt(request.getParameter("solve_state"));
+		String grade_location = request.getParameter("grade_location") + "ÇÐ³â ";
+		String class_location = grade_location + request.getParameter("class_location")+"¹Ý";
+//		int solve_state = Integer.parseInt(request.getParameter("solve_state"));
+		int solve_state = 0;
 		int declaration_type = Integer.parseInt(request.getParameter("declaration_type"));
+		declaration_type = declaration_type==100 ? 1 : 2; 
 		String today = todayDate();
-		System.out.println(today);
+		System.out.println("badge_id : " + badge_id + " location : " + class_location + " type : " + declaration_type);
 		map.put("badge_id", badge_id);
 		map.put("class_location", class_location);
 		map.put("declaration_type", declaration_type);
@@ -164,7 +167,6 @@ public class DeclarationController {
 		map.put("notification_state", 0);
 		map.put("solve_state", solve_state);
 		service.insertDeclaration(map);
-
 	}
 
 	public String todayDate() {

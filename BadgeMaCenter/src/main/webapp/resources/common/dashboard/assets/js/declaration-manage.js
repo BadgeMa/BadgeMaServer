@@ -176,6 +176,10 @@ manage = {
 				});
 	},
 	detail_onclick : function(obj) {
-		alert(obj['pk']);
+		swal({
+			  title: "'도와주세요!' 처리 완료",
+			  text: "" + obj['location'] + "에서 " + obj['date'] + "에 처리완료!",
+			  imageUrl: "resources/common/dashboard/assets/img/new_logo.png"
+			});
 	}
 }

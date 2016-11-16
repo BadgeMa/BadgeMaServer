@@ -11,7 +11,7 @@
 	href="resources/common/dashboard/assets/img/favicon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title>BadgeMa 신고 목록</title>
+<title>'도와주세요' 완료 목록</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <meta
@@ -77,42 +77,32 @@
 					</div>
 				</div>
 				<ul class="nav">
-					<li><a data-toggle="collapse" href="#dashboardOverview"> <i
+					<li><a href="<%=server%>/home.do"> <i
 							class="ti-panel"></i>
-							<p>
-								대시보드 <b class="caret"></b>
+							<p>현황판					
 							</p>
 					</a>
-						<div class="collapse" id="dashboardOverview">
-							<ul class="nav">
-								<li><a href="<%=server%>/home.do">overview</a></li>
-								<li><a href="#">장비 배치도</a></li>
-							</ul>
-						</div></li>
+						</li>
 
 					<li class="active"><a data-toggle="collapse"
-						href="#tablesExamples"> <i class="ti-view-list-alt"></i>
+						href="#tablesExamples"> <i class="ti-signal"></i>
 							<p>
-								목록 보기<b class="caret"></b>
+								도와주세요<b class="caret"></b>
 							</p>
 					</a>
 						<div class="collapse in" id="tablesExamples">
 							<ul class="nav">
-								<li><a href="<%=server%>/userList.do">사용자
-										목록</a></li>
-								<li class="active"><a href="<%=server%>/declarationList.do">신고 목록</a></li>
-								<li><a href="<%=server%>/declarationList.do">상담 목록</a></li>
+								<li><a href="<%=server%>/declarationManage.do">신고 목록</a></li>
+								<li class="active"><a href="<%=server%>/finishDeclaration.do">완료 목록</a></li>
 							</ul>
 						</div></li>
-					<li><a href="<%=server %>/declarationManage.do"> <i class="ti-signal"></i>
-							<p>신고 관리</p>
-					</a></li>
+					
 					<li><a href="<%=server %>/adviceManage.do"> <i class="ti-comments"></i>
-							<p>상담 관리</p>
+							<p>고민있어요</p>
 					</a></li>
 					<li><a href="<%=server%>/feed.do"> <i
 							class="ti-book"></i>
-							<p>대나무숲 관리</p>
+							<p>대나무숲</p>
 					</a></li>
 					<li><a href="<%=server%>/map.do"> <i
 							class="ti-map"></i>
@@ -138,7 +128,7 @@
 								class="icon-bar bar1"></span> <span class="icon-bar bar2"></span>
 							<span class="icon-bar bar3"></span>
 						</button>
-						<a class="navbar-brand" href="#datatable">신고 목록</a>
+						<a class="navbar-brand" href="#datatable">'도와주세요' 완료 목록</a>
 					</div>
 					
 				</div>
@@ -157,10 +147,8 @@
 										<thead>
 
 											<th data-field="state" data-checkbox="true"></th>
-											<th data-field="id" class="text-center">순번</th>
-											<th data-field="user_id" data-sortable="true">아이디</th>
+											<th data-field="id" class="text-center"></th>
 											<th data-field="location" data-sortable="true">위치</th>
-											<th data-field="declaration_type" data-sortable="true">신고 유형</th>
 											<th data-field="declaration_date">날짜</th>
 											<th data-field ="detail"></th>
 											
@@ -171,12 +159,10 @@
 													<c:forEach items="${declaration_list}" var="row">
 														<tr>
 															<td></td>
-															<td>${row.declaration_id}</td>
-															<td>${row.badge_id}</td>
+															<td><input type="hidden" value ="${row.declaration_id}"></td>
 															<td>${row.class_location}</td>
-															<td>${row.declaration_type}</td>
 															<td>${row.declaration_date}</td>
-															<td><button class="btn btn-success btn-fill btn-wd" onclick="manage.detail_onclick({pk:'${row.declaration_id}'})">자세히 보기</button></td>
+															<td><button class="btn btn-success btn-fill btn-wd" onclick="manage.detail_onclick({pk:'${row.declaration_id}', location:'${row.class_location}', date:'${row.declaration_date}'})">자세히 보기</button></td>
 														</tr>
 													</c:forEach>
 												</c:when>
@@ -288,7 +274,7 @@
 <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
 <script src="resources/common/dashboard/assets/js/demo.js"></script>
 <script
-	src="resources/common/dashboard/assets/js/declaration-manage.js?ver=1 charset='utf-8'"></script>
+	src="resources/common/dashboard/assets/js/declaration-manage.js?ver=2 charset='utf-8'"></script>
 <script type="text/javascript">
 	var $table = $('#bootstrap-table');
 

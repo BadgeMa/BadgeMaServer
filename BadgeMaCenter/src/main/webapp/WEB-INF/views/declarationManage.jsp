@@ -34,7 +34,7 @@
 	href="resources/common/dashboard/assets/img/favicon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title>신고 관리</title>
+<title>도와주세요 관리</title>
 
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
@@ -99,45 +99,35 @@
 					</div>
 				</div>
 				<ul class="nav">
-					<li><a data-toggle="collapse" href="#dashboardOverview"> <i
+					<li><a href="<%=server%>/home.do"> <i
 							class="ti-panel"></i>
-							<p>
-								대시보드 <b class="caret"></b>
+							<p>현황판					
 							</p>
 					</a>
-						<div class="collapse" id="dashboardOverview">
-							<ul class="nav">
-								<li><a href="<%=server%>/home.do">overview</a></li>
-								<li><a href="#">장비 배치도</a></li>
-							</ul>
-						</div></li>
+						</li>
 
-
-					<li><a data-toggle="collapse" href="#tablesExamples"> <i
-							class="ti-view-list-alt"></i>
+					<li class="active"><a data-toggle="collapse"
+						href="#tablesExamples"> <i class="ti-signal"></i>
 							<p>
-								목록 보기 <b class="caret"></b>
+								도와주세요<b class="caret"></b>
 							</p>
 					</a>
-						<div class="collapse" id="tablesExamples">
+						<div class="collapse in" id="tablesExamples">
 							<ul class="nav">
-								<li><a href="<%=server%>/userList.do">사용자 목록</a></li>
-								<li><a href="<%=server%>/declarationList.do">신고 목록</a></li>
-								<li><a href="<%=server%>/declarationList.do">상담 목록</a></li>
+								<li class="active"><a href="<%=server%>/declarationManage.do">신고 목록</a></li>
+								<li><a href="<%=server%>/finishDeclaration.do">완료 목록</a></li>
 							</ul>
 						</div></li>
-					<li class="active"><a href="<%=server%>/declarationManage.do">
-							<i class="ti-signal"></i>
-							<p>신고 관리</p>
+					
+					<li><a href="<%=server %>/adviceManage.do"> <i class="ti-comments"></i>
+							<p>고민있어요</p>
 					</a></li>
-					<li><a href="<%=server%>/adviceManage.do"> <i
-							class="ti-comments"></i>
-							<p>상담 관리</p>
+					<li><a href="<%=server%>/feed.do"> <i
+							class="ti-book"></i>
+							<p>대나무숲</p>
 					</a></li>
-					<li><a href="<%=server%>/feed.do"> <i class="ti-book"></i>
-							<p>대나무숲 관리</p>
-					</a></li>
-					<li><a href="<%=server%>/map.do"> <i class="ti-map"></i>
+					<li><a href="<%=server%>/map.do"> <i
+							class="ti-map"></i>
 							<p>BadgeMa Map</p>
 					</a></li>
 
@@ -159,7 +149,7 @@
 							<span class="icon-bar bar3"></span>
 						</button>
 						<a class="navbar-brand" href="<%=server%>/declarationManage.do">
-							신고 관리 </a>
+							도와주세요 목록 </a>
 					</div>
 				</div>
 			</nav>
