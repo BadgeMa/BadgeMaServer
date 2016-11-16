@@ -815,7 +815,7 @@
 		demo.initOverviewDashboard();
 		demo.initCirclePercentage();
 		//demo.showNotification('bottom','right', "hi");
-		//notificationPolling();
+		notificationPolling();
 		pollA();
 		pollB();
 		//pollSolveA();
@@ -908,29 +908,29 @@
 		});
 	};
 	var notificationPolling = function() {
-		$.ajax({
-			type : "GET",
-			url : "unnotificationList.do",
-			success : function(json) {
-				var list = json.notification_result;
-				var listLen = list.length;
-				var contentStr = "";
-				for (var i = 0; i < listLen; i++) {
-					contentStr = list[i].class_location + "에서 ";
-					if (list[i].declaration_type == 1) {
-						contentStr += "A버튼";
-					} else {
-						contentStr += "B버튼";
+		setInterval(function(){
+			$.ajax({
+				type : "GET",
+				url : "unnotificationList.do",
+				dataType : "json",
+				success : function(json) {
+					var list = json.notification_result;
+					var listLen = list.length;
+					var contentStr = "";
+					for (var i = 0; i < listLen; i++) {
+						contentStr = list[i].class_location + "에서 ";
+						if (list[i].declaration_type == 1) {
+							contentStr += "도와주세요! ";
+						} else {
+							contentStr += "고민있어요! ";
+						}
+						contentStr += " 의 신고가 들어왔습니다!!";
+						demo.showNotification('bottom', 'right', contentStr);
 					}
-					contentStr += " 의 신고가 들어왔습니다!!";
-					demo.showNotification('bottom', 'right', contentStr);
-				}
+				},
 
-			},
-			dataType : "json",
-			complete : notificationPolling,
-			timeout : 30000
-		});
+			});
+		}, 1000);
 	};
 </script>
 

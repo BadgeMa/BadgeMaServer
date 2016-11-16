@@ -85,7 +85,7 @@
 			FROM
 			   Declaration
 			WHERE
-				declaration_date=#{declaration_date} AND
+				declaration_date LIKE '%'+#{declaration_date}+'%' AND 
 				notification_state=#{notification_state}
  		]]>
 	</select>

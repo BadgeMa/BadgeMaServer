@@ -68,7 +68,7 @@ public class DeclarationController {
 	public ModelAndView selectUnNotificationList(Map<String, Object> commandMap) throws Exception {
 		Map<String, Object> map = new HashMap<String, Object>();
 		// System.out.println("hello");
-		map.put("declaration_date", todayDate());
+		map.put("declaration_date", today());
 		map.put("declaration_type", 1);
 		map.put("notification_state", 0);
 		ModelAndView mv = new ModelAndView("jsonView");
