@@ -13,6 +13,12 @@ public class DeclarationDao extends abDAO {
 	public List<Map<String, Object>> selectDeclarationList(Map<String, Object> commandMap) {
 		return (List<Map<String, Object>>) selectList("declarationSQL.selectDeclaration", commandMap);
 	}
+	public List<Map<String, Object>> selectFinishDeclarationList(Map<String, Object> commandMap) {
+		return (List<Map<String, Object>>) selectList("declarationSQL.selectFinishDeclaration", commandMap);
+	}
+	public List<Map<String, Object>> selectADeclarationList(Map<String, Object> commandMap) {
+		return (List<Map<String, Object>>) selectList("declarationSQL.selectADeclaration", commandMap);
+	}
 	public List<Map<String, Object>> selectPreDeclarationList(Map<String, Object> commandMap) {
 		return (List<Map<String, Object>>) selectList("declarationSQL.selectPreDeclaration", commandMap);
 	}

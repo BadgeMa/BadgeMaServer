@@ -4,17 +4,14 @@
 <html lang="ko">
 <head>
 <%
-	String server = "/BadgeMaCenter";
+	String server = "/badgemacenter";
 %>
 <style type="text/css">
 <!--
 #class_style {
 	width: 50px;
 	height: 50px;
-	overflow: hidden;
-	border-radius: 50%;
 	margin: 0 auto;
-	border: 4px solid rgba(0, 0, 0, 0.15);
 }
 
 #stylePhotoImg {
@@ -34,7 +31,7 @@
 	href="resources/common/dashboard/assets/img/favicon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title>Badge Ma 대시보드</title>
+<title>현황판</title>
 
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
@@ -116,7 +113,7 @@
 						<div class="collapse" id="tablesExamples">
 							<ul class="nav">
 								<li ><a href="<%=server%>/declarationManage.do">신고 목록</a></li>
-								<li><a href="<%=server%>/finishDeclaration.do">완료 목록</a></li>
+								<li><a href="<%=server%>/finishDeclarationList.do">완료 목록</a></li>
 							</ul>
 						</div></li>
 					
@@ -150,7 +147,7 @@
 							<span class="icon-bar bar3"></span>
 						</button>
 						<a class="navbar-brand" href="<%=server%>/declarationManage.do">
-							신고 관리 </a>
+							현황판 </a>
 					</div>
 				</div>
 			</nav>
@@ -262,7 +259,7 @@
 											<div>
 												<div id="class_style">
 													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+														src="resources/common/dashboard/assets/img/background/chair.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>1학년 1반</p>
@@ -273,7 +270,7 @@
 											<div>
 												<div id="class_style">
 													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+														src="resources/common/dashboard/assets/img/background/chair.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>1학년 2반</p>
@@ -284,7 +281,7 @@
 											<div>
 												<div id="class_style">
 													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+														src="resources/common/dashboard/assets/img/background/chair.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>1학년 3반</p>
@@ -295,7 +292,7 @@
 											<div>
 												<div id="class_style">
 													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+														src="resources/common/dashboard/assets/img/background/chair.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>1학년 4반</p>
@@ -306,7 +303,7 @@
 											<div>
 												<div id="class_style">
 													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+														src="resources/common/dashboard/assets/img/background/toilet.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>화장실</p>
@@ -325,7 +322,7 @@
 											<div>
 												<div id="class_style">
 													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+														src="resources/common/dashboard/assets/img/background/chair.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>2학년 1반</p>
@@ -336,7 +333,7 @@
 											<div>
 												<div id="class_style">
 													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+														src="resources/common/dashboard/assets/img/background/chair.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>2학년 2반</p>
@@ -347,7 +344,7 @@
 											<div>
 												<div id="class_style">
 													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+														src="resources/common/dashboard/assets/img/background/chair.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>2학년 3반</p>
@@ -358,7 +355,7 @@
 											<div>
 												<div id="class_style">
 													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+														src="resources/common/dashboard/assets/img/background/chair.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>2학년 4반</p>
@@ -369,7 +366,7 @@
 											<div>
 												<div id="class_style">
 													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+														src="resources/common/dashboard/assets/img/background/toilet.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>화장실</p>
@@ -388,7 +385,7 @@
 											<div>
 												<div id="class_style">
 													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+														src="resources/common/dashboard/assets/img/background/chair.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>3학년 1반</p>
@@ -399,7 +396,7 @@
 											<div>
 												<div id="class_style">
 													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+														src="resources/common/dashboard/assets/img/background/chair.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>3학년 2반</p>
@@ -410,7 +407,7 @@
 											<div>
 												<div id="class_style">
 													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+														src="resources/common/dashboard/assets/img/background/chair.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>3학년 3반</p>
@@ -421,7 +418,7 @@
 											<div>
 												<div id="class_style">
 													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+														src="resources/common/dashboard/assets/img/background/chair.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>3학년 4반</p>
@@ -432,7 +429,7 @@
 											<div>
 												<div id="class_style">
 													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/faces/face-2.jpg" />
+												src="resources/common/dashboard/assets/img/background/toilet.jpg" />
 												</div>
 												<div id="styleInfo">
 													<p>화장실</p>

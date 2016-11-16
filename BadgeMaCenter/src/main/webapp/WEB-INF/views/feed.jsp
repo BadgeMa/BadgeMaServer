@@ -25,7 +25,7 @@
 -->
 </style>
 <%
-	String server = "/BadgeMaCenter";
+	String server = "/badgemacenter";
 %>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="apple-touch-icon" sizes="76x76"
@@ -100,44 +100,32 @@
 					</div>
 				</div>
 				<ul class="nav">
-					<li><a data-toggle="collapse" href="#dashboardOverview"> <i
+					<li><a href="<%=server%>/home.do"> <i
 							class="ti-panel"></i>
-							<p>
-								대시보드 <b class="caret"></b>
+							<p>현황판					
 							</p>
 					</a>
-						<div class="collapse" id="dashboardOverview">
-							<ul class="nav">
-								<li><a href="<%=server%>/home.do">overview</a></li>
-								<li><a href="#">장비 배치도</a></li>
-							</ul>
-						</div></li>
+						</li>
 
-
-					<li><a data-toggle="collapse" href="#tablesExamples"> <i
-							class="ti-view-list-alt"></i>
+					<li ><a data-toggle="collapse"
+						href="#tablesExamples"> <i class="ti-signal"></i>
 							<p>
-								목록 보기 <b class="caret"></b>
+								도와주세요<b class="caret"></b>
 							</p>
 					</a>
 						<div class="collapse" id="tablesExamples">
 							<ul class="nav">
-								<li><a href="<%=server%>/userList.do">사용자 목록</a></li>
-								<li><a href="<%=server%>/declarationList.do">신고 목록</a></li>
-								<li><a href="<%=server%>/declarationList.do">상담 목록</a></li>
+								<li ><a href="<%=server%>/declarationManage.do">신고 목록</a></li>
+								<li><a href="<%=server%>/finishDeclarationList.do">완료 목록</a></li>
 							</ul>
 						</div></li>
-					<li><a href="<%=server%>/declarationManage.do">
-							<i class="ti-signal"></i>
-							<p>신고 관리</p>
-					</a></li>
-					<li><a href="<%=server%>/adviceManage.do"> <i
-							class="ti-comments"></i>
-							<p>상담 관리</p>
+					
+					<li ><a href="<%=server %>/adviceManage.do"> <i class="ti-comments"></i>
+							<p>고민있어요</p>
 					</a></li>
 					<li class="active"><a href="<%=server%>/feed.do"> <i
 							class="ti-book"></i>
-							<p>대나무숲 관리</p>
+							<p>대나무숲</p>
 					</a></li>
 					<li><a href="<%=server%>/map.do"> <i
 							class="ti-map"></i>

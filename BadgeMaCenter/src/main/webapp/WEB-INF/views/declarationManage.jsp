@@ -25,7 +25,7 @@
 -->
 </style>
 <%
-	String server = "/BadgeMaCenter";
+	String server = "/badgemacenter";
 %>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="apple-touch-icon" sizes="76x76"
@@ -115,7 +115,7 @@
 						<div class="collapse in" id="tablesExamples">
 							<ul class="nav">
 								<li class="active"><a href="<%=server%>/declarationManage.do">신고 목록</a></li>
-								<li><a href="<%=server%>/finishDeclaration.do">완료 목록</a></li>
+								<li><a href="<%=server%>/finishDeclarationList.do">완료 목록</a></li>
 							</ul>
 						</div></li>
 					

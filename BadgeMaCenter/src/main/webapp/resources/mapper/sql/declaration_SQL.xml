@@ -11,6 +11,28 @@
 			   Declaration
 		]]>
 	</select>
+	<select id="selectFinishDeclaration" parameterType="hashmap"
+		resultType="hashmap">
+		<![CDATA[
+			SELECT
+			    *
+			FROM
+			   Declaration
+			WHERE
+				declaration_type = 1 AND solve_state = 2
+		]]>
+	</select>
+	<select id="selectADeclaration" parameterType="hashmap"
+		resultType="hashmap">
+		<![CDATA[
+			SELECT
+			    *
+			FROM
+			   Declaration
+			WHERE
+				declaration_type = 1
+		]]>
+	</select>
 	<select id="selectPreDeclaration" parameterType="hashmap"
 		resultType="hashmap">
 		<![CDATA[

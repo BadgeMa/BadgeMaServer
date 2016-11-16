@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<%String server = "/BadgeMaCenter"; %>
+<%String server = "/badgemacenter"; %>
 <meta charset="UTF-8" />
 <link rel="apple-touch-icon" sizes="76x76"
 	href="resources/common/dashboard/assets/img/apple-icon.png">
@@ -93,7 +93,7 @@
 						<div class="collapse in" id="tablesExamples">
 							<ul class="nav">
 								<li><a href="<%=server%>/declarationManage.do">신고 목록</a></li>
-								<li class="active"><a href="<%=server%>/finishDeclaration.do">완료 목록</a></li>
+								<li class="active"><a href="<%=server%>/finishDeclarationList.do">완료 목록</a></li>
 							</ul>
 						</div></li>
 					

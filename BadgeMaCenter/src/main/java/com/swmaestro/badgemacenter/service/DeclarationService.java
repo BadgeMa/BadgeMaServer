@@ -23,6 +23,12 @@ public class DeclarationService {
 	public List<Map<String, Object>> selectDeclarationList(Map<String, Object> Map) throws Exception {
 		return dao.selectDeclarationList(Map);
 	}
+	public List<Map<String, Object>> selectADeclarationList(Map<String, Object> Map) throws Exception {
+		return dao.selectADeclarationList(Map);
+	}
+	public List<Map<String, Object>> selectFinishDeclarationList(Map<String, Object> Map) throws Exception {
+		return dao.selectFinishDeclarationList(Map);
+	}
 	public List<Map<String, Object>> selectPreDeclarationList(Map<String, Object> Map) throws Exception {
 		return dao.selectPreDeclarationList(Map);
 	}
