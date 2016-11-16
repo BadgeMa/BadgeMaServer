@@ -816,30 +816,33 @@
 		demo.initCirclePercentage();
 		//demo.showNotification('bottom','right', "hi");
 		//notificationPolling();
-		//pollA();
-		//pollB();
+		pollA();
+		pollB();
 		//pollSolveA();
 		//pollSolveB();
 	});
 	var pollA = function() {
+		setInterval(function(){
+			$.ajax({
+				type : "GET",
+				url : "AbtnNumber.do",
+				dataType : "json",
+				success : function(json) {
+					var list = json.report_result;
+					var listLen = list.length;
+					var contentStr = "";
+					for (var i = 0; i < listLen; i++) {
+						contentStr += list[i].num;
+					}
+					
+					$('#Abtn_number').html(
+							"<div id='Abtn_number'>" + contentStr + "</div>");
+				},
 
-		$.ajax({
-			type : "GET",
-			url : "AbtnNumber.do",
-			success : function(json) {
-				var list = json.report_result;
-				var listLen = list.length;
-				var contentStr = "";
-				for (var i = 0; i < listLen; i++) {
-					contentStr += list[i].num;
-				}
-				$('#Abtn_number').html(
-						"<div id='Abtn_number'>" + contentStr + "</div>");
-			},
-			dataType : "json",
-			complete : pollA,
-			timeout : 30000
-		});
+			});
+		}, 1000);
+		
+		
 	};
 	var pollSolveA = function() {
 
@@ -864,23 +867,24 @@
 	};
 	var pollB = function() {
 
-		$.ajax({
-			type : "GET",
-			url : "BbtnNumber.do",
-			success : function(json) {
-				var list = json.report_result;
-				var listLen = list.length;
-				var contentStr = "";
-				for (var i = 0; i < listLen; i++) {
-					contentStr += list[i].num;
-				}
-				$('#Bbtn_number').html(
-						"<div id='Bbtn_number'>" + contentStr + "</div>");
-			},
-			dataType : "json",
-			complete : pollB,
-			timeout : 30000
-		});
+		setInterval(function(){
+			$.ajax({
+				type : "GET",
+				url : "BbtnNumber.do",
+				dataType : "json",
+				success : function(json) {
+					var list = json.report_result;
+					var listLen = list.length;
+					var contentStr = "";
+					for (var i = 0; i < listLen; i++) {
+						contentStr += list[i].num;
+					}
+					$('#Bbtn_number').html(
+							"<div id='Bbtn_number'>" + contentStr + "</div>");
+				},
+
+			});
+		}, 1000);
 	};
 	var pollSolveB = function() {
 

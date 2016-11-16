@@ -109,7 +109,7 @@ public class DeclarationController {
 	@RequestMapping(value = "/BbtnNumber.do")
 	public ModelAndView BbtnNumber(Map<String, Object> commandMap) throws Exception {
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("declaration_date", todayDate());
+		map.put("declaration_date", today());
 		map.put("declaration_type", 2);
 		ModelAndView mv = new ModelAndView("jsonView");
 		List<Map<String, Object>> list = service.selectBtnNumber(map);
