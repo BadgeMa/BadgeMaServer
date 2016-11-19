@@ -142,9 +142,11 @@ public class DeclarationController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		int declaration_id = Integer.parseInt(request.getParameter("declaration_id"));
 		int solve_state = Integer.parseInt(request.getParameter("solve_state"));
-		System.out.println("declaration_id : " + declaration_id);
+		String input_message = request.getParameter("input_message");
+		System.out.println("declaration_id : " + declaration_id +" msg : " + input_message);
 		map.put("declaration_id", declaration_id);
 		map.put("solve_state", solve_state);
+		map.put("coment", input_message);
 		service.updateSolve(map);
 	}
 	// 신고 접수

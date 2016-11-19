@@ -162,7 +162,7 @@
 															<td><input type="hidden" value ="${row.declaration_id}"></td>
 															<td>${row.class_location}</td>
 															<td>${row.declaration_date}</td>
-															<td><button class="btn btn-success btn-fill btn-wd" onclick="manage.detail_onclick({pk:'${row.declaration_id}', location:'${row.class_location}', date:'${row.declaration_date}'})">자세히 보기</button></td>
+															<td><button class="btn btn-success btn-fill btn-wd" onclick="manage.detail_onclick({pk:'${row.declaration_id}', location:'${row.class_location}', date:'${row.declaration_date}', coment:'${row.coment}'})">자세히 보기</button></td>
 														</tr>
 													</c:forEach>
 												</c:when>

@@ -50,6 +50,11 @@ public class HomeController {
 
 		return "overview";
 	}
+	@RequestMapping(value = "userhome.do", method = RequestMethod.GET)
+	public String userHome(Locale locale, Model model) throws Exception {
+
+		return "/student/overview";
+	}
 	@RequestMapping(value = "classUI.do", method = RequestMethod.GET)
 	public String classUI(Locale locale, Model model) throws Exception {
 

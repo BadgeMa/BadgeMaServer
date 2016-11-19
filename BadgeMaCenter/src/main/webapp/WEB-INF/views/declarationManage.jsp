@@ -41,7 +41,7 @@
 	name='viewport' />
 <meta name="viewport" content="width=device-width" />
 
-
+<link rel="stylesheet" type="text/css" href="resources/common/dashboard/assets/css/sweetalert.css">
 <!-- Bootstrap core CSS     -->
 <link href="resources/common/dashboard/assets/css/bootstrap.min.css"
 	rel="stylesheet" />
@@ -304,7 +304,8 @@
 <!-- Wizard Plugin    -->
 <script
 	src="resources/common/dashboard/assets/js/jquery.bootstrap.wizard.min.js"></script>
-
+<script
+	src="resources/common/dashboard/assets/js/sweetalert.min.js"></script>
 <!--  Bootstrap Table Plugin    -->
 <script src="resources/common/dashboard/assets/js/bootstrap-table.js"></script>
 

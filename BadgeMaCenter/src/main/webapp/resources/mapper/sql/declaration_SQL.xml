@@ -126,7 +126,8 @@
 			UPDATE
 				Declaration
 			SET
-				solve_state = #{solve_state}
+				solve_state = #{solve_state}, 
+				coment = #{coment}
 			WHERE 
 				declaration_id = #{declaration_id}
 		]]>
