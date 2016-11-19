@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="adviceSQL">
+	<select id="selectAdviceList" parameterType="hashmap"
+		resultType="hashmap">
+		<![CDATA[
+			SELECT
+			    *
+			FROM
+			   Advice
+		]]>
+	</select>
+	<select id="selectAdviceContentList" parameterType="hashmap"
+		resultType="hashmap">
+		<![CDATA[
+			SELECT
+			    *
+			FROM
+			   AdviceContent
+			WHERE 
+			   advice_id = #{advice_id}
+		]]>
+	</select>
+	<insert id="insertAdviceContent" parameterType="hashmap">
+		<![CDATA[
+			INSERT 
+				INTO AdviceContent(
+			    	advice_id,
+			    	send_id,
+			    	content,
+			    	content_date
+			    	)
+				VALUES(
+					#{advice_id},
+			    	#{send_id},
+			    	#{content},
+			    	#{content_date}
+			    )
+		]]>
+	</insert>
+</mapper>
