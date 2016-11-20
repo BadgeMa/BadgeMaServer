@@ -22,6 +22,17 @@
 			   advice_id = #{advice_id}
 		]]>
 	</select>
+	<select id="selectAdvicePassword" parameterType="hashmap"
+		resultType="hashmap">
+		<![CDATA[
+			SELECT
+			    advice_password
+			FROM
+			   Advice
+			WHERE 
+			   advice_id = #{advice_id}
+		]]>
+	</select>
 	<insert id="insertAdviceContent" parameterType="hashmap">
 		<![CDATA[
 			INSERT 

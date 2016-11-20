@@ -24,6 +24,9 @@ public class AdviceService {
 	public List<Map<String, Object>> selectAdviceContentList(Map<String, Object> Map) throws Exception {
 		return dao.selectAdviceContentList(Map);
 	}
+	public List<Map<String, Object>> selectAdvicePassword(Map<String, Object> Map) throws Exception {
+		return dao.selectAdvicePassword(Map);
+	}
 	public void insertAdviceContent(Map<String, Object> map) {
 		dao.insertAdviceContent(map);
 	}

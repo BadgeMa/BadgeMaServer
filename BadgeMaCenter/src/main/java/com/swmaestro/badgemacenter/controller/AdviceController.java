@@ -21,12 +21,13 @@ import com.swmaestro.badgemacenter.service.AdviceService;
 public class AdviceController {
 	@Resource(name = "AdviceService")
 	private AdviceService service;
+
 	@RequestMapping(value = "/adviceManage.do", method = RequestMethod.GET)
 	public String adviceView(Locale locale, Model model) {
 		return "adviceManage";
 	}
-	
-	//상담 내용 가져오기
+
+	// 상담 내용 가져오기
 	@RequestMapping(value = "/adviceList.do")
 	public ModelAndView adviceList(Map<String, Object> commandMap) throws Exception {
 		ModelAndView mv = new ModelAndView("jsonView");
@@ -34,7 +35,8 @@ public class AdviceController {
 		mv.addObject("advice_list", list);
 		return mv;
 	}
-	//해당 상담에 대한 댓글 가져오기
+
+	// 해당 상담에 대한 댓글 가져오기
 	@RequestMapping(value = "/adviceContentList.do")
 	public ModelAndView adviceContentList(HttpServletRequest request) throws Exception {
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -45,8 +47,22 @@ public class AdviceController {
 		mv.addObject("advicecontent_list", list);
 		return mv;
 	}
+
+	// 해당 상담 비밀번호 check
+	@RequestMapping(value = "/checkAdvicePassword.do")
+	public ModelAndView checkAdvicePassword(HttpServletRequest request) throws Exception {
+		Map<String, Object> map = new HashMap<String, Object>();
+		int advice_id = Integer.parseInt(request.getParameter("advice_id"));
+		map.put("advice_id", advice_id);
+		ModelAndView mv = new ModelAndView("jsonView");
+		List<Map<String, Object>> list = service.selectAdvicePassword(map);
+		mv.addObject("password_check", list);
+		return mv;
+	}
+
 	@RequestMapping("/insertAdviceContent.do")
-	public ModelAndView insertAdviceContent(HttpServletRequest request, Map<String, Object> commandMap) throws Exception {
+	public ModelAndView insertAdviceContent(HttpServletRequest request, Map<String, Object> commandMap)
+			throws Exception {
 		Map<String, Object> map = new HashMap<String, Object>();
 		String advice_id = request.getParameter("advice_id");
 		String send_id = request.getParameter("send_id");
@@ -62,6 +78,15 @@ public class AdviceController {
 		mv.addObject("insert_state", 1);
 		return mv;
 	}
+
+	/************************* Student Controller **********************/
+	@RequestMapping(value = "studentAdvice.do", method = RequestMethod.GET)
+	public String studentAdvice(Locale locale, Model model) throws Exception {
+
+		return "/student/advice";
+	}
+
+	/******************************************************************/
 	public String todayDate() {
 		Date date = new Date();
 		String today_date = "";
@@ -71,8 +96,8 @@ public class AdviceController {
 		int minutes = date.getMinutes();
 		today_date += month / 10 > 0 ? "" + month + "월 " : "0" + month + "월 ";
 		today_date += day / 10 > 0 ? "" + day + "일 " : "0" + day + "일 ";
-		today_date += hours/10>0 ? "" +hours+ "시 " : "0" + hours+"시 ";
-		today_date += minutes/10>0 ? "" +minutes+ "분" : "0" + minutes+"분";
+		today_date += hours / 10 > 0 ? "" + hours + "시 " : "0" + hours + "시 ";
+		today_date += minutes / 10 > 0 ? "" + minutes + "분" : "0" + minutes + "분";
 		return today_date;
 	}
 }
