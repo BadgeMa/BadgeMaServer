@@ -169,7 +169,7 @@
 											<div class="col-xs-7">
 												<div class="numbers">
 													<p>도와주세요</p>
-													<div id='Abtn_number'>0</div>
+													<div id='Abtn_number'>15/62</div>
 												</div>
 											</div>
 										</div>
@@ -190,7 +190,7 @@
 											<div class="col-xs-7">
 												<div class="numbers">
 													<p>출동했어요</p>
-													<div id='Abtn_completeNumber'>0</div>
+													<div id='Abtn_completeNumber'>13/60</div>
 												</div>
 											</div>
 										</div>
@@ -211,7 +211,7 @@
 											<div class="col-xs-7">
 												<div class="numbers">
 													<p>고민있어요</p>
-													<div id='Bbtn_number'>0</div>
+													<div id='Bbtn_number'>38</div>
 												</div>
 											</div>
 										</div>
@@ -232,7 +232,7 @@
 											<div class="col-xs-7">
 												<div class="numbers">
 													<p>대화중이에요</p>
-													<div id='Bbtn_completeNumber'>0</div>
+													<div id='Bbtn_completeNumber'>34</div>
 												</div>
 											</div>
 										</div>

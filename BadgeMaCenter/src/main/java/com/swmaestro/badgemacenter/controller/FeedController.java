@@ -13,4 +13,8 @@ public class FeedController {
 	public String feedView(Locale locale, Model model) {
 		return "feed";
 	}
+	@RequestMapping(value = "/studentFeed.do", method = RequestMethod.GET)
+	public String studentFeedView(Locale locale, Model model) {
+		return "student/studentFeed";
+	}
 }
