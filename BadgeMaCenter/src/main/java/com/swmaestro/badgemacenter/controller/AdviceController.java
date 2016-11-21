@@ -85,7 +85,24 @@ public class AdviceController {
 
 		return "/student/advice";
 	}
-
+	@RequestMapping("/insertAdvice.do")
+	public ModelAndView insertAdvice(HttpServletRequest request, Map<String, Object> commandMap)
+			throws Exception {
+		Map<String, Object> map = new HashMap<String, Object>();
+		String badge_id = request.getParameter("badge_id");
+		String advice_date = today();
+		String title = request.getParameter("title");
+		String advice_password = request.getParameter("advice_password");
+		System.out.println("id : " + badge_id + " title : " + title + " pwd : " + advice_password);
+		map.put("badge_id", badge_id);
+		map.put("advice_date", advice_date);
+		map.put("title", title);
+		map.put("advice_password", advice_password);
+		service.insertAdvice(map);
+		ModelAndView mv = new ModelAndView("jsonView");
+		mv.addObject("insert_state", 1);
+		return mv;
+	}
 	/******************************************************************/
 	public String todayDate() {
 		Date date = new Date();
@@ -94,6 +111,21 @@ public class AdviceController {
 		int day = date.getDate();
 		int hours = date.getHours();
 		int minutes = date.getMinutes();
+		today_date += month / 10 > 0 ? "" + month + "월 " : "0" + month + "월 ";
+		today_date += day / 10 > 0 ? "" + day + "일 " : "0" + day + "일 ";
+		today_date += hours / 10 > 0 ? "" + hours + "시 " : "0" + hours + "시 ";
+		today_date += minutes / 10 > 0 ? "" + minutes + "분" : "0" + minutes + "분";
+		return today_date;
+	}
+	public String today() {
+		Date date = new Date();
+		String today_date = "";
+		int month = date.getMonth() + 1;
+		int day = date.getDate();
+		int hours = date.getHours();
+		int minutes = date.getMinutes();
+		int year = 1900 + date.getYear();
+		today_date = "" + year + "년 ";
 		today_date += month / 10 > 0 ? "" + month + "월 " : "0" + month + "월 ";
 		today_date += day / 10 > 0 ? "" + day + "일 " : "0" + day + "일 ";
 		today_date += hours / 10 > 0 ? "" + hours + "시 " : "0" + hours + "시 ";

@@ -50,4 +50,23 @@
 			    )
 		]]>
 	</insert>
+	<insert id="insertAdvice" parameterType="hashmap">
+		<![CDATA[
+			INSERT 
+				INTO Advice(
+			    	badge_id,
+			    	advice_date,
+			    	advice_state,
+			    	title,
+			    	advice_password
+			    	)
+				VALUES(
+					#{badge_id},
+			    	#{advice_date},
+			    	0,
+			    	#{title},
+			    	#{advice_password}
+			    )
+		]]>
+	</insert>
 </mapper>

@@ -285,7 +285,7 @@
 	<script
 		src="resources/common/dashboard/assets/js/demo.js?ver=1 charset='utf-8'"></script>
 	<script
-		src="resources/common/dashboard/assets/js/studentadvice-manage.js?ver=1 charset='utf-8'"></script>
+		src="resources/common/dashboard/assets/js/studentadvice-manage.js?ver=2 charset='utf-8'"></script>
 	<script type="text/javascript">
 	<!-- Pie Chart -->
 		$(document).ready(function() {

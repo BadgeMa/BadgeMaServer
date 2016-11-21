@@ -22,4 +22,7 @@ public class AdviceDao extends abDAO{
 	public void insertAdviceContent(Map<String, Object> map) {
 		insert("adviceSQL.insertAdviceContent", map);
 	}
+	public void insertAdvice(Map<String, Object> map) {
+		insert("adviceSQL.insertAdvice", map);
+	}
 }

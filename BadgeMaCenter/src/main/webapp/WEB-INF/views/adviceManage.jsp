@@ -25,7 +25,7 @@
 -->
 </style>
 <%
-	String server = "/badgemacenter";
+	String server = "/BadgeMaCenter";
 %>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="apple-touch-icon" sizes="76x76"
@@ -316,7 +316,7 @@
 <script
 	src="resources/common/dashboard/assets/js/demo.js?ver=1 charset='utf-8'"></script>
 <script
-	src="resources/common/dashboard/assets/js/advice-manage.js?ver=2 charset='utf-8'"></script>
+	src="resources/common/dashboard/assets/js/advice-manage.js?ver=1 charset='utf-8'"></script>
 <script type="text/javascript">
 <!-- Pie Chart -->
 $(document).ready(function() {

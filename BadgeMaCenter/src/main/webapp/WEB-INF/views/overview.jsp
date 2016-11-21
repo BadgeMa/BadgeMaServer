@@ -4,7 +4,7 @@
 <html lang="ko">
 <head>
 <%
-	String server = "/badgemacenter";
+	String server = "/BadgeMaCenter";
 %>
 <style type="text/css">
 <!--
@@ -64,688 +64,761 @@
 </head>
 
 <body>
-
-	<div class="wrapper">
-		<div class="sidebar" data-background-color="brown"
-			data-active-color="danger">
-			<!--
-			Tip 1: you can change the color of the sidebar's background using: data-background-color="white | brown"
-			Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
-		-->
-			<div class="logo">
-				<a href="<%=server%>/home.do" class="simple-text"> Badge Ma </a>
-			</div>
-			<div class="logo logo-mini">
-				<a href="<%=server%>/home.do" class="simple-text"> 뺏지마 </a>
-			</div>
-			<div class="sidebar-wrapper">
-				<div class="user">
-					<div class="photo">
-						<img src="resources/common/dashboard/assets/img/faces/moonsu.png" />
-					</div>
-					<div class="info">
-						<a data-toggle="collapse" href="#collapseExample"
-							class="collapsed">김 문 수 <b class="caret"></b>
-						</a>
-						<div class="collapse" id="collapseExample">
-							<ul class="nav">
-								<li><a href="#profile">My Profile</a></li>
-								<li><a href="#editprofile">Edit Profile</a></li>
-								<li><a href="#settings">Settings</a></li>
-							</ul>
+		<div class="wrapper">
+			<div class="sidebar" data-background-color="brown" data-active-color="danger">
+				<!--
+		 Tip 1: you can change the color of the sidebar's background using: data-background-color="white | brown"
+		 Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+	  -->
+				<div class="logo">
+					<a href="<%=server%>/home.do" class="simple-text"> Badge Ma </a>
+				</div>
+				<div class="logo logo-mini">
+					<a href="<%=server%>/home.do" class="simple-text"> 뺏지마 </a>
+				</div>
+				<div class="sidebar-wrapper">
+					<div class="user">
+						<div class="photo">
+							<img src="resources/common/dashboard/assets/img/faces/moonsu.png" />
+						</div>
+						<div class="info">
+							<a data-toggle="collapse" href="#collapseExample" class="collapsed">김 문 수 <b class="caret"></b>
+				  </a>
+							<div class="collapse" id="collapseExample">
+								<ul class="nav">
+									<li><a href="#profile">My Profile</a></li>
+								</ul>
+							</div>
 						</div>
 					</div>
-				</div>
-				<ul class="nav">
-					<li class="active"><a href="<%=server%>/home.do"> <i
-							class="ti-panel"></i>
-							<p>현황판					
-							</p>
-					</a>
+					<ul class="nav">
+						<li class="active">
+							<a href="<%=server%>/home.do"> <i class="ti-panel"></i>
+								<p>현황판
+								</p>
+							</a>
 						</li>
 
-					<li ><a data-toggle="collapse"
-						href="#tablesExamples"> <i class="ti-signal"></i>
-							<p>
-								도와주세요<b class="caret"></b>
-							</p>
-					</a>
-						<div class="collapse" id="tablesExamples">
-							<ul class="nav">
-								<li ><a href="<%=server%>/declarationManage.do">신고 목록</a></li>
-								<li><a href="<%=server%>/finishDeclarationList.do">완료 목록</a></li>
+						<li>
+							<a data-toggle="collapse" href="#tablesExamples"> <i class="ti-signal"></i>
+								<p>
+									도와주세요<b class="caret"></b>
+								</p>
+							</a>
+							<div class="collapse" id="tablesExamples">
+								<ul class="nav">
+									<li><a href="<%=server%>/declarationManage.do">신고 목록</a></li>
+									<li><a href="<%=server%>/finishDeclarationList.do">완료 목록</a></li>
+								</ul>
+							</div>
+						</li>
+
+						<li>
+							<a href="<%=server %>/adviceManage.do"> <i class="ti-comments"></i>
+								<p>고민있어요</p>
+							</a>
+						</li>
+						<li>
+							<a href="<%=server%>/feed.do"> <i class="ti-book"></i>
+								<p>대나무숲</p>
+							</a>
+						</li>
+						<li>
+							<a href="<%=server%>/map.do"> <i class="ti-map"></i>
+								<p>BadgeMa Map</p>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			<div class="main-panel">
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<div class="navbar-minimize">
+							<button id="minimizeSidebar" class="btn btn-fill btn-icon">
+					 <i class="ti-more-alt"></i>
+				  </button>
+						</div>
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle">
+					 <span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar bar1"></span> <span class="icon-bar bar2"></span>
+					 <span class="icon-bar bar3"></span>
+				  </button>
+							<a class="navbar-brand" href="<%=server%>/declarationManage.do">
+					 현황판 </a>
+						</div>
+					</div>
+				</nav>
+				<div class="content">
+					<div class="container-fluid">
+
+						<div class="row">
+							<div class="col-md-12">
+
+								<div class="col-md-3">
+									<div class="card" style="background-color: #FFA2A2">
+										<div class="content">
+											<div class="row">
+												<div class="col-xs-5">
+													<div class="icon-big icon-danger text-center">
+														<i class="ti-help"></i>
+													</div>
+												</div>
+												<div class="col-xs-7">
+													<div class="numbers" style="color: #ffffff">
+														<p style="font-weight: bold">도와주세요</p>
+														<div id='Abtn_number'>0건</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- card end -->
+								</div>
+
+								<div class="col-md-3">
+									<div class="card" style="background-color: #98EBBC">
+										<div class="content">
+											<div class="row">
+												<div class="col-xs-5">
+													<div class="icon-big icon-success text-center">
+														<i class="ti-check"></i>
+													</div>
+												</div>
+												<div class="col-xs-7">
+													<div class="numbers" style="color: #ffffff">
+														<p style="font-weight: bold">출동했어요</p>
+														<div id='Abtn_completeNumber'>0건</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- card end -->
+								</div>
+
+								<div class="col-md-3">
+									<div class="card" style="background-color: #ffe180">
+										<div class="content">
+											<div class="row">
+												<div class="col-xs-5">
+													<div class="icon-big icon-warning text-center">
+														<i class="ti-face-sad"></i>
+													</div>
+												</div>
+												<div class="col-xs-7">
+													<div class="numbers" style="color: #ffffff">
+														<p style="font-weight: bold">고민있어요</p>
+														<div id='Abtn_completeNumber'>0건</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- card end -->
+								</div>
+
+								<div class="col-md-3">
+									<div class="card" style="background-color: #99dff2">
+										<div class="content">
+											<div class="row">
+												<div class="col-xs-5">
+													<div class="icon-big icon-info text-center">
+														<i class="ti-face-sad"></i>
+													</div>
+												</div>
+												<div class="col-xs-7">
+													<div class="numbers" style="color: #ffffff">
+														<p style="font-weight: bold">대화중이에요</p>
+														<div id='Abtn_completeNumber'>0건</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- card end -->
+								</div>
+
+							</div>
+							<div class="col-md-12">
+								<div class="card">
+									<div class="content">
+										<h4 class="title text-center">
+							  <b>반별 배치 상황</b>
+						   </h4>
+										<hr />
+										<div class="row" style="height: 60px;">
+											<div class="col-md-1">
+												<div id="styleInfo" style="margin-left: 15px;">
+													<h4>1층</h4>
+												</div>
+											</div>
+											<div class="col-md-11">
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/chair.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>1학년 1반</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/chair.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>1학년 2반</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/chair.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>1학년 3반</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/chair.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>1학년 4반</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/toilet.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>화장실</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/toilet.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>체육실</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<hr style="height: 1px;" />
+										<div class="row" style="height: 60px;">
+											<div class="col-md-1">
+												<div id="styleInfo" style="margin-left: 15px;">
+													<h4>2층</h4>
+												</div>
+											</div>
+											<div class="col-md-11">
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/chair.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>2학년 1반</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/chair.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>2학년 2반</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/chair.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>2학년 3반</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/chair.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>2학년 4반</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/toilet.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>화장실</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/toilet.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>미술실</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<hr />
+										<div class="row" style="height: 60px;">
+											<div class="col-md-1">
+												<div id="styleInfo" style="margin-left: 15px;">
+													<h4>3층</h4>
+												</div>
+											</div>
+											<div class="col-md-11">
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/chair.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>3학년 1반</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/chair.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>3학년 2반</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/chair.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>3학년 3반</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/chair.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>3학년 4반</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/toilet.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>화장실</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/toilet.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>음악실</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<hr />
+										<div class="row" style="height: 60px;">
+											<div class="col-md-1">
+												<div id="styleInfo" style="margin-left: 10px">
+													<h4>교외</h4>
+												</div>
+											</div>
+											<div class="col-md-11">
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/chair.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>교문</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/chair.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>학교 뒷편1</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/chair.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>학교 뒷편2</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/chair.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>쓰레기장</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/toilet.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>농구장</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div>
+														<div id="class_style">
+															<img id="stylePhotoImg" src="resources/common/dashboard/assets/img/background/toilet.jpg" />
+														</div>
+														<div id="styleInfo">
+															<p>수돗가</p>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+										<hr />
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-12">
+								<div class="col-md-4">
+									<div class="card">
+										<div class="header text-center">
+											<h4 class="title">1학년 신고순위</h4>
+										</div>
+										<div class="content">
+											<div class="row">
+												<div class="col-md-12">
+													<div class="table-responsive">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>
+																		<h6>순위</h6>
+																	</th>
+																	<th>
+																		<h6>장소</h6>
+																	</th>
+																	<th>
+																		<h6>신고</h6>
+																	</th>
+																	<th>
+																		<h6>고민</h6>
+																	</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr BGCOLOR="RED">
+																	<td>
+																		<div class="flag">
+																			<img width='25' height='25' src="resources/common/dashboard/assets/img/rank/one.png" />
+																		</div>
+																	</td>
+																	<td>화장실</td>
+																	<td>8</td>
+																	<td>13</td>
+																</tr>
+																<tr>
+																	<td>
+																		<div class="flag">
+																			<img width='25' height='25' src="resources/common/dashboard/assets/img/rank/two.png" />
+																		</div>
+																	</td>
+																	<td>1-1반</td>
+																	<td>6</td>
+																	<td>11</td>
+																</tr>
+																<tr>
+																	<td>
+																		<div class="flag">
+																			<img width='25' height='25' src="resources/common/dashboard/assets/img/rank/three.png" />
+																		</div>
+																	</td>
+																	<td>1-3반</td>
+																	<td>6</td>
+																	<td>9</td>
+																</tr>
+																<tr>
+																	<td>
+																		<div class="flag">
+																			<img width='25' height='25' src="resources/common/dashboard/assets/img/rank/four.png" />
+																		</div>
+																	</td>
+																	<td>1-4반</td>
+																	<td>4</td>
+																	<td>8</td>
+																</tr>
+																<tr>
+																	<td>
+																		<div class="flag">
+																			<img width='25' height='25' src="resources/common/dashboard/assets/img/rank/five.png" />
+																		</div>
+																	</td>
+																	<td>1-2반</td>
+																	<td>2</td>
+																	<td>8</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="card">
+										<div class="header text-center">
+											<h4 class="title">2학년 신고순위</h4>
+										</div>
+										<div class="content">
+											<div class="row">
+												<div class="col-md-12">
+													<div class="table-responsive">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>
+																		<h6>순위</h6>
+																	</th>
+																	<th>
+																		<h6>장소</h6>
+																	</th>
+																	<th>
+																		<h6>신고</h6>
+																	</th>
+																	<th>
+																		<h6>고민</h6>
+																	</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr BGCOLOR="RED">
+																	<td>
+																		<div class="flag">
+																			<img width='25' height='25' src="resources/common/dashboard/assets/img/rank/one.png" />
+																		</div>
+																	</td>
+																	<td>2-1반</td>
+																	<td>10</td>
+																	<td>12</td>
+																</tr>
+																<tr>
+																	<td>
+																		<div class="flag">
+																			<img width='25' height='25' src="resources/common/dashboard/assets/img/rank/two.png" />
+																		</div>
+																	</td>
+																	<td>2-2반</td>
+																	<td>9</td>
+																	<td>13</td>
+																</tr>
+																<tr>
+																	<td>
+																		<div class="flag">
+																			<img width='25' height='25' src="resources/common/dashboard/assets/img/rank/three.png" />
+																		</div>
+																	</td>
+																	<td>2-3반</td>
+																	<td>8</td>
+																	<td>10</td>
+																</tr>
+																<tr>
+																	<td>
+																		<div class="flag">
+																			<img width='25' height='25' src="resources/common/dashboard/assets/img/rank/four.png" />
+																		</div>
+																	</td>
+																	<td>2-4반</td>
+																	<td>5</td>
+																	<td>5</td>
+																</tr>
+																<tr>
+																	<td>
+																		<div class="flag">
+																			<img width='25' height='25' src="resources/common/dashboard/assets/img/rank/five.png" />
+																		</div>
+																	</td>
+																	<td>화장실2</td>
+																	<td>2</td>
+																	<td>7</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="card">
+										<div class="header text-center">
+											<h4 class="title">3학년 신고순위</h4>
+										</div>
+										<div class="content">
+											<div class="row">
+												<div class="col-md-12">
+													<div class="table-responsive">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>
+																		<h6>순위</h6>
+																	</th>
+																	<th>
+																		<h6>장소</h6>
+																	</th>
+																	<th>
+																		<h6>신고</h6>
+																	</th>
+																	<th>
+																		<h6>고민</h6>
+																	</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr BGCOLOR="RED">
+																	<td>
+																		<div class="flag">
+																			<img width='25' height='25' src="resources/common/dashboard/assets/img/rank/one.png" />
+																		</div>
+																	</td>
+																	<td>3-3</td>
+																	<td>11</td>
+																	<td>11</td>
+																</tr>
+																<tr>
+																	<td>
+																		<div class="flag">
+																			<img width='25' height='25' src="resources/common/dashboard/assets/img/rank/two.png" />
+																		</div>
+																	</td>
+																	<td>화장실</td>
+																	<td>12</td>
+																	<td>8</td>
+																</tr>
+																<tr>
+																	<td>
+																		<div class="flag">
+																			<img width='25' height='25' src="resources/common/dashboard/assets/img/rank/three.png" />
+																		</div>
+																	</td>
+																	<td>3-1반</td>
+																	<td>10</td>
+																	<td>7</td>
+																</tr>
+																<tr>
+																	<td>
+																		<div class="flag">
+																			<img width='25' height='25' src="resources/common/dashboard/assets/img/rank/four.png" />
+																		</div>
+																	</td>
+																	<td>3-2반</td>
+																	<td>9</td>
+																	<td>7</td>
+																</tr>
+																<tr>
+																	<td>
+																		<div class="flag">
+																			<img width='25' height='25' src="resources/common/dashboard/assets/img/rank/five.png" />
+																		</div>
+																	</td>
+																	<td>1-4반</td>
+																	<td>8</td>
+																	<td>6</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<footer class="footer">
+					<div class="container-fluid">
+						<nav class="pull-left">
+							<ul>
+								<li><a href="https://www.facebook.com/groups/1599411230361237/?ref=bookmarks">
+						   BadgeMa FaceBook </a></li>
+								<li><a href="https://github.com/OnePercentDevelop">
+						   github </a></li>
 							</ul>
-						</div></li>
-					
-					<li ><a href="<%=server %>/adviceManage.do"> <i class="ti-comments"></i>
-							<p>고민있어요</p>
-					</a></li>
-					<li><a href="<%=server%>/feed.do"> <i
-							class="ti-book"></i>
-							<p>대나무숲</p>
-					</a></li>
-					<li><a href="<%=server%>/map.do"> <i
-							class="ti-map"></i>
-							<p>BadgeMa Map</p>
-					</a></li>
-
-				</ul>
+						</nav>
+						<div class="copyright pull-right">
+							&copy;
+							<script>
+								document.write(new Date().getFullYear())
+							</script>
+							, made with <i class="fa fa-heart heart"></i> by <a href="<%=server%>/home.do">Bagde Ma</a>
+						</div>
+					</div>
+				</footer>
 			</div>
 		</div>
-		<div class="main-panel">
-			<nav class="navbar navbar-default">
-				<div class="container-fluid">
-					<div class="navbar-minimize">
-						<button id="minimizeSidebar" class="btn btn-fill btn-icon">
-							<i class="ti-more-alt"></i>
-						</button>
-					</div>
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle">
-							<span class="sr-only">Toggle navigation</span> <span
-								class="icon-bar bar1"></span> <span class="icon-bar bar2"></span>
-							<span class="icon-bar bar3"></span>
-						</button>
-						<a class="navbar-brand" href="<%=server%>/declarationManage.do">
-							현황판 </a>
-					</div>
-				</div>
-			</nav>
-			<div class="content">
-				<div class="container-fluid">
-
-					<div class="row">
-						<div class="col-md-12">
-
-							<div class="col-md-3">
-								<div class="card">
-									<div class="content">
-										<div class="row">
-											<div class="col-xs-5">
-												<div class="icon-big icon-warning text-center">
-													<i class="ti-server"></i>
-												</div>
-											</div>
-											<div class="col-xs-7">
-												<div class="numbers">
-													<p>도와주세요</p>
-													<div id='Abtn_number'>15/62</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- card end -->
-							</div>
-
-							<div class="col-md-3">
-								<div class="card">
-									<div class="content">
-										<div class="row">
-											<div class="col-xs-5">
-												<div class="icon-big icon-success text-center">
-													<i class="ti-wallet"></i>
-												</div>
-											</div>
-											<div class="col-xs-7">
-												<div class="numbers">
-													<p>출동했어요</p>
-													<div id='Abtn_completeNumber'>13/60</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- card end -->
-							</div>
-
-							<div class="col-md-3">
-								<div class="card">
-									<div class="content">
-										<div class="row">
-											<div class="col-xs-5">
-												<div class="icon-big icon-danger text-center">
-													<i class="ti-pulse"></i>
-												</div>
-											</div>
-											<div class="col-xs-7">
-												<div class="numbers">
-													<p>고민있어요</p>
-													<div id='Bbtn_number'>38</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- card end -->
-							</div>
-
-							<div class="col-md-3">
-								<div class="card">
-									<div class="content">
-										<div class="row">
-											<div class="col-xs-5">
-												<div class="icon-big icon-info text-center">
-													<i class="ti-twitter-alt"></i>
-												</div>
-											</div>
-											<div class="col-xs-7">
-												<div class="numbers">
-													<p>대화중이에요</p>
-													<div id='Bbtn_completeNumber'>34</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- card end -->
-							</div>
-
-						</div>
-						<div class="col-md-12">
-							<div class="card">
-								<div class="content">
-									<h4 class="title text-center">
-										<b>반별 배치 상황</b>
-									</h4>
-									<hr />
-									<div class="row">
-										<div class="col-md-2">
-											<div id="styleInfo">
-												<h4>1층</h4>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/background/chair.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>1학년 1반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/background/chair.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>1학년 2반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/background/chair.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>1학년 3반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/background/chair.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>1학년 4반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/background/toilet.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>화장실</p>
-												</div>
-											</div>
-										</div>
-									</div>
-									<hr />
-									<div class="row">
-										<div class="col-md-2">
-											<div id="styleInfo">
-												<h4>2층</h4>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/background/chair.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>2학년 1반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/background/chair.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>2학년 2반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/background/chair.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>2학년 3반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/background/chair.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>2학년 4반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/background/toilet.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>화장실</p>
-												</div>
-											</div>
-										</div>
-									</div>
-									<hr />
-									<div class="row">
-										<div class="col-md-2">
-											<div id="styleInfo">
-												<h4>3층</h4>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/background/chair.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>3학년 1반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/background/chair.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>3학년 2반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/background/chair.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>3학년 3반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-														src="resources/common/dashboard/assets/img/background/chair.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>3학년 4반</p>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div>
-												<div id="class_style">
-													<img id="stylePhotoImg"
-												src="resources/common/dashboard/assets/img/background/toilet.jpg" />
-												</div>
-												<div id="styleInfo">
-													<p>화장실</p>
-												</div>
-											</div>
-										</div>
-									</div>
-									<hr />
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-12">
-							<div class="col-md-4">
-								<div class="card">
-									<div class="header text-center">
-										<h4 class="title">1학년 신고순위</h4>
-									</div>
-									<div class="content">
-										<div class="row">
-											<div class="col-md-12">
-												<div class="table-responsive">
-													<table class="table">
-														<thead>
-															<tr>
-																<th>
-																	<h6>순위</h6>
-																</th>
-																<th>
-																	<h6>장소</h6>
-																</th>
-																<th>
-																	<h6>신고</h6>
-																</th>
-																<th>
-																	<h6>고민</h6>
-																</th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr BGCOLOR="RED">
-																<td>
-																	<div class="flag">
-																		<img width='25' height='25'
-																			src="resources/common/dashboard/assets/img/rank/one.png" />
-																	</div>
-																</td>
-																<td>화장실</td>
-																<td>8</td>
-																<td>13</td>
-															</tr>
-															<tr>
-																<td>
-																	<div class="flag">
-																		<img width='25' height='25'
-																			src="resources/common/dashboard/assets/img/rank/two.png" />
-																	</div>
-																</td>
-																<td>1-1반</td>
-																<td>6</td>
-																<td>11</td>
-															</tr>
-															<tr>
-																<td>
-																	<div class="flag">
-																		<img width='25' height='25'
-																			src="resources/common/dashboard/assets/img/rank/three.png" />
-																	</div>
-																</td>
-																<td>1-3반</td>
-																<td>6</td>
-																<td>9</td>
-															</tr>
-															<tr>
-																<td>
-																	<div class="flag">
-																		<img width='25' height='25'
-																			src="resources/common/dashboard/assets/img/rank/four.png" />
-																	</div>
-																</td>
-																<td>1-4반</td>
-																<td>4</td>
-																<td>8</td>
-															</tr>
-															<tr>
-																<td>
-																	<div class="flag">
-																		<img width='25' height='25'
-																			src="resources/common/dashboard/assets/img/rank/five.png" />
-																	</div>
-																</td>
-																<td>1-2반</td>
-																<td>2</td>
-																<td>8</td>
-															</tr>
-														</tbody>
-													</table>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-md-4">
-								<div class="card">
-									<div class="header text-center">
-										<h4 class="title">2학년 신고순위</h4>
-									</div>
-									<div class="content">
-										<div class="row">
-											<div class="col-md-12">
-												<div class="table-responsive">
-													<table class="table">
-														<thead>
-															<tr>
-																<th>
-																	<h6>순위</h6>
-																</th>
-																<th>
-																	<h6>장소</h6>
-																</th>
-																<th>
-																	<h6>신고</h6>
-																</th>
-																<th>
-																	<h6>고민</h6>
-																</th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr BGCOLOR="RED">
-																<td>
-																	<div class="flag">
-																		<img width='25' height='25'
-																			src="resources/common/dashboard/assets/img/rank/one.png" />
-																	</div>
-																</td>
-																<td>2-1반</td>
-																<td>10</td>
-																<td>12</td>
-															</tr>
-															<tr>
-																<td>
-																	<div class="flag">
-																		<img width='25' height='25'
-																			src="resources/common/dashboard/assets/img/rank/two.png" />
-																	</div>
-																</td>
-																<td>2-2반</td>
-																<td>9</td>
-																<td>13</td>
-															</tr>
-															<tr>
-																<td>
-																	<div class="flag">
-																		<img width='25' height='25'
-																			src="resources/common/dashboard/assets/img/rank/three.png" />
-																	</div>
-																</td>
-																<td>2-3반</td>
-																<td>8</td>
-																<td>10</td>
-															</tr>
-															<tr>
-																<td>
-																	<div class="flag">
-																		<img width='25' height='25'
-																			src="resources/common/dashboard/assets/img/rank/four.png" />
-																	</div>
-																</td>
-																<td>2-4반</td>
-																<td>5</td>
-																<td>5</td>
-															</tr>
-															<tr>
-																<td>
-																	<div class="flag">
-																		<img width='25' height='25'
-																			src="resources/common/dashboard/assets/img/rank/five.png" />
-																	</div>
-																</td>
-																<td>화장실2</td>
-																<td>2</td>
-																<td>7</td>
-															</tr>
-														</tbody>
-													</table>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-md-4">
-								<div class="card">
-									<div class="header text-center">
-										<h4 class="title">3학년 신고순위</h4>
-									</div>
-									<div class="content">
-										<div class="row">
-											<div class="col-md-12">
-												<div class="table-responsive">
-													<table class="table">
-														<thead>
-															<tr>
-																<th>
-																	<h6>순위</h6>
-																</th>
-																<th>
-																	<h6>장소</h6>
-																</th>
-																<th>
-																	<h6>신고</h6>
-																</th>
-																<th>
-																	<h6>고민</h6>
-																</th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr BGCOLOR="RED">
-																<td>
-																	<div class="flag">
-																		<img width='25' height='25'
-																			src="resources/common/dashboard/assets/img/rank/one.png" />
-																	</div>
-																</td>
-																<td>3-3</td>
-																<td>11</td>
-																<td>11</td>
-															</tr>
-															<tr>
-																<td>
-																	<div class="flag">
-																		<img width='25' height='25'
-																			src="resources/common/dashboard/assets/img/rank/two.png" />
-																	</div>
-																</td>
-																<td>화장실</td>
-																<td>12</td>
-																<td>8</td>
-															</tr>
-															<tr>
-																<td>
-																	<div class="flag">
-																		<img width='25' height='25'
-																			src="resources/common/dashboard/assets/img/rank/three.png" />
-																	</div>
-																</td>
-																<td>3-1반</td>
-																<td>10</td>
-																<td>7</td>
-															</tr>
-															<tr>
-																<td>
-																	<div class="flag">
-																		<img width='25' height='25'
-																			src="resources/common/dashboard/assets/img/rank/four.png" />
-																	</div>
-																</td>
-																<td>3-2반</td>
-																<td>9</td>
-																<td>7</td>
-															</tr>
-															<tr>
-																<td>
-																	<div class="flag">
-																		<img width='25' height='25'
-																			src="resources/common/dashboard/assets/img/rank/five.png" />
-																	</div>
-																</td>
-																<td>1-4반</td>
-																<td>8</td>
-																<td>6</td>
-															</tr>
-														</tbody>
-													</table>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<footer class="footer">
-				<div class="container-fluid">
-					<nav class="pull-left">
-						<ul>
-							<li><a
-								href="https://www.facebook.com/groups/1599411230361237/?ref=bookmarks">
-									BadgeMa FaceBook </a></li>
-							<li><a href="https://github.com/OnePercentDevelop">
-									github </a></li>
-						</ul>
-					</nav>
-					<div class="copyright pull-right">
-						&copy;
-						<script>
-							document.write(new Date().getFullYear())
-						</script>
-						, made with <i class="fa fa-heart heart"></i> by <a
-							href="<%=server%>/home.do">Bagde Ma</a>
-					</div>
-				</div>
-			</footer>
-		</div>
-	</div>
-</body>
+	</body>
 
 <!--   Core JS Files. Extra: PerfectScrollbar + TouchPunch libraries inside jquery-ui.min.js   -->
 <script src="resources/common/dashboard/assets/js/jquery-1.10.2.js"

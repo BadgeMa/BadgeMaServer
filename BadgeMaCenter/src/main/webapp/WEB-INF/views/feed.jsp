@@ -1,17 +1,19 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="ko">
+
 <head>
+<%
+	String server = "/badgemacenter";
+%>
 <style type="text/css">
 <!--
 #class_style {
-	width: 80px;
-	height: 80px;
-	overflow: hidden;
-	border-radius: 50%;
+	width: 50px;
+	height: 50px;
 	margin: 0 auto;
-	border: 4px solid rgba(0, 0, 0, 0.15);
 }
 
 #stylePhotoImg {
@@ -24,9 +26,6 @@
 //
 -->
 </style>
-<%
-	String server = "/badgemacenter";
-%>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="apple-touch-icon" sizes="76x76"
 	href="resources/common/dashboard/assets/img/apple-icon.png">
@@ -34,7 +33,7 @@
 	href="resources/common/dashboard/assets/img/favicon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title>신고 관리</title>
+<title>현황판</title>
 
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
@@ -67,7 +66,6 @@
 </head>
 
 <body>
-
 	<div class="wrapper">
 		<div class="sidebar" data-background-color="brown"
 			data-active-color="danger">
@@ -100,35 +98,44 @@
 					</div>
 				</div>
 				<ul class="nav">
-					<li><a href="<%=server%>/home.do"> <i
-							class="ti-panel"></i>
-							<p>현황판					
-							</p>
-					</a>
-						</li>
+					<li><a href="<%=server%>/home.do"> <i class="ti-panel"></i>
+							<p>현황판</p>
+					</a></li>
 
-					<li ><a data-toggle="collapse"
-						href="#tablesExamples"> <i class="ti-signal"></i>
+					<li><a data-toggle="collapse" href="#tablesExamples"> <i
+							class="ti-signal"></i>
 							<p>
 								도와주세요<b class="caret"></b>
 							</p>
 					</a>
 						<div class="collapse" id="tablesExamples">
 							<ul class="nav">
-								<li ><a href="<%=server%>/declarationManage.do">신고 목록</a></li>
-								<li><a href="<%=server%>/finishDeclarationList.do">완료 목록</a></li>
+								<li><a href="<%=server%>/declarationManage.do">신고 목록</a></li>
+								<li><a href="<%=server%>/finishDeclarationList.do">완료
+										목록</a></li>
 							</ul>
 						</div></li>
-					
-					<li ><a href="<%=server %>/adviceManage.do"> <i class="ti-comments"></i>
+
+					<li><a href="<%=server%>/adviceManage.do"> <i
+							class="ti-comments"></i>
 							<p>고민있어요</p>
 					</a></li>
-					<li class="active"><a href="<%=server%>/feed.do"> <i
-							class="ti-book"></i>
-							<p>대나무숲</p>
-					</a></li>
-					<li><a href="<%=server%>/map.do"> <i
-							class="ti-map"></i>
+					<li class="active"><a data-toggle="collapse"
+						href="#feedExamples"> <i class="ti-book"></i>
+							<p>
+								대나무숲<b class="caret"></b>
+							</p>
+					</a>
+						<div class="collapse in" id="feedExamples">
+							<ul class="nav">
+								<li class="active"><a href="<%=server%>/feed.do">대나무숲
+										보기</a></li>
+								<li><a href="<%=server%>/finishDeclarationList.do">신청
+										목록</a></li>
+							</ul>
+						</div></li>
+
+					<li><a href="<%=server%>/map.do"> <i class="ti-map"></i>
 							<p>BadgeMa Map</p>
 					</a></li>
 
@@ -149,75 +156,39 @@
 								class="icon-bar bar1"></span> <span class="icon-bar bar2"></span>
 							<span class="icon-bar bar3"></span>
 						</button>
-						<a class="navbar-brand" href="<%=server%>/feed.do">
-							대나무숲 관리 </a>
+						<a class="navbar-brand" href="#userpage">대나무숲</a>
 					</div>
 				</div>
 			</nav>
-			 <div class="content">
-	            <div class="container-fluid">
-	                <div class="row">
-	                    <div class="col-md-6">
+
+			<div class="content">
+				<div class="container-fluid">
+					<div class="row">
+
+						<div class="col-md-10 col-md-offset-1">
 							<div class="card">
 								<div class="header text-center">
 									<h4 class="title">대나무숲 사연목록</h4>
 								</div>
-								<hr/>
+								<hr />
 
-								<div class="content">
-									<div class="card" style="background-color: #f4f3ef">
-						                <div class="header">
-						                    <span class="label label-success">Bamboo Memo</span>
-						                    <p class="category">#고민 #사연</p>
-						                </div>
-						                <div class="content">
-						                    <p>오늘 집에 가다가 돈을 주웠어요. 어떻게 해야할까요?</p>
-						                </div>
-						                <div class="card-footer">
-						                    <hr/>
-						                    <i class="ti-time"></i>
-						                    11 hours ago via Twitter
-						                </div>
-						            </div>
-								</div>
+								<div class="content" id="feed_content"></div>
+
 							</div>
-	                    </div>
+						</div>
 
-						<div class="col-md-6">
-							<div class="card">
-								<div class="header text-center">
-									<h4 class="title">사연신청 목록</h4>
-								</div>
-								<hr/>
-
-								<div class="content">
-									<div class="card" style="background-color: #f4f3ef">
-						                <div class="header">
-						                    <span class="label label-success">Bamboo Memo</span>
-						                    <p class="category">#고민 #사연</p>
-						                </div>
-						                <div class="content">
-						                    <p>오늘 집에 가다가 돈을 주웠어요. 어떻게 해야할까요?</p>
-						                </div>
-						                <div class="card-footer">
-						                    <hr/>
-											<button class="btn btn-fill btn-wd btn-sm">확인</button>
-											<button class="btn btn-wd btn-sm">삭제</button>
-						                </div>
-						            </div>
-								</div>
-							</div>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
+					</div>
+				</div>
+			</div>
 
 			<footer class="footer">
 				<div class="container-fluid">
 					<nav class="pull-left">
 						<ul>
-								
-							<li><a href="https://github.com/BadgeMa">
+							<li><a
+								href="https://www.facebook.com/groups/1599411230361237/?ref=bookmarks">
+									BadgeMa FaceBook </a></li>
+							<li><a href="https://github.com/OnePercentDevelop">
 									github </a></li>
 						</ul>
 					</nav>
@@ -231,6 +202,7 @@
 					</div>
 				</div>
 			</footer>
+
 		</div>
 	</div>
 </body>
@@ -297,14 +269,13 @@
 <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
 <script
 	src="resources/common/dashboard/assets/js/demo.js?ver=1 charset='utf-8'"></script>
-
+<script
+	src="resources/common/dashboard/assets/js/admin-feed.js?ver=1 charset='utf-8'"></script>
 <script type="text/javascript">
-<!-- Pie Chart -->
 	$(document).ready(function() {
 		demo.initOverviewDashboard();
 		demo.initCirclePercentage();
-		
+		adminFeed.feedList();
 	});
 </script>
-
 </html>

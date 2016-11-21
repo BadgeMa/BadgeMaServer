@@ -30,4 +30,7 @@ public class AdviceService {
 	public void insertAdviceContent(Map<String, Object> map) {
 		dao.insertAdviceContent(map);
 	}
+	public void insertAdvice(Map<String, Object> map) {
+		dao.insertAdvice(map);
+	}
 }
