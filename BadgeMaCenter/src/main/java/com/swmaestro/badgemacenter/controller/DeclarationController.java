@@ -1,6 +1,5 @@
 package com.swmaestro.badgemacenter.controller;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -13,12 +12,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.swmaestro.badgemacenter.service.AdviceService;
 import com.swmaestro.badgemacenter.service.DeclarationService;
 
 @Controller
 public class DeclarationController {
 	@Resource(name = "DeclarationService")
 	private DeclarationService service;
+	@Resource(name = "AdviceService")
+	private AdviceService adviceService;
+
 
 	// declaration list display
 	@RequestMapping(value = "/declarationList.do")
@@ -153,7 +156,7 @@ public class DeclarationController {
 	@RequestMapping("/insertDeclaration.do")
 	public void insertDeclaration(HttpServletRequest request, Map<String, Object> commandMap) throws Exception {
 		Map<String, Object> map = new HashMap<String, Object>();
-		String badge_id = request.getParameter("badge_id");
+		String badge_id = "010101";
 		String grade_location = request.getParameter("grade_location") + "학년 ";
 		String class_location = grade_location + request.getParameter("class_location")+"반";
 //		int solve_state = Integer.parseInt(request.getParameter("solve_state"));
@@ -161,7 +164,10 @@ public class DeclarationController {
 		int declaration_type = Integer.parseInt(request.getParameter("declaration_type"));
 		declaration_type = declaration_type==100 ? 1 : 2; 
 		String today = todayDate();
-		System.out.println("badge_id : " + badge_id + " location : " + class_location + " type : " + declaration_type);
+//		System.out.println("badge_id : " + badge_id + " location : " + class_location + " type : " + declaration_type);
+		if (declaration_type==2) {
+			insertAdvice();
+		}			
 		map.put("badge_id", badge_id);
 		map.put("class_location", class_location);
 		map.put("declaration_type", declaration_type);
@@ -169,6 +175,18 @@ public class DeclarationController {
 		map.put("notification_state", 0);
 		map.put("solve_state", solve_state);
 		service.insertDeclaration(map);
+	}
+	public void insertAdvice() {
+		Map<String, Object> map = new HashMap<String, Object>();
+		String badge_id = "010101";
+		String advice_date = todayDate();
+		String title = "뺏지로 접수된 상담 입니다.";
+		String advice_password = "0000";
+		map.put("badge_id", badge_id);
+		map.put("advice_date", advice_date);
+		map.put("title", title);
+		map.put("advice_password", advice_password);
+		adviceService.insertAdvice(map);
 	}
 
 	public String todayDate() {
@@ -185,7 +203,6 @@ public class DeclarationController {
 		today_date += day / 10 > 0 ? "" + day + "일 " : "0" + day + "일 ";
 		today_date += hours/10>0 ? "" +hours+ "시 " : "0" + hours+"시 ";
 		today_date += minutes/10>0 ? "" +minutes+ "분 " : "0" + minutes+"분 ";
-		today_date += seconds/10>0 ? "" +seconds+ "초 " : "0" + seconds+"초 ";
 		return today_date;
 	}
 	public String today() {
