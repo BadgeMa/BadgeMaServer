@@ -1,41 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!doctype html>
-<html lang="ko">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<style type="text/css">
-<!--
-#class_style {
-	width: 80px;
-	height: 80px;
-	overflow: hidden;
-	border-radius: 50%;
-	margin: 0 auto;
-	border: 4px solid rgba(0, 0, 0, 0.15);
-}
-
-#stylePhotoImg {
-	width: 100%
-}
-
-#styleInfo {
-	text-align: center
-}
-//
--->
-</style>
-<%
-	String server = "/badgemacenter";
-%>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<%String server = "/badgemacenter"; %>
+<meta charset="UTF-8" />
 <link rel="apple-touch-icon" sizes="76x76"
 	href="resources/common/dashboard/assets/img/apple-icon.png">
 <link rel="icon" type="image/png" sizes="96x96"
 	href="resources/common/dashboard/assets/img/favicon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title>상담 관리</title>
-
+<title>대나무숲 신청 목록</title>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
 	name='viewport' />
@@ -99,144 +77,119 @@
 					</div>
 				</div>
 				<ul class="nav">
-					<li><a href="<%=server%>/home.do"> <i
-							class="ti-panel"></i>
-							<p>현황판					
-							</p>
-					</a>
-						</li>
+					<li><a href="<%=server%>/home.do"> <i class="ti-panel"></i>
+							<p>현황판</p>
+					</a></li>
 
-					<li ><a data-toggle="collapse"
-						href="#tablesExamples"> <i class="ti-signal"></i>
+					<li><a data-toggle="collapse" href="#tablesExamples"> <i
+							class="ti-signal"></i>
 							<p>
 								도와주세요<b class="caret"></b>
 							</p>
 					</a>
 						<div class="collapse" id="tablesExamples">
 							<ul class="nav">
-								<li ><a href="<%=server%>/declarationManage.do">신고 목록</a></li>
-								<li><a href="<%=server%>/finishDeclarationList.do">완료 목록</a></li>
+								<li><a href="<%=server%>/declarationManage.do">신고 목록</a></li>
+								<li><a href="<%=server%>/feedConfirmList.do">완료
+										목록</a></li>
 							</ul>
 						</div></li>
-					
-					<li class="active"><a href="<%=server %>/adviceManage.do"> <i class="ti-comments"></i>
+
+					<li><a href="<%=server%>/adviceManage.do"> <i
+							class="ti-comments"></i>
 							<p>고민있어요</p>
 					</a></li>
-					<li><a data-toggle="collapse"
+					<li class="active"><a data-toggle="collapse"
 						href="#feedExamples"> <i class="ti-book"></i>
 							<p>
 								대나무숲<b class="caret"></b>
 							</p>
 					</a>
-						<div class="collapse" id="feedExamples">
+						<div class="collapse in" id="feedExamples">
 							<ul class="nav">
 								<li><a href="<%=server%>/feed.do">대나무숲
 										보기</a></li>
-								<li><a href="<%=server%>/feedConfirmList.do">신청
+								<li class="active"><a href="<%=server%>/feedConfirmList.do">신청
 										목록</a></li>
 							</ul>
 						</div></li>
-					<li><a href="<%=server%>/map.do"> <i
-							class="ti-map"></i>
+
+					<li><a href="<%=server%>/map.do"> <i class="ti-map"></i>
 							<p>BadgeMa Map</p>
 					</a></li>
 
 				</ul>
 			</div>
 		</div>
+
+
 		<div class="main-panel">
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
 					<div class="navbar-minimize">
 						<button id="minimizeSidebar" class="btn btn-fill btn-icon">
-                        <i class="ti-more-alt"></i>
-                     </button>
+							<i class="ti-more-alt"></i>
+						</button>
 					</div>
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle">
-                        <span class="sr-only">Toggle navigation</span> <span
-                           class="icon-bar bar1"></span> <span class="icon-bar bar2"></span>
-                        <span class="icon-bar bar3"></span>
-                     </button>
-						<a class="navbar-brand" href="<%=server%>/home.do">상담 관리</a>
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar bar1"></span> <span class="icon-bar bar2"></span>
+							<span class="icon-bar bar3"></span>
+						</button>
+						<a class="navbar-brand" href="#datatable">대나무숲 사연 신청 목록</a>
 					</div>
+					
 				</div>
 			</nav>
 
 			<div class="content">
 				<div class="container-fluid">
 					<div class="row">
-
-						<div class="col-md-6">
+						<div class="col-md-12">
 							<div class="card">
-								<div class="header">
-									<div class="card-title">상담 신청 목록</div>
-									<p class="category">학생들의 고민을 함께 나눠요</p>
-								</div>
-								<div class="content" id = "advice">
-									<div class="card" style="background-color: #f4f3ef">
-						                <div class="content">
-						                    <p>같은반 친구가 돈을 빌려갔는데 갚지 않고 있어요</p>
-						                </div>
-						                <div class="card-footer" style="
-											text-align: right;
-											height: 40px;
-											font-size: 12px;
-										">
-						                    <hr/>
-						                    <i class="ti-time"></i>
-						                    16.11.04. 14:27 김문수
-						                </div>
-						            </div>
+								<div class="content">
+									<div class="toolbar">
+										<!--Here you can write extra buttons/actions for the toolbar-->
+									</div>
+									<table id="bootstrap-table" class="table">
+										<thead>
 
-									<div class="card" style="background-color: #f4f3ef">
-						                <div class="content">
-						                    <p>안녕하세요, 익명의 고민상담방입니다. 마음편하게 이야기 해주세요.</p>
-						                </div>
-						                <div class="card-footer" style="
-											text-align: right;
-											height: 40px;
-											font-size: 12px;
-										">
-						                    <hr/>
-						                    <i class="ti-time"></i>
-						                    16.11.02. 10:41 김문수
-						                </div>
-						            </div>
-
-									<div class="card" style="background-color: #f4f3ef">
-						                <div class="content">
-						                    <p>어떤 대학교의 어떤 과로 진학해야할지 모르겠어요</p>
-						                </div>
-						                <div class="card-footer" style="
-											text-align: right;
-											height: 40px;
-											font-size: 12px;
-										">
-						                    <hr/>
-						                    <i class="ti-time"></i>
-						                    16.11.01. 17:17 김문수
-						                </div>
-						            </div>
+											<th data-field="state" data-checkbox="true"></th>
+											<th data-field="id" class="text-center"></th>
+											<th data-field="location" data-sortable="true">내용</th>
+											<th data-field="declaration_date">날짜</th>
+											<th data-field ="detail"></th>
+											
+										</thead>
+										<tbody>
+											<c:choose>
+												<c:when test="${fn:length(confirm_list) > 0}">
+													<c:forEach items="${confirm_list}" var="row">
+														<tr>
+															<td></td>
+															<td><input type="hidden" value ="${row.feed_id}"></td>
+															<td>${row.title}</td>
+															<td>${row.feed_date}</td>
+															<td><button class="btn btn-success btn-fill btn-wd" onclick="adminFeed.detail_onclick({feed_id:'${row.feed_id}', title:'${row.title}', date:'${row.feed_date}'})">자세히 보기</button></td>
+														</tr>
+													</c:forEach>
+												</c:when>
+												<c:otherwise>
+													<tr>
+														<td colspan="4">조회된 결과가 없습니다.</td>
+													</tr>
+												</c:otherwise>
+											</c:choose>
+										</tbody>
+									</table>
 								</div>
 							</div>
-							<!-- card end -->
+							<!--  end card  -->
 						</div>
-
-						<div class="col-md-6">
-							<div class="card">
-								<div class="card card-chat" >
-									<div class="header">
-										<h4 class="title"><b>함께 나누는 고민</b></h4>
-										<p class="category"></p>
-									</div>
-									<div class="content" id="advice_content">
-																			</div>
-								</div>
-							</div> <!-- card end -->
-						</div>
-
+						<!-- end col-md-12 -->
 					</div>
+					<!-- end row -->
 				</div>
 			</div>
 
@@ -244,10 +197,10 @@
 				<div class="container-fluid">
 					<nav class="pull-left">
 						<ul>
-							<li><a href="https://www.facebook.com/groups/1599411230361237/?ref=bookmarks">
-                              BadgeMa FaceBook </a></li>
-							<li><a href="https://github.com/OnePercentDevelop">
-                              github </a></li>
+							<li><a href="https://www.facebook.com/groups/1599411230361237/?ref=bookmarks"> 1% FaceBook
+							</a></li>
+							<li><a href="https://github.com/OnePercentDevelop"> github </a></li>
+							
 						</ul>
 					</nav>
 					<div class="copyright pull-right">
@@ -255,7 +208,8 @@
 						<script>
 							document.write(new Date().getFullYear())
 						</script>
-						, made with <i class="fa fa-heart heart"></i> by <a href="<%=server%>/home.do">Bagde Ma</a>
+						, made with <i class="fa fa-heart heart"></i> by <a
+							href="<%=server %>/home.do">Badge Ma</a>
 					</div>
 				</div>
 			</footer>
@@ -268,7 +222,7 @@
 	type="text/javascript"></script>
 <script src="resources/common/dashboard/assets/js/jquery-ui.min.js"
 	type="text/javascript"></script>
-<script src="resources/common/dashboard/assets/js/bootstrap.min.js"
+<script src="resources/common/dashboard//assets/js/bootstrap.min.js"
 	type="text/javascript"></script>
 
 <!--  Forms Validations Plugin -->
@@ -315,6 +269,10 @@
 
 <!--  Bootstrap Table Plugin    -->
 <script src="resources/common/dashboard/assets/js/bootstrap-table.js"></script>
+<script src="resources/common/dashboard/assets/js/declaration-table.js"></script>
+
+<!--  Plugin for DataTables.net  -->
+<script src="resources/common/dashboard/assets/js/jquery.datatables.js"></script>
 
 <!--  Full Calendar Plugin    -->
 <script src="resources/common/dashboard/assets/js/fullcalendar.min.js"></script>
@@ -323,54 +281,83 @@
 <script src="resources/common/dashboard/assets/js/paper-dashboard.js"></script>
 
 <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
+<script src="resources/common/dashboard/assets/js/demo.js"></script>
 <script
-	src="resources/common/dashboard/assets/js/demo.js?ver=1 charset='utf-8'"></script>
-<script
-	src="resources/common/dashboard/assets/js/advice-manage.js?ver=1 charset='utf-8'"></script>
+	src="resources/common/dashboard/assets/js/admin-feed.js?ver=1 charset='utf-8'"></script>
 <script type="text/javascript">
-<!-- Pie Chart -->
-$(document).ready(function() {
-	advice.adviceList();
-	demo.initOverviewDashboard();
-	demo.initCirclePercentage();
-	$('#chartCounsel').easyPieChart({
-		lineWidth: 6,
-		size: 160,
-		scaleColor: false,
-		trackColor: 'rgba(255,255,255,.25)',
-		barColor: '#FFFFFF',
-		animate: ({duration: 5000, enabled: true})
-	});
-});
+	var $table = $('#bootstrap-table');
 
-
-var dataPrice = {
-  labels: ['월','화','수', '목', '금', '토'],
-  series: [
-	[3, 5, 1, 12, 4, 0]
-  ]
-};
-
-var optionsPrice = {
-  showPoint: false,
-  lineSmooth: true,
-  height: "250px",
-  axisX: {
-	showGrid: false,
-	showLabel: true
-  },
-  axisY: {
-	offset: 40,
-	showGrid: false
-  },
-  low: 0,
-  high: 'auto',
-	  classNames: {
-		line: 'ct-line ct-green'
+	function operateFormatter(value, row, index) {
+		return [
+				'<div class="table-icons">',
+				'<a rel="tooltip" title="View" class="btn btn-simple btn-info btn-icon table-action view" href="javascript:void(0)">',
+				'<i class="ti-image"></i>',
+				'</a>',
+				'<a rel="tooltip" title="Edit" class="btn btn-simple btn-warning btn-icon table-action edit" href="javascript:void(0)">',
+				'<i class="ti-pencil-alt"></i>',
+				'</a>',
+				'<a rel="tooltip" title="Remove" class="btn btn-simple btn-danger btn-icon table-action remove" href="javascript:void(0)">',
+				'<i class="ti-close"></i>', '</a>', '</div>', ].join('');
 	}
-};
 
-Chartist.Line('#chartWeeklyCounsel', dataPrice, optionsPrice);
+	$().ready(function() {
+		
+		window.operateEvents = {
+			'click .view' : function(e, value, row, index) {
+				info = JSON.stringify(row);
+				swal('You click view icon, row: ', info);
+				console.log(info);
+			},
+			'click .edit' : function(e, value, row, index) {
+				info = JSON.stringify(row);
+
+				swal('You click edit icon, row: ', info);
+				console.log(info);
+			},
+			'click .remove' : function(e, value, row, index) {
+				console.log(row);
+				$table.bootstrapTable('remove', {
+					field : 'id',
+					values : [ row.id ]
+				});
+			}
+		};
+
+		$table.bootstrapTable({
+			toolbar : ".toolbar",
+			clickToSelect : true,
+			showRefresh : true,
+			search : true,
+			showToggle : true,
+			showColumns : true,
+			pagination : true,
+			searchAlign : 'left',
+			pageSize : 8,
+			clickToSelect : false,
+			pageList : [ 8, 10, 25, 50, 100 ],
+
+			formatShowingRows : function(pageFrom, pageTo, totalRows) {
+				//do nothing here, we don't want to show the text "showing x of y from..."
+			},
+			formatRecordsPerPage : function(pageNumber) {
+				return pageNumber + " rows visible";
+			},
+			icons : {
+				refresh : 'fa fa-refresh',
+				toggle : 'fa fa-th-list',
+				columns : 'fa fa-columns',
+				detailOpen : 'fa fa-plus-circle',
+				detailClose : 'ti-close'
+			}
+		});
+
+		//activate the tooltips after the data table is initialized
+		$('[rel="tooltip"]').tooltip();
+
+		$(window).resize(function() {
+			$table.bootstrapTable('resetView');
+		});
+	});
 </script>
 
 </html>

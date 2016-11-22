@@ -33,7 +33,7 @@
 	href="resources/common/dashboard/assets/img/favicon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title>현황판</title>
+<title>대나무숲</title>
 
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
@@ -66,6 +66,7 @@
 </head>
 
 <body>
+
 	<div class="wrapper">
 		<div class="sidebar" data-background-color="brown"
 			data-active-color="danger">
@@ -130,7 +131,7 @@
 							<ul class="nav">
 								<li class="active"><a href="<%=server%>/feed.do">대나무숲
 										보기</a></li>
-								<li><a href="<%=server%>/finishDeclarationList.do">신청
+								<li><a href="<%=server%>/feedConfirmList.do">신청
 										목록</a></li>
 							</ul>
 						</div></li>
@@ -156,7 +157,7 @@
 								class="icon-bar bar1"></span> <span class="icon-bar bar2"></span>
 							<span class="icon-bar bar3"></span>
 						</button>
-						<a class="navbar-brand" href="#userpage">대나무숲</a>
+						<a class="navbar-brand" href="<%=server%>/feed.do">대나무숲</a>
 					</div>
 				</div>
 			</nav>
@@ -205,6 +206,8 @@
 
 		</div>
 	</div>
+
+
 </body>
 
 <!--   Core JS Files. Extra: PerfectScrollbar + TouchPunch libraries inside jquery-ui.min.js   -->
@@ -270,7 +273,7 @@
 <script
 	src="resources/common/dashboard/assets/js/demo.js?ver=1 charset='utf-8'"></script>
 <script
-	src="resources/common/dashboard/assets/js/admin-feed.js?ver=1 charset='utf-8'"></script>
+	src="resources/common/dashboard/assets/js/admin-feed.js?ver=2 charset='utf-8'"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		demo.initOverviewDashboard();

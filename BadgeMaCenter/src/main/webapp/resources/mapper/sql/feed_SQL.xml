@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="feedSQL">
+	<select id="selectFeedList" parameterType="hashmap"
+		resultType="hashmap">
+		<![CDATA[
+			SELECT
+			    *
+			FROM
+			   Feed
+			WHERE
+			   feed_state = 1
+		]]>
+	</select>
+	<select id="selectFeedConfirmList" parameterType="hashmap"
+		resultType="hashmap">
+		<![CDATA[
+			SELECT
+			    *
+			FROM
+			   Feed
+			WHERE
+			   feed_state = 0
+		]]>
+	</select>
+	<select id="selectFeedCommentList" parameterType="hashmap"
+		resultType="hashmap">
+		<![CDATA[
+			SELECT
+			    *
+			FROM
+			   FeedComment
+			WHERE 
+			   feed_id = #{feed_id}
+		]]>
+	</select>
+	<insert id="insertFeedComment" parameterType="hashmap">
+		<![CDATA[
+			INSERT 
+				INTO FeedComment(
+			    	feed_id,
+			    	comment,
+			    	comment_date
+			    	)
+				VALUES(
+					#{feed_id},
+			    	#{comment},
+			    	#{comment_date}
+			    )
+		]]>
+	</insert>
+	<insert id="insertFeed" parameterType="hashmap">
+		<![CDATA[
+			INSERT 
+				INTO Feed(
+			    	title,
+			    	feed_date,
+			    	feed_state
+			    	)
+				VALUES(
+					#{title},
+			    	#{feed_date},
+			    	0
+			    )
+		]]>
+	</insert>
+	<update id="updateFeedState" parameterType="hashmap">
+		<![CDATA[
+			UPDATE
+				Feed
+			SET
+				feed_state = 1
+			WHERE 
+				feed_id = #{feed_id}
+		]]>
+	</update>
+</mapper>

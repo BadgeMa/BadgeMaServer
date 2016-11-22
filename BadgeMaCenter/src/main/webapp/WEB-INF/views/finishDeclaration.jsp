@@ -3,7 +3,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<%String server = "/BadgeMaCenter"; %>
+<%
+	String server = "/badgemacenter";
+%>
 <meta charset="UTF-8" />
 <link rel="apple-touch-icon" sizes="76x76"
 	href="resources/common/dashboard/assets/img/apple-icon.png">
@@ -77,12 +79,9 @@
 					</div>
 				</div>
 				<ul class="nav">
-					<li><a href="<%=server%>/home.do"> <i
-							class="ti-panel"></i>
-							<p>현황판					
-							</p>
-					</a>
-						</li>
+					<li><a href="<%=server%>/home.do"> <i class="ti-panel"></i>
+							<p>현황판</p>
+					</a></li>
 
 					<li class="active"><a data-toggle="collapse"
 						href="#tablesExamples"> <i class="ti-signal"></i>
@@ -93,19 +92,29 @@
 						<div class="collapse in" id="tablesExamples">
 							<ul class="nav">
 								<li><a href="<%=server%>/declarationManage.do">신고 목록</a></li>
-								<li class="active"><a href="<%=server%>/finishDeclarationList.do">완료 목록</a></li>
+								<li class="active"><a
+									href="<%=server%>/finishDeclarationList.do">완료 목록</a></li>
 							</ul>
 						</div></li>
-					
-					<li><a href="<%=server %>/adviceManage.do"> <i class="ti-comments"></i>
+
+					<li><a href="<%=server%>/adviceManage.do"> <i
+							class="ti-comments"></i>
 							<p>고민있어요</p>
 					</a></li>
-					<li><a href="<%=server%>/feed.do"> <i
+					<li><a data-toggle="collapse" href="#feedExamples"> <i
 							class="ti-book"></i>
-							<p>대나무숲</p>
-					</a></li>
-					<li><a href="<%=server%>/map.do"> <i
-							class="ti-map"></i>
+							<p>
+								대나무숲<b class="caret"></b>
+							</p>
+					</a>
+						<div class="collapse" id="feedExamples">
+							<ul class="nav">
+								<li><a href="<%=server%>/feed.do">대나무숲 보기</a></li>
+								<li><a href=<%=server%>/feedConfirmList.do>신청
+										목록</a></li>
+							</ul>
+						</div></li>
+					<li><a href="<%=server%>/map.do"> <i class="ti-map"></i>
 							<p>BadgeMa Map</p>
 					</a></li>
 
@@ -130,7 +139,7 @@
 						</button>
 						<a class="navbar-brand" href="#datatable">'도와주세요' 완료 목록</a>
 					</div>
-					
+
 				</div>
 			</nav>
 
@@ -150,8 +159,8 @@
 											<th data-field="id" class="text-center"></th>
 											<th data-field="location" data-sortable="true">위치</th>
 											<th data-field="declaration_date">날짜</th>
-											<th data-field ="detail"></th>
-											
+											<th data-field="detail"></th>
+
 										</thead>
 										<tbody>
 											<c:choose>
@@ -159,10 +168,13 @@
 													<c:forEach items="${declaration_list}" var="row">
 														<tr>
 															<td></td>
-															<td><input type="hidden" value ="${row.declaration_id}"></td>
+															<td><input type="hidden"
+																value="${row.declaration_id}"></td>
 															<td>${row.class_location}</td>
 															<td>${row.declaration_date}</td>
-															<td><button class="btn btn-success btn-fill btn-wd" onclick="manage.detail_onclick({pk:'${row.declaration_id}', location:'${row.class_location}', date:'${row.declaration_date}', coment:'${row.coment}'})">자세히 보기</button></td>
+															<td><button class="btn btn-success btn-fill btn-wd"
+																	onclick="manage.detail_onclick({pk:'${row.declaration_id}', location:'${row.class_location}', date:'${row.declaration_date}', coment:'${row.coment}'})">자세히
+																	보기</button></td>
 														</tr>
 													</c:forEach>
 												</c:when>
@@ -188,10 +200,12 @@
 				<div class="container-fluid">
 					<nav class="pull-left">
 						<ul>
-							<li><a href="https://www.facebook.com/groups/1599411230361237/?ref=bookmarks"> 1% FaceBook
-							</a></li>
-							<li><a href="https://github.com/OnePercentDevelop"> github </a></li>
-							
+							<li><a
+								href="https://www.facebook.com/groups/1599411230361237/?ref=bookmarks">
+									1% FaceBook </a></li>
+							<li><a href="https://github.com/OnePercentDevelop">
+									github </a></li>
+
 						</ul>
 					</nav>
 					<div class="copyright pull-right">
@@ -200,7 +214,7 @@
 							document.write(new Date().getFullYear())
 						</script>
 						, made with <i class="fa fa-heart heart"></i> by <a
-							href="<%=server %>/home.do">Badge Ma</a>
+							href="<%=server%>/home.do">Badge Ma</a>
 					</div>
 				</div>
 			</footer>
@@ -292,7 +306,7 @@
 	}
 
 	$().ready(function() {
-		
+
 		window.operateEvents = {
 			'click .view' : function(e, value, row, index) {
 				info = JSON.stringify(row);

@@ -4,7 +4,7 @@
 <html lang="ko">
 <head>
 <%
-	String server = "/BadgeMaCenter";
+	String server = "/badgemacenter";
 %>
 <meta charset="utf-8" />
 <link rel="apple-touch-icon" sizes="76x76"
@@ -106,10 +106,20 @@
 					<li><a href="<%=server %>/adviceManage.do"> <i class="ti-comments"></i>
 							<p>고민있어요</p>
 					</a></li>
-					<li><a href="<%=server%>/feed.do"> <i
-							class="ti-book"></i>
-							<p>대나무숲</p>
-					</a></li>
+					<li><a data-toggle="collapse"
+						href="#feedExamples"> <i class="ti-book"></i>
+							<p>
+								대나무숲<b class="caret"></b>
+							</p>
+					</a>
+						<div class="collapse" id="feedExamples">
+							<ul class="nav">
+								<li><a href="<%=server%>/feed.do">대나무숲
+										보기</a></li>
+								<li><a href="<%=server%>/feedConfirmList.do">신청
+										목록</a></li>
+							</ul>
+						</div></li>
 					<li class="active"><a href="<%=server%>/map.do"> <i
 							class="ti-map"></i>
 							<p>BadgeMa Map</p>

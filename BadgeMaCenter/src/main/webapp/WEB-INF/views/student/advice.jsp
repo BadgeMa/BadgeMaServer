@@ -69,27 +69,27 @@
 
 <body>
 	<div class="wrapper">
-		<div class="sidebar" data-background-color="brown"
-			data-active-color="danger">
+		<div class="sidebar" data-background-color="brown" data-active-color="warning">
 			<!--
-  		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | brown"
-  		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
-  	 -->
+			Tip 1: you can change the color of the sidebar's background using: data-background-color="white | brown"
+			Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+		-->
 			<div class="logo">
-				<a href="<%=server%>/home.do" class="simple-text"> Badge Ma </a>
+				<a href="<%=server%>/studentFeed.do" class="simple-text" > Badge Ma </a>
 			</div>
 			<div class="logo logo-mini">
-				<a href="<%=server%>/home.do" class="simple-text"> 뺏지마 </a>
+				<a href="<%=server%>/studentFeed.do" class="simple-text"> 뺏지마 </a>
 			</div>
 			<div class="sidebar-wrapper">
 				<div class="user">
 					<div class="photo">
-						<img src="resources/common/dashboard/assets/img/faces/moonsu.png" />
+						<img width="60" height="60" src="resources/common/dashboard/assets/img/faces/badgema_logo.png" />
 					</div>
 					<div class="info">
-						<a data-toggle="collapse" href="#collapseExample"
-							class="collapsed">김 문 수 <b class="caret"></b>
-						</a>
+						<a data-toggle="collapse" href="#collapseExample" class="collapsed" >
+	                        학생
+	                        <b class="caret"></b>
+	                    </a>
 						<div class="collapse" id="collapseExample">
 							<ul class="nav">
 								<li><a href="#profile">My Profile</a></li>
@@ -98,19 +98,24 @@
 					</div>
 				</div>
 				<ul class="nav">
-					<li><a href="<%=server%>/#"> <i class="ti-book"></i>
-							<p>대나무숲</p>
-					</a></li>
-					<li><a href="<%=server%>/#"> <i class="ti-panel"></i>
-							<p>도와주세요</p>
-					</a></li>
-
-					<li class="active"><a href="<%=server%>/#"> <i
-							class="ti-signal"></i>
-							<p>
-								고민있어요<b class="caret"></b>
-							</p>
-					</a></li>
+					<li>
+						<a href="<%=server%>/studentFeed.do">
+							<i class="ti-book" ></i>
+							<p>대나무 숲</p>
+						</a>
+					</li>
+					<li>
+						<a href="<%=server%>/studentFeedForm.do">
+							<i class="ti-notepad"></i>
+							<p >사연 신청</p>
+						</a>
+					</li>
+					<li class="active">
+						<a href="<%=server%>/studentAdvice.do">
+							<i class="ti-comments" ></i>
+							<p>고민있어요</p>
+						</a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -128,7 +133,7 @@
 								class="icon-bar bar1"></span> <span class="icon-bar bar2"></span>
 							<span class="icon-bar bar3"></span>
 						</button>
-						<a class="navbar-brand" href="<%=server%>/home.do">상담 관리</a>
+						<a class="navbar-brand" href="<%=server%>/studentAdvice.do">상담 관리</a>
 					</div>
 				</div>
 			</nav>
