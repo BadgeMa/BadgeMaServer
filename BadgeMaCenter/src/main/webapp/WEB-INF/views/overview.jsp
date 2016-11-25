@@ -4,7 +4,7 @@
 <html lang="ko">
 <head>
 <%
-	String server = "/badgemacenter";
+	String server = "/BadgeMaCenter";
 %>
 <style type="text/css">
 <!--

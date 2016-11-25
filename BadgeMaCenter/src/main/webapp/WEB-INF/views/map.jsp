@@ -4,7 +4,7 @@
 <html lang="ko">
 <head>
 <%
-	String server = "/badgemacenter";
+	String server = "/BadgeMaCenter";
 %>
 <meta charset="utf-8" />
 <link rel="apple-touch-icon" sizes="76x76"
